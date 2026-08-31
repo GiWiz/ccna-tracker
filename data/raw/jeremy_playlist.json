@@ -1,0 +1,764 @@
+{
+  "playlist_title": "Free CCNA v1.1 200-301 | Complete Course 2026",
+  "total_videos": 126,
+  "total_runtime_seconds": 210374,
+  "total_runtime_formatted": "58h 26m",
+  "videos": [
+    {
+      "title": "Free CCNA | Network Devices | Day 1 | CCNA 200-301 Complete Course",
+      "duration": "30:26",
+      "video_id": "H8W9oMNSuwo",
+      "index": 1
+    },
+    {
+      "title": "Free CCNA | Anki Flashcards | Day 1 Extra | CCNA 200-301 Complete Course",
+      "duration": "14:56",
+      "video_id": "6Atw8oMtVTA",
+      "index": 2
+    },
+    {
+      "title": "Free CCNA | Packet Tracer Introduction | Day 1 Lab | CCNA 200-301 Complete Course",
+      "duration": "15:18",
+      "video_id": "a1Im6GYaSno",
+      "index": 3
+    },
+    {
+      "title": "Free CCNA | Interfaces and Cables | Day 2 | CCNA 200-301 Complete Course",
+      "duration": "35:52",
+      "video_id": "ieTH5lVhNaY",
+      "index": 4
+    },
+    {
+      "title": "Free CCNA | Connecting Devices | Day 2 Lab | CCNA 200-301 Complete Course",
+      "duration": "5:33",
+      "video_id": "K6Qt23sY68Y",
+      "index": 5
+    },
+    {
+      "title": "How the TCP/IP Model Actually Works | CCNA Day 3",
+      "duration": "42:42",
+      "video_id": "yM-XNq9ADlI",
+      "index": 6
+    },
+    {
+      "title": "Free CCNA | OSI Model | Day 3 Lab | CCNA 200-301 Complete Course",
+      "duration": "8:05",
+      "video_id": "7nmYoL0t2tU",
+      "index": 7
+    },
+    {
+      "title": "Free CCNA | Intro to the CLI | Day 4 | CCNA 200-301 Complete Course",
+      "duration": "31:06",
+      "video_id": "IYbtai7Nu2g",
+      "index": 8
+    },
+    {
+      "title": "Free CCNA | Basic Device Security | Day 4 Lab | CCNA 200-301 Complete Course",
+      "duration": "10:26",
+      "video_id": "SDocmq1c05s",
+      "index": 9
+    },
+    {
+      "title": "Free CCNA | Ethernet LAN Switching (Part 1) | Day 5 | CCNA 200-301 Complete Course",
+      "duration": "38:13",
+      "video_id": "u2n762WG0Vo",
+      "index": 10
+    },
+    {
+      "title": "Free CCNA | Ethernet LAN Switching (Part 2) | Day 6 | CCNA 200-301 Complete Course",
+      "duration": "33:41",
+      "video_id": "5q1pqdmdPjo",
+      "index": 11
+    },
+    {
+      "title": "Free CCNA | Analyzing Ethernet Switching | Day 6 Lab | CCNA 200-301 Complete Course",
+      "duration": "10:29",
+      "video_id": "Ig0dSaOQDI8",
+      "index": 12
+    },
+    {
+      "title": "Free CCNA | IPv4 Addressing (Part 1) | Day 7 | CCNA 200-301 Complete Course",
+      "duration": "40:21",
+      "video_id": "3ROdsfEUuhs",
+      "index": 13
+    },
+    {
+      "title": "Free CCNA | IPv4 Addressing (Part 2) | Day 8 | CCNA 200-301 Complete Course",
+      "duration": "30:42",
+      "video_id": "FiAatRd84XI",
+      "index": 14
+    },
+    {
+      "title": "Free CCNA | Configuring IP Addresses | Day 8 Lab | CCNA 200-301 Complete Course",
+      "duration": "10:06",
+      "video_id": "e1jbvyMeS5I",
+      "index": 15
+    },
+    {
+      "title": "Free CCNA | Switch Interfaces | Day 9 | CCNA 200-301 Complete Course",
+      "duration": "32:28",
+      "video_id": "cCqluocfQe0",
+      "index": 16
+    },
+    {
+      "title": "Free CCNA | Configuring Interfaces | Day 9 Lab | CCNA 200-301 Complete Course",
+      "duration": "11:54",
+      "video_id": "rzDb5DoBKRk",
+      "index": 17
+    },
+    {
+      "title": "Free CCNA | IPv4 Header | Day 10 | CCNA 200-301 Complete Course",
+      "duration": "30:11",
+      "video_id": "aQB22y4liXA",
+      "index": 18
+    },
+    {
+      "title": "Free CCNA | Routing Fundamentals | Day 11 (part 1) | CCNA 200-301 Complete Course",
+      "duration": "31:00",
+      "video_id": "aHwAm8GYbn8",
+      "index": 19
+    },
+    {
+      "title": "Free CCNA | Static Routing | Day 11 (part 2) | CCNA 200-301 Complete Course",
+      "duration": "37:44",
+      "video_id": "YCv4-_sMvYE",
+      "index": 20
+    },
+    {
+      "title": "Free CCNA | Configuring Static Routes | Day 11 Lab 1 | CCNA 200-301 Complete Course",
+      "duration": "12:29",
+      "video_id": "XHxOtIav2k8",
+      "index": 21
+    },
+    {
+      "title": "Free CCNA | Troubleshooting Static Routes | Day 11 Lab 2 | CCNA 200-301 Complete Course",
+      "duration": "9:45",
+      "video_id": "3z8YGEVFTiA",
+      "index": 22
+    },
+    {
+      "title": "Free CCNA | The Life of a Packet | Day 12 | CCNA 200-301 Complete Course",
+      "duration": "20:13",
+      "video_id": "4YrYV2io3as",
+      "index": 23
+    },
+    {
+      "title": "Free CCNA | Life of a Packet | Day 12 Lab | CCNA 200-301 Complete Course",
+      "duration": "15:36",
+      "video_id": "bfsEqDeHbpI",
+      "index": 24
+    },
+    {
+      "title": "Free CCNA | Subnetting (Part 1) | Day 13 | CCNA 200-301 Complete Course",
+      "duration": "28:54",
+      "video_id": "bQ8sdpGQu8c",
+      "index": 25
+    },
+    {
+      "title": "Free CCNA | Subnetting (Part 2) | Day 14 | CCNA 200-301 Complete Course",
+      "duration": "24:47",
+      "video_id": "IGhd-0di0Qo",
+      "index": 26
+    },
+    {
+      "title": "Free CCNA | Subnetting (Part 3 - VLSM) | Day 15 | CCNA 200-301 Complete Course",
+      "duration": "23:53",
+      "video_id": "z-JqCedc9EI",
+      "index": 27
+    },
+    {
+      "title": "Free CCNA | Subnetting (VLSM) | Day 15 Lab | CCNA 200-301 Complete Course",
+      "duration": "14:59",
+      "video_id": "Rn_E1Qv8--I",
+      "index": 28
+    },
+    {
+      "title": "Free CCNA | VLANs (Part 1) | Day 16 | CCNA 200-301 Complete Course",
+      "duration": "23:45",
+      "video_id": "cjFzOnm6u1g",
+      "index": 29
+    },
+    {
+      "title": "Free CCNA | VLANs (Part 1) | Day 16 Lab | CCNA 200-301 Complete Course",
+      "duration": "11:02",
+      "video_id": "-tq7f3xtyLQ",
+      "index": 30
+    },
+    {
+      "title": "Free CCNA | VLANs (Part 2) | Day 17 | CCNA 200-301 Complete Course",
+      "duration": "40:01",
+      "video_id": "Jl9OOzNaBDU",
+      "index": 31
+    },
+    {
+      "title": "Free CCNA | VLANs (Part 2) | Day 17 Lab | CCNA 200-301 Complete Course",
+      "duration": "23:23",
+      "video_id": "iRkFE_lpYgc",
+      "index": 32
+    },
+    {
+      "title": "Free CCNA | VLANs (Part 3) | Day 18 | CCNA 200-301 Complete Course",
+      "duration": "32:32",
+      "video_id": "OkPB028l2eE",
+      "index": 33
+    },
+    {
+      "title": "Free CCNA | VLANs (Part 3) | Day 18 Lab | CCNA 200-301 Complete Course",
+      "duration": "25:19",
+      "video_id": "MQcCr3QW1vE",
+      "index": 34
+    },
+    {
+      "title": "Free CCNA | DTP/VTP | Day 19 | CCNA 200-301 Complete Course",
+      "duration": "37:34",
+      "video_id": "JtQV_0Sjszg",
+      "index": 35
+    },
+    {
+      "title": "Free CCNA | DTP/VTP | Day 19 Lab | CCNA 200-301 Complete Course",
+      "duration": "18:47",
+      "video_id": "ngTns2vF_44",
+      "index": 36
+    },
+    {
+      "title": "Free CCNA | Spanning Tree Protocol (Part 1) | Day 20 | CCNA 200-301 Complete Course",
+      "duration": "38:39",
+      "video_id": "j-bK-EFt9cY",
+      "index": 37
+    },
+    {
+      "title": "Free CCNA | Analyzing STP | Day 20 Lab | CCNA 200-301 Complete Course",
+      "duration": "18:55",
+      "video_id": "Ev9gy7B5hx0",
+      "index": 38
+    },
+    {
+      "title": "Free CCNA | Spanning Tree Protocol (Part 2) | Day 21 | CCNA 200-301 Complete Course",
+      "duration": "42:18",
+      "video_id": "nWpldCc8msY",
+      "index": 39
+    },
+    {
+      "title": "PortFast (STP Toolkit) | CCNA 200-301 Day 21 (part 1)",
+      "duration": "17:34",
+      "video_id": "zqzppl4LOwk",
+      "index": 40
+    },
+    {
+      "title": "BPDU Guard & BPDU Filter (STP Toolkit) | CCNA 200-301 Day 21 (part 2)",
+      "duration": "24:24",
+      "video_id": "jfC_AeJnuhY",
+      "index": 41
+    },
+    {
+      "title": "Root Guard (STP Toolkit) | CCNA 200-301 Day 21 (part 3)",
+      "duration": "19:44",
+      "video_id": "2XE_PgkvSic",
+      "index": 42
+    },
+    {
+      "title": "Loop Guard (STP Toolkit) | CCNA 200-301 Day 21 (part 4)",
+      "duration": "18:49",
+      "video_id": "uJ5_Klha0ig",
+      "index": 43
+    },
+    {
+      "title": "Free CCNA | Configuring STP (PVST+) | Day 21 Lab | CCNA 200-301 Complete Course",
+      "duration": "17:09",
+      "video_id": "5rpaeJNig2o",
+      "index": 44
+    },
+    {
+      "title": "Free CCNA | Rapid Spanning Tree Protocol | Day 22 | CCNA 200-301 Complete Course",
+      "duration": "43:01",
+      "video_id": "EpazNsLlPps",
+      "index": 45
+    },
+    {
+      "title": "Free CCNA | Rapid STP | Day 22 Lab | CCNA 200-301 Complete Course",
+      "duration": "19:50",
+      "video_id": "YG7r4XHy2JU",
+      "index": 46
+    },
+    {
+      "title": "Free CCNA | EtherChannel | Day 23 | CCNA 200-301 Complete Course",
+      "duration": "41:33",
+      "video_id": "xuo69Joy_Nc",
+      "index": 47
+    },
+    {
+      "title": "Free CCNA | Configuring EtherChannel | Day 23 Lab | CCNA 200-301 Complete Course",
+      "duration": "25:03",
+      "video_id": "8gKF2fMMjA8",
+      "index": 48
+    },
+    {
+      "title": "Free CCNA | Dynamic Routing | Day 24 | CCNA 200-301 Complete Course",
+      "duration": "44:38",
+      "video_id": "xSTgb8JLkvs",
+      "index": 49
+    },
+    {
+      "title": "Free CCNA | Floating Static Routes | Day 24 Lab | CCNA 200-301 Complete Course",
+      "duration": "23:20",
+      "video_id": "KuKC0G3LZc8",
+      "index": 50
+    },
+    {
+      "title": "Free CCNA | RIP & EIGRP | Day 25 | CCNA 200-301 Complete Course",
+      "duration": "43:42",
+      "video_id": "N8PiZDld6Zc",
+      "index": 51
+    },
+    {
+      "title": "Free CCNA | Configuring EIGRP | Day 25 Lab | CCNA 200-301 Complete Course",
+      "duration": "26:14",
+      "video_id": "ffnJ5oBIObY",
+      "index": 52
+    },
+    {
+      "title": "Free CCNA | OSPF Part 1 | Day 26 | CCNA 200-301 Complete Course",
+      "duration": "39:40",
+      "video_id": "pvuaoJ9YzoI",
+      "index": 53
+    },
+    {
+      "title": "Free CCNA | Configuring OSPF (1) | Day 26 Lab | CCNA 200-301 Complete Course",
+      "duration": "22:07",
+      "video_id": "LeLRWjfylcs",
+      "index": 54
+    },
+    {
+      "title": "Free CCNA | OSPF Part 2 | Day 27 | CCNA 200-301 Complete Course",
+      "duration": "36:55",
+      "video_id": "VtzfTA21ht0",
+      "index": 55
+    },
+    {
+      "title": "Free CCNA | Configuring OSPF (2) | Day 27 Lab | CCNA 200-301 Complete Course",
+      "duration": "22:10",
+      "video_id": "UEyQW-EcnY8",
+      "index": 56
+    },
+    {
+      "title": "Free CCNA | OSPF Part 3 | Day 28 | CCNA 200-301 Complete Course",
+      "duration": "47:53",
+      "video_id": "3ew26ujkiDI",
+      "index": 57
+    },
+    {
+      "title": "Free CCNA | Configuring OSPF (3) | Day 28 Lab | CCNA 200-301 Complete Course",
+      "duration": "21:25",
+      "video_id": "Goekjm3bK5o",
+      "index": 58
+    },
+    {
+      "title": "Free CCNA | First Hop Redundancy Protocols | Day 29 | CCNA 200-301 Complete Course",
+      "duration": "40:25",
+      "video_id": "43WnpwQMolo",
+      "index": 59
+    },
+    {
+      "title": "Free CCNA | Configuring HSRP | Day 29 Lab | CCNA 200-301 Complete Course",
+      "duration": "22:01",
+      "video_id": "uho5Z2nFhb8",
+      "index": 60
+    },
+    {
+      "title": "Free CCNA | TCP & UDP | Day 30 | CCNA 200-301 Complete Course",
+      "duration": "33:59",
+      "video_id": "LIEACBqlntY",
+      "index": 61
+    },
+    {
+      "title": "Free CCNA | Wireshark Demo (TCP/UDP) | Day 30 Lab | CCNA 200-301 Complete Course",
+      "duration": "11:15",
+      "video_id": "pJKFahkqMU8",
+      "index": 62
+    },
+    {
+      "title": "Free CCNA | IPv6 Part 1 | Day 31 | CCNA 200-301 Complete Course",
+      "duration": "39:26",
+      "video_id": "ZNuXyOXae5U",
+      "index": 63
+    },
+    {
+      "title": "Free CCNA | Configuring IPv6 (Part 1) | Day 31 Lab | CCNA 200-301 Complete Course",
+      "duration": "18:02",
+      "video_id": "BdsIahtrWIA",
+      "index": 64
+    },
+    {
+      "title": "Free CCNA | IPv6 Part 2 | Day 32 | CCNA 200-301 Complete Course",
+      "duration": "39:33",
+      "video_id": "BrTMMOXFhDU",
+      "index": 65
+    },
+    {
+      "title": "Free CCNA | Configuring IPv6 (Part 2) | Day 32 Lab | CCNA 200-301 Complete Course",
+      "duration": "21:02",
+      "video_id": "Zfhpd7dl6QI",
+      "index": 66
+    },
+    {
+      "title": "Free CCNA | IPv6 Part 3 | Day 33 | CCNA 200-301 Complete Course",
+      "duration": "43:51",
+      "video_id": "rwkHfsWQwy8",
+      "index": 67
+    },
+    {
+      "title": "Free CCNA | Configuring IPv6 (Part 3) | Day 33 Lab | CCNA 200-301 Complete Course",
+      "duration": "19:17",
+      "video_id": "WSBEVFANMmc",
+      "index": 68
+    },
+    {
+      "title": "Free CCNA | Standard ACLs | Day 34 | CCNA 200-301 Complete Course",
+      "duration": "46:51",
+      "video_id": "z023_eRUtSo",
+      "index": 69
+    },
+    {
+      "title": "Free CCNA | Standard ACLs | Day 34 Lab | CCNA 200-301 Complete Course",
+      "duration": "27:01",
+      "video_id": "sJ8PXmiAkvs",
+      "index": 70
+    },
+    {
+      "title": "Free CCNA | Extended ACLs | Day 35 | CCNA 200-301 Complete Course",
+      "duration": "40:55",
+      "video_id": "dUttKY_CNXE",
+      "index": 71
+    },
+    {
+      "title": "Free CCNA | Extended ACLs | Day 35 Lab | CCNA 200-301 Complete Course",
+      "duration": "22:08",
+      "video_id": "1cuMzWBrEYs",
+      "index": 72
+    },
+    {
+      "title": "Free CCNA | CDP & LLDP | Day 36 | CCNA 200-301 Complete Course",
+      "duration": "39:23",
+      "video_id": "_hnMZBzXRRk",
+      "index": 73
+    },
+    {
+      "title": "Free CCNA | CDP & LLDP | Day 36 Lab | CCNA 200-301 Complete Course",
+      "duration": "24:37",
+      "video_id": "4s8qqL7R9W8",
+      "index": 74
+    },
+    {
+      "title": "Free CCNA | NTP | Day 37 | CCNA 200-301 Complete Course",
+      "duration": "42:46",
+      "video_id": "qGJaJx7OfUo",
+      "index": 75
+    },
+    {
+      "title": "Free CCNA | NTP | Day 37 Lab | CCNA 200-301 Complete Course",
+      "duration": "19:08",
+      "video_id": "Miys7Ft9wWI",
+      "index": 76
+    },
+    {
+      "title": "Free CCNA | DNS | Day 38 | CCNA 200-301 Complete Course",
+      "duration": "30:11",
+      "video_id": "4C6eeQes4cs",
+      "index": 77
+    },
+    {
+      "title": "Free CCNA | DNS | Day 38 Lab | CCNA 200-301 Complete Course",
+      "duration": "17:31",
+      "video_id": "7D_FapNrRUM",
+      "index": 78
+    },
+    {
+      "title": "Free CCNA | DHCP | Day 39 | CCNA 200-301 Complete Course",
+      "duration": "37:02",
+      "video_id": "hzkleGAC2_Y",
+      "index": 79
+    },
+    {
+      "title": "Free CCNA | DHCP | Day 39 Lab | CCNA 200-301 Complete Course",
+      "duration": "17:49",
+      "video_id": "cgMsoIQB9Wk",
+      "index": 80
+    },
+    {
+      "title": "Free CCNA | SNMP | Day 40 | CCNA 200-301 Complete Course",
+      "duration": "29:21",
+      "video_id": "HXu0Ifj0oWU",
+      "index": 81
+    },
+    {
+      "title": "Free CCNA | SNMP | Day 40 Lab | CCNA 200-301 Complete Course",
+      "duration": "13:37",
+      "video_id": "v8WxIytUdS4",
+      "index": 82
+    },
+    {
+      "title": "Free CCNA | Syslog | Day 41 | CCNA 200-301 Complete Course",
+      "duration": "27:58",
+      "video_id": "RaQPSKQ4J5A",
+      "index": 83
+    },
+    {
+      "title": "Free CCNA | Syslog | Day 41 Lab | CCNA 200-301 Complete Course",
+      "duration": "14:03",
+      "video_id": "-R_CYM6Wm-Y",
+      "index": 84
+    },
+    {
+      "title": "Free CCNA | SSH | Day 42 | CCNA 200-301 Complete Course",
+      "duration": "31:07",
+      "video_id": "AvgYqI2qSD4",
+      "index": 85
+    },
+    {
+      "title": "Free CCNA | SSH | Day 42 Lab | CCNA 200-301 Complete Course",
+      "duration": "15:50",
+      "video_id": "QnHq7iCOtTc",
+      "index": 86
+    },
+    {
+      "title": "Free CCNA | FTP & TFTP | Day 43 | CCNA 200-301 Complete Course",
+      "duration": "30:55",
+      "video_id": "50hcfsoBf4Q",
+      "index": 87
+    },
+    {
+      "title": "Free CCNA | FTP & TFTP | Day 43 Lab | CCNA 200-301 Complete Course",
+      "duration": "15:36",
+      "video_id": "W9PLvA2wZ28",
+      "index": 88
+    },
+    {
+      "title": "Free CCNA | NAT (Part 1) | Day 44 | CCNA 200-301 Complete Course",
+      "duration": "32:10",
+      "video_id": "2TZCfTgopeg",
+      "index": 89
+    },
+    {
+      "title": "Free CCNA | Static NAT | Day 44 Lab | CCNA 200-301 Complete Course",
+      "duration": "14:12",
+      "video_id": "vir6n_NVZFw",
+      "index": 90
+    },
+    {
+      "title": "Free CCNA | NAT (part 2) | Day 45 | CCNA 200-301 Complete Course",
+      "duration": "29:40",
+      "video_id": "kILDNs4KjYE",
+      "index": 91
+    },
+    {
+      "title": "Free CCNA | Dynamic NAT | Day 45 Lab | CCNA 200-301 Complete Course",
+      "duration": "15:01",
+      "video_id": "vNs1xxiwGJs",
+      "index": 92
+    },
+    {
+      "title": "Free CCNA | QoS (Part 1) | Day 46 | CCNA 200-301 Complete Course",
+      "duration": "32:33",
+      "video_id": "H6FKJMiiL6E",
+      "index": 93
+    },
+    {
+      "title": "Free CCNA | Voice VLANs | Day 46 Lab | CCNA 200-301 Complete Course",
+      "duration": "20:18",
+      "video_id": "kGX76QNIjsE",
+      "index": 94
+    },
+    {
+      "title": "Free CCNA | QoS (Part 2) | Day 47 | CCNA 200-301 Complete Course",
+      "duration": "41:46",
+      "video_id": "4vurfhVjcMM",
+      "index": 95
+    },
+    {
+      "title": "Free CCNA | QoS | Day 47 Lab | CCNA 200-301 Complete Course",
+      "duration": "15:41",
+      "video_id": "63tD4t8189k",
+      "index": 96
+    },
+    {
+      "title": "Free CCNA | Security Fundamentals | Day 48 | CCNA 200-301 Complete Course",
+      "duration": "38:40",
+      "video_id": "VvFuieyTTSw",
+      "index": 97
+    },
+    {
+      "title": "Free CCNA | Kali Linux Demo | Day 48 Lab | CCNA 200-301 Complete Course",
+      "duration": "10:25",
+      "video_id": "EBs47-0ZD-A",
+      "index": 98
+    },
+    {
+      "title": "Free CCNA | Port Security | Day 49 | CCNA 200-301 Complete Course",
+      "duration": "34:28",
+      "video_id": "sHN3jOJIido",
+      "index": 99
+    },
+    {
+      "title": "Free CCNA | Port Security | Day 49 Lab | CCNA 200-301 Complete Course",
+      "duration": "17:03",
+      "video_id": "zZwhrxKeGj8",
+      "index": 100
+    },
+    {
+      "title": "Free CCNA | DHCP Snooping | Day 50 | CCNA 200-301 Complete Course",
+      "duration": "28:23",
+      "video_id": "qYYeg2kz1yE",
+      "index": 101
+    },
+    {
+      "title": "Free CCNA | DHCP Snooping | Day 50 Lab | CCNA 200-301 Complete Course",
+      "duration": "15:41",
+      "video_id": "YMom_e545H4",
+      "index": 102
+    },
+    {
+      "title": "Free CCNA | Dynamic ARP Inspection | Day 51 | CCNA 200-301 Complete Course",
+      "duration": "32:50",
+      "video_id": "HwbTKaIvL6s",
+      "index": 103
+    },
+    {
+      "title": "Free CCNA | Dynamic ARP Inspection | Day 51 Lab | CCNA 200-301 Complete Course",
+      "duration": "20:53",
+      "video_id": "oLF2mbmYMAk",
+      "index": 104
+    },
+    {
+      "title": "Free CCNA | LAN Architectures | Day 52 | CCNA 200-301 Complete Course",
+      "duration": "28:06",
+      "video_id": "PvyEcLhmNBk",
+      "index": 105
+    },
+    {
+      "title": "Free CCNA | STP & FHRP Synchronization | Day 52 Lab | CCNA 200-301 Complete Course",
+      "duration": "19:11",
+      "video_id": "BgIEhyoETgU",
+      "index": 106
+    },
+    {
+      "title": "Free CCNA | WAN Architectures | Day 53 | CCNA 200-301 Complete Course",
+      "duration": "37:34",
+      "video_id": "BW3fQgdf4-w",
+      "index": 107
+    },
+    {
+      "title": "Free CCNA | GRE Tunnels | Day 53 Lab | CCNA 200-301 Complete Course",
+      "duration": "22:04",
+      "video_id": "_MMuU5viinM",
+      "index": 108
+    },
+    {
+      "title": "Free CCNA | Virtualization & Cloud | Day 54 (part 1) | CCNA 200-301 Complete Course",
+      "duration": "38:41",
+      "video_id": "_S3greGajJA",
+      "index": 109
+    },
+    {
+      "title": "Free CCNA | Containers | Day 54 (part 2) | CCNA 200-301 Complete Course",
+      "duration": "13:33",
+      "video_id": "K731pAS22Aw",
+      "index": 110
+    },
+    {
+      "title": "Free CCNA | VRF | Day 54 (part 3) | CCNA 200-301 Complete Course",
+      "duration": "18:03",
+      "video_id": "Ge4644KUvh4",
+      "index": 111
+    },
+    {
+      "title": "Free CCNA | Oracle VirtualBox | Day 54 Lab | CCNA 200-301 Complete Course",
+      "duration": "8:43",
+      "video_id": "swqADfQk2jM",
+      "index": 112
+    },
+    {
+      "title": "Free CCNA | Wireless Fundamentals | Day 55 | CCNA 200-301 Complete Course",
+      "duration": "35:57",
+      "video_id": "zuYiktLqNYQ",
+      "index": 113
+    },
+    {
+      "title": "Free CCNA | Wireless Architectures | Day 56 | CCNA 200-301 Complete Course",
+      "duration": "38:21",
+      "video_id": "uX1h0F6wpBY",
+      "index": 114
+    },
+    {
+      "title": "Free CCNA | Wireless Security | Day 57 | CCNA 200-301 Complete Course",
+      "duration": "33:53",
+      "video_id": "wHXKo9So5y8",
+      "index": 115
+    },
+    {
+      "title": "Free CCNA | Wireless Configuration | Day 58 | CCNA 200-301 Complete Course",
+      "duration": "46:38",
+      "video_id": "r9o6GFI87go",
+      "index": 116
+    },
+    {
+      "title": "Free CCNA | Wireless LANs | Day 58 Lab | CCNA 200-301 Complete Course",
+      "duration": "17:28",
+      "video_id": "Il8ev78fcqw",
+      "index": 117
+    },
+    {
+      "title": "Intro to Network Automation | CCNA 200-301 Day 59 (part 1)",
+      "duration": "33:27",
+      "video_id": "4tsBgMCPVuc",
+      "index": 118
+    },
+    {
+      "title": "AI & Machine Learning | CCNA 200-301 Day 59 (part 2)",
+      "duration": "41:49",
+      "video_id": "Fn_kAv35W5A",
+      "index": 119
+    },
+    {
+      "title": "Free CCNA | JSON, XML, & YAML | Day 60 | CCNA 200-301 Complete Course",
+      "duration": "28:56",
+      "video_id": "nohde2-QNJ4",
+      "index": 120
+    },
+    {
+      "title": "Free CCNA | REST APIs | Day 61 | CCNA 200-301 Complete Course",
+      "duration": "31:45",
+      "video_id": "Luei0p-2h10",
+      "index": 121
+    },
+    {
+      "title": "REST API Authentication | CCNA 200-301 Day 61 (part 2)",
+      "duration": "29:15",
+      "video_id": "bmqr_xpt6sc",
+      "index": 122
+    },
+    {
+      "title": "Free CCNA | Software-Defined Networking | Day 62 | CCNA 200-301 Complete Course",
+      "duration": "28:19",
+      "video_id": "7HhWCeXDTpA",
+      "index": 123
+    },
+    {
+      "title": "Free CCNA | Ansible, Puppet, & Chef | Day 63 (part 1) | CCNA 200-301 Complete Course",
+      "duration": "21:33",
+      "video_id": "Kog9gHTjALI",
+      "index": 124
+    },
+    {
+      "title": "Terraform | CCNA 200-301 Day 63 (part 2)",
+      "duration": "22:29",
+      "video_id": "VAwUaffejWU",
+      "index": 125
+    },
+    {
+      "title": "Complete Network Configuration // CCNA Mega Lab! / OSPF, VLANs, STP, DHCP, Security, Wireless + more",
+      "duration": "2:38:50",
+      "video_id": "2p7-MluKAgE",
+      "index": 126
+    }
+  ]
+}

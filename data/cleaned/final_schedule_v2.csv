@@ -1,0 +1,37 @@
+Done,Date,Day_Type,Jeremy_Days,Lectures_Total_Min,Lectures,PT_Labs,Boson_Labs,Other,Total_Est_Hrs
+TRUE,08/18/2026,Tuesday,"1, 2",82.9,Network Devices | Interfaces and Cables,Packet Tracer Introduction | Connecting Devices,,Anki Flashcards,2.6
+TRUE,08/19/2026,Wednesday,"3, 4",92.2,How the TCP/IP Model Actually Works | Intro to the CLI,OSI Model | Basic Device Security,Using NetSim Online | Explore Cisco Devices,,2.9
+TRUE,08/20/2026,Thursday,4,0,,,Router Basics | Configure a Cisco Device | Configure the Enable Password | Configure the Enable Secret Password | Configure Local User Accounts | Secure the Console and VTY Ports | Encrypt Passwords on a Cisco Device | Explore Password Complexity | Implement Passwords | Implement Local User Accounts,,2.9
+TRUE,08/21/2026,Friday,"5, 6, 7",140.3,Ethernet LAN Switching (Part 1) | Ethernet LAN Switching (Part 2) | IPv4 Addressing (Part 1),Analyzing Ethernet Switching,,,2.8
+TRUE,08/22/2026,Saturday,"7, 8, 9",79.0,IPv4 Addressing (Part 2) | Switch Interfaces,Configuring IP Addresses,Configure RFC 1918 IP Addressing | Configure Global IPv4 Addressing | Implement IPv4 Addressing,,2.8
+TRUE,08/23/2026,Sunday,"9, 10, 11",123.6,IPv4 Header | Routing Fundamentals | Static Routing,Configuring Interfaces | Configuring Static Routes | Troubleshooting Static Routes,Switch Basics | Interpret Interface Errors | Explore the MAC Address Table | Explore the Routing Table | Route Selection by Using Administrative Distance | Route Selection by Using Routing Protocol Metric | Manually Configure Default Routes on IPv4 Networks | Manually Configure Network Routes on IPv4 Networks,,6.0
+TRUE,08/24/2026,Monday,"11, 12, 13, 14, 15, 16",177.9,The Life of a Packet | Subnetting (Part 1) | Subnetting (Part 2) | Subnetting (Part 3 - VLSM) | VLANs (Part 1),Life of a Packet | Subnetting (VLSM),Manually Configure Host Routes on IPv4 Networks | Implement Route Selection | Implement Static and Default Routes | Subnet an IPv4 Network | Configure VLSM on an IPv4 Network,,5.7
+TRUE,08/25/2026,Tuesday,"16, 17, 18",219.4,VLANs (Part 2) | VLANs (Part 3),VLANs (Part 1) | VLANs (Part 2) | VLANs (Part 3),Explore and Configure Switch Access Ports | Explore and Configure Switch Trunk Ports | Configure InterVLAN Routing | Explore the Native VLAN,,6.0
+TRUE,08/26/2026,Wednesday,"18, 19",90.7,DTP/VTP,DTP/VTP,Implement InterVLAN Routing | Configure and Verify VTP,,2.3
+TRUE,08/27/2026,Thursday,"20, 21",101.2,Spanning Tree Protocol (Part 1) | Spanning Tree Protocol (Part 2),Analyzing STP,Explore Spanning Tree Protocol Port Roles,,2.8
+TRUE,08/28/2026,Friday,21,100.6,PortFast (STP Toolkit) | BPDU Guard & BPDU Filter (STP Toolkit) | Root Guard (STP Toolkit) | Loop Guard (STP Toolkit),Configuring STP (PVST+),Explore Spanning Tree Protocol Port States and PortFast,,2.8
+TRUE,08/29/2026,Saturday,"21, 22, 23",105.7,Rapid Spanning Tree Protocol | EtherChannel,Rapid STP,Implement PVST+,,2.9
+TRUE,08/30/2026,Sunday,"23, 24, 25",110.4,Dynamic Routing | RIP & EIGRP,Configuring EtherChannel | Floating Static Routes,Configure Layer 2 EtherChannel LACP | Configure Layer 3 EtherChannel LACP and Load Balancing | Boson CCNA Challenge Lab 2,,5.5
+FALSE,08/31/2026,Monday,"25, 26, 27",95.7,OSPF Part 1 | OSPF Part 2,Configuring EIGRP | Configuring OSPF (1),Configuration Demo 1 | Explore and Configure OSPFv2 Router IDs | Plan and Configure Single-Area OSPF,,5.3
+FALSE,09/01/2026,Tuesday,"27, 28",59.9,OSPF Part 3,Configuring OSPF (2),Configure OSPFv2 Adjacencies | Implement Single-Area OSPFv2,,2.7
+FALSE,09/02/2026,Wednesday,28,0,,Configuring OSPF (3),Configure Point-to-Point OSPFv2 | Explore OSPFv2 DR and BDR Router Selection | Troubleshoot an OSPFv2 Configuration | Boson CCNA Challenge Lab 3,,2.9
+FALSE,09/03/2026,Thursday,29,50.5,First Hop Redundancy Protocols,Configuring HSRP,Explore HSRP | Explore VRRP | Implement HSRP,,2.8
+FALSE,09/04/2026,Friday,"29, 30, 31",91.8,TCP & UDP | IPv6 Part 1,Wireshark Demo (TCP/UDP),Implement VRRP,,2.4
+FALSE,09/05/2026,Saturday,"31, 32",49.4,IPv6 Part 2,Configuring IPv6 (Part 1),Configure IPv6 Address Types | Implement IPv6 Addressing,,2.6
+FALSE,09/06/2026,Sunday,"32, 33, 34",180.4,IPv6 Part 3 | Standard ACLs,Configuring IPv6 (Part 2) | Configuring IPv6 (Part 3),Configure IPv6 by Using Modified EUI-64 | Boson CCNA Challenge Lab 1 | Manually Configure Default Routes on IPv6 Networks | Manually Configure Network Routes on IPv6 Networks | Manually Configure Host Routes on IPv6 Networks,,5.6
+FALSE,09/07/2026,Monday (Holiday),"34, 35",113.3,Extended ACLs,Standard ACLs | Extended ACLs,Explore and Configure Standard Numbered ACLs | Explore and Configured Numbered IP ACLs | Configure Standard Named ACLs | Implement Standard ACLs | Troubleshooting ACLs 2: Standard ACLs | Explore and Configure Extended Numbered ACLs | Configure Extended Named ACLs | Implement Extended ACLs,,5.8
+FALSE,09/08/2026,Tuesday,"35, 36",113.8,CDP & LLDP,CDP & LLDP,Troubleshoot ACLs | Troubleshooting ACLs 1: Extended ACLs | Troubleshooting ACLs 3: Named ACLs,,2.9
+FALSE,09/09/2026,Wednesday,"36, 37",97.6,NTP,,Configure and Verify CDP | Configure and Verify LLDP | Implement CDP and LLDP,,2.7
+FALSE,09/10/2026,Thursday,37,0,,NTP,Configure an NTP Server | Configure an NTP Client | Implement NTP,,2.5
+FALSE,09/11/2026,Friday,"38, 39",169.3,DNS | DHCP,DNS,Configure and Test a DNS Server | Implement DNS,,2.8
+FALSE,09/12/2026,Saturday,39,0,,DHCP,Configure DHCP for IPv4 Networks | Configure DHCP Relay for IPv4 Networks | Implement DHCP,,2.8
+FALSE,09/13/2026,Sunday,"39, 40, 41, 42",229.0,SNMP | Syslog | SSH,SNMP | Syslog | SSH,Boson CCNA Challenge Lab 4 | Explore Syslog Output | Explore and Configure Syslog Levels | Configure SSH | Implement SSH,,5.6
+FALSE,09/14/2026,Monday,"43, 44, 45",156.5,FTP & TFTP | NAT (Part 1) | NAT (part 2),FTP & TFTP | Static NAT | Dynamic NAT,Explore and Configure TFTP | Explore and Configure FTP | Configure Static NAT | Implement NAT | Configure Dynamic NAT,,5.8
+FALSE,09/15/2026,Tuesday,"45, 46",40.7,QoS (Part 1),Voice VLANs,Configure PAT,,2.1
+FALSE,09/16/2026,Wednesday,"47, 48",100.5,QoS (Part 2) | Security Fundamentals,QoS | Kali Linux Demo,,,2.8
+FALSE,09/17/2026,Thursday,"48, 49",85.1,Port Security,Port Security,Explore AAA | Boson CCNA Challenge Lab 5 | Explore and Configure Port Security,,2.8
+FALSE,09/18/2026,Friday,"49, 50, 51",178.1,DHCP Snooping | Dynamic ARP Inspection,DHCP Snooping,Implement Port Security | Troubleshoot Port Security,,2.9
+FALSE,09/19/2026,Saturday,"51, 52",35.1,LAN Architectures,Dynamic ARP Inspection | STP & FHRP Synchronization,,,2.3
+FALSE,09/20/2026,Sunday,"53, 54, 55, 56, 57",270.0,WAN Architectures | Virtualization & Cloud | Containers | VRF | Wireless Fundamentals | Wireless Architectures | Wireless Security,GRE Tunnels | Oracle VirtualBox,,,5.9
+FALSE,09/21/2026,Monday,"58, 59, 60, 61",264.8,"Wireless Configuration | Intro to Network Automation | AI & Machine Learning | JSON, XML, & YAML | REST APIs | REST API Authentication",Wireless LANs,Configure a Wireless LAN by Using the WLC GUI | Obtain and Interpret JSON Output | Explore HTTP Server Verbs,,5.7
+FALSE,09/22/2026,Tuesday,"62, 63",90.4,"Software-Defined Networking | Ansible, Puppet, & Chef | Terraform",,"Compare a Traditional Network to a Controller-Based Network | Submit and Explore Ansible, Chef, and Puppet Queries",,1.8

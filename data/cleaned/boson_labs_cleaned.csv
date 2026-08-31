@@ -1,0 +1,1203 @@
+Lab_ID,Lab_Title,Objective,Commands,Command_Details,Task_Headers,Task_Count,Command_Count,CCNA_Topics
+1,Configuration Demo 1,"Configure Router1, Router2, and Router3 so that every host in the topology can ping every other host. Switch1, Switch2, Switch3, and all six hosts have already been configured.",configure terminal; enable; end; exit; hostname host-name; interface type number; ip address ip-address subnet mask; network network-address wildcard-mask; ping ip-address; router eigrp autonomous-system-number; show ip route; show running-config; shutdown; no shutdown,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• hostname host-name — sets the device name
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip address ip-address subnet mask — assigns an Internet Protocol (IP) address to an interface
+• network network-address wildcard-mask — activates the specified routing protocol on the specified network
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• router eigrp autonomous-system-number — enters router configuration mode for EIGRP
+• show ip route — displays the IP routing table
+• show running-config — displays the active configuration file
+• shutdown; no shutdown — disables an interface; enables an interface",Task 1: Configure Router LAN Interfaces | Task 2: Configure Router WAN Interfaces | Task 3: Configure EIGRP | Task 4: Verify Network Connectivity,4,13,"Device Basics, EIGRP, IPv4 Addressing, Interface Configuration, Routing Fundamentals, Static Routes"
+2,Using NetSim Online,Learn to save and reload configurations from within NetSim. Configure Router1 with the appropriate settings.,configure terminal; enable; end; exit; hostname host-name,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• hostname host-name — sets the device name","Task 1: Configure the Router | Task 2: Save a Configuration, and then Load the Configuration",2,5,Device Basics
+3,Explore Cisco Devices,"In this lab, you will learn how to interpret a network topology diagram. You will also learn how to navigate the Cisco IOS. The routers, switches, servers, and laptops in this lab have already been configured.",configure terminal; enable; end; exit; interface type number; show clock; show history; show version,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• show clock — displays the system clock
+• show history — displays the session command history
+• show version — displays the system hardware version and software status",Task 1: Learn About Network Topology Diagrams | Task 2: Navigate the Cisco IOS,2,8,"Device Basics, Interface Configuration"
+4,Router Basics,"In this lab, you will learn the basic operation of a router. A router is used to forward packets between computer networks. Routers create separate broadcast domains.",ping ip-address; show ip route,"• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show ip route — displays the routing table",Task 1: Explore a Broadcast Domain | Task 2: Explore a Router’s Role in a Broadcast Domain | Task 3: Exploring How a Router Forwards Packets,3,2,"Routing Fundamentals, Static Routes"
+5,Switch Basics,"In this lab, you will learn the basic operation of a switch. Switches provide network connectivity to endpoint devices. Switches can operate at Layer 2 or Layer 3.",enable; ping ip-address; ipconfig /all; show ip arp; show mac-address-table,"• enable — enters privileged EXEC mode
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• ipconfig /all — is used in NetSim to display the Internet Protocol (IP) addresses and MAC address on a workstation
+• show ip arp — displays the IP Address Resolution Protocol (ARP) table
+• show mac-address-table — displays the MAC address forwarding table",Task 1: Explore Layer 2 Switching in a Broadcast Domain | Task 2: Explore Layer 3 Switching in a Broadcast Domain,2,5,"Device Basics, IPv4 Addressing"
+6,Configure a Cisco Device,"In this lab, you will learn how to configure a Cisco IOS device from an unconfigured state. You will configure both Cisco IOS routers and Layer 2 Cisco IOS switches for basic connectivity to the network. You will configure two devices manually.",configure terminal; copy running-config startup-config; enable; enable password password; enable secret password; end; exit; hostname host-name; interface type number; ip address ip-address subnet-mask,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• copy running-config startup-config — saves the configuration file
+• enable — enters privileged EXEC mode
+• enable password password — sets the enable password
+• enable secret password — sets the enable secret password
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• hostname host-name — sets the device name
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip address ip-address subnet-mask — assigns an IP address and subnet mask to an interface",Task 1: Configure a Cisco Router by Using the System Configuration Dialog | Task 2: Configure a Cisco Switch by Using the System Configuration Dialog | Task 3: Manually Configure a Cisco Router and Switch,3,10,"Device Basics, IPv4 Addressing, Interface Configuration, Password Security"
+7,Interpret Interface Errors,"In this lab, you will learn how to interpret interface errors, including shutdown interfaces, duplex mismatches, and speed mismatches. You will also learn how to interpret the output of the show interfaces command. The switches and computers in this lab have already been configured.",configure terminal; copy running-config startup-config; duplex {auto | full | half}; enable; end; exit; interface type number; ping ip-address; show interfaces type number; show interfaces status; shutdown; no shutdown; speed {10 | 100 | auto},"• configure terminal — enters global configuration mode from privileged EXEC mode
+• copy running-config startup-config — saves the configuration file
+• duplex {auto | full | half} — configures the duplex of an interface
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show interfaces type number — display the interface status and configuration for an interface
+• show interfaces status — display the line status for all interfaces
+• shutdown; no shutdown — disables an interface; enables an interface
+• speed {10 | 100 | auto} — configures the speed of an interface",Task 1: Troubleshoot Shut-down Interfaces | Task 2: Troubleshoot Duplex Mismatches | Task 3: Troubleshoot Speed Mismatches,3,12,"Device Basics, Interface Configuration"
+8,Configure Global IPv4 Addressing,"In this lab, you will learn about global unicast Internet Protocol version 4 (IPv4) addressing. IP is a routed protocol and a logical addressing method that operates at the Network layer of the Open Systems Interconnection (OSI) model. IPv4 supports unicast, multicast, and broadcast addressing of packets.",configure terminal; enable; end; exit; interface type number; ip address ip-address subnet-mask; ipconfig /dg ip-address; ipconfig /ip ip-address subnet-mask; ip routing; ping ip-address; shutdown; no shutdown; no switchport,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip address ip-address subnet-mask — assigns an IP address and subnet mask to an interface
+• ipconfig /dg ip-address — is used in NetSim to assign a default gateway IP address to a workstation interface
+• ipconfig /ip ip-address subnet-mask — is used in NetSim to assign an IP address and subnet mask to a workstation interface
+• ip routing — enables IPv4 routing capabilities on a router or Layer 3 switch
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• shutdown; no shutdown — disables an interface; enables an interface
+• no switchport — disables Layer 2 switching on a switchport and allows the configuration of Layer 3 network addresses on the port",Task 1: Explore Global IPv4 Addressing | Task 2: Configure Global IPv4 Addressing,2,12,"Device Basics, IPv4 Addressing, Interface Configuration"
+9,Configure RFC 1918 IP Addressing,"In this lab, you will learn about Internet Protocol version 4 (IPv4) addressing by using ranges defined by Request for Comments (RFC) 1918. IP is a routed protocol and a logical addressing method that operates at the Network layer of the Open Systems Interconnection (OSI) model. IPv4 supports unicast, multicast, and broadcast addressing of packets.",configure terminal; enable; end; interface type number; ip address ip-address subnet-mask; ipconfig /dg ip-address; ipconfig /ip ip-address subnet-mask; no switchport; ping ip-address,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip address ip-address subnet-mask — assigns an IP address and subnet mask to an interface
+• ipconfig /dg ip-address — is used in NetSim to assign a default gateway IP address to a workstation interface
+• ipconfig /ip ip-address subnet-mask — is used in NetSim to assign an IP address and subnet mask to a workstation interface
+• no switchport — disables Layer 2 switching on a switchport and allows the configuration of Layer 3 network addresses on the port
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address",Task 1: Explore RFC 1918 IPv4 Addressing | Task 2: Configure RFC 1918 IPv4 Addressing,2,9,"Device Basics, IPv4 Addressing, Interface Configuration"
+10,Subnet an IPv4 Network,"Subnetting is a technique used to divide a network into smaller subnetworks. In this lab, you will learn how to subnet a network. You will also practice subnetting a network into a series of smaller networks.",configure terminal; enable; end; exit; interface type number; ip address ip-address subnet-mask; ipconfig /dg ip-address; ipconfig /ip ip-address subnet-mask; no switchport; ping ip-address; shutdown; no shutdown,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip address ip-address subnet-mask — assigns an IP address and subnet mask to an interface
+• ipconfig /dg ip-address — is used in NetSim to assign a default gateway IP address to a workstation interface
+• ipconfig /ip ip-address subnet-mask — is used in NetSim to assign an IP address and subnet mask to a workstation interface
+• no switchport — disables Layer 2 switching on a switchport and allows the configuration of Layer 3 network addresses on the port
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• shutdown; no shutdown — disables an interface; enables an interface",Task 1: Explore Subnetting | Task 2: Subnet and Configure an IP Address Range,2,11,"Device Basics, IPv4 Addressing, Interface Configuration"
+11,Configure VLSM on an IPv4 Network,"You have been allocated a Classless Inter-Domain Routing (CIDR) block, from which you must assign subnets to the various networks in the lab exercise. Use Dynamic Host Configuration Protocol (DHCP) to deliver Internet Protocol (IP) addresses to department workstations. Create an IP addressing plan using the CIDR block you have been given.",configure terminal; enable; end; exit; interface type number; interface type number subinterface-id; ip address ip-address subnet-mask; ipconfig /all; ipconfig /dg ip-address; ipconfig /ip ip-address subnet-mask; ping ip-address; show running-config; show vlan brief,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• interface type number subinterface-id — creates a subinterface
+• ip address ip-address subnet-mask — assigns an IP address to an interface
+• ipconfig /all — displays detailed IP address configuration information on a PC
+• ipconfig /dg ip-address — is used in NetSim to assign a default gateway IP address to a workstation interface
+• ipconfig /ip ip-address subnet-mask — is used in NetSim to assign an IP address and subnet mask to a workstation interface
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show running-config — displays the active configuration file
+• show vlan brief — displays parameters for all virtual local area networks (VLANs); contains the VLAN’s name, status, and ports assigned to it",Task 1: Review and Analyze the Assigned Address Block | Task 2: Assign IP Addresses to Router1 Subinterfaces | Task 3: Assign IP Addresses to Switch1 SVIs | Task 4: Assign IP Addresses to Workstations,4,13,"DHCP, Device Basics, IPv4 Addressing, Interface Configuration, VLANs"
+12,Configure IPv6 Address Types,"Internet Protocol version 6 (IPv6) offers several improvements over IP version 4 (IPv4), including a simplified header, native IP Security (IPSec) protocol support, and improved route aggregation. IPv6 uses a 128-bit address space, which provides enough unique addresses to meet future demand. In this lab, you will learn about IPv6 address types and implement IPv6 addressing on the network.",configure terminal; enable; end; interface type number; ip address ip-address subnet-mask; ipv6 address address/prefix-length; ipv6 router rip process-name; ipv6 rip process-name enable; ipv6 unicast-routing; ping ip-address; ping ipv6 ipv6-address; show interfaces [type number]; show ip interface brief; show ipv6 interface brief; show ipv6 route; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip address ip-address subnet-mask — assigns an IPv4 address to an interface
+• ipv6 address address/prefix-length — configures an IPv6 address for an interface
+• ipv6 router rip process-name — configures a router for Routing Information Protocol next generation (RIPng)
+• ipv6 rip process-name enable — configures an interface for RIPng
+• ipv6 unicast-routing — enables IPv6 routing
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• ping ipv6 ipv6-address — sends an ICMP Echo Request to the specified IPv6 address
+• show interfaces [type number] — displays the interface’s Data Link layer status; when the type and number parameters are included, displays detailed information about the specified interface
+• show ip interface brief — displays a brief summary of interface status and configuration
+• show ipv6 interface brief — displays a brief summary of interface status and configuration
+• show ipv6 route — displays the IP routing table
+• show running-config — displays the active configuration file",Task 1: Examine the Initial Network Configuration | Task 2: Explore IPv6 and Understand IPv6 Addresses | Task 3: Implement IPv6 | Task 4: Verify IPv6,4,16,"Device Basics, IPv4 Addressing, IPv6 Addressing, Interface Configuration, NAT, RIP, Static Routes"
+13,Configure IPv6 by Using Modified EUI-64,"In this lab, you will configure an automatic Internet Protocol version 6 (IPv6) addressing environment on Layer 3 switches by using modified extended unique identifier (EUI)-64. Similar to IP version 4 (IPv4), each IPv6 host on a network must have a unique address assigned to it. Because of the large address space provided by IPv6, hosts can use the Media Access Control (MAC) address assigned to them during the manufacturing process as part of the interface ID portion of their IPv6 address.",configure terminal; enable; end; exit; interface type number; ipv6 address ipv6-address/prefix-length; ipv6 address autoconfig; ipv6 enable; ipv6 unicast-routing; ping ipv6 ipv6-address; show hosts; show ipv6 interface [brief] [type number]; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ipv6 address ipv6-address/prefix-length — configures an IPv6 address for an interface
+• ipv6 address autoconfig — configures an IPv6 address on an interface by using SLAAC
+• ipv6 enable — enables IPv6 on an interface
+• ipv6 unicast-routing — enables IPv6 routing
+• ping ipv6 ipv6-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified IPv6 address
+• show hosts — displays the default domain name, a list of name server hosts, and a cached list of host names and addresses
+• show ipv6 interface [brief] [type number] — displays a brief summary of each IPv6 interface’s configuration and status
+• show running-config — displays the active configuration file",Task 1: Configure IPv6 on CORE | Task 2: Configure SLAAC on Router3,2,13,"Device Basics, IPv6 Addressing, Interface Configuration"
+14,Explore the MAC Address Table,"Switches are responsible for switching frames by using a Media Access Control (MAC) address, which is a physical address. When a switch receives a frame, the switch adds the source MAC address to the switching table if the address does not already exist. Then the switch will check the switching table to determine whether the destination MAC address is listed.",configure terminal; enable; end; interface type number; ipconfig /all; ping ip-address; show interfaces [type number]; show ip interface brief; show mac-address-table; show running-config; shutdown; no shutdown,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• interface type number — changes from global configuration mode to interface configuration mode
+• ipconfig /all — displays detailed IP address configuration information on a PC
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show interfaces [type number] — displays the interface’s Data Link layer status; when the type and number parameters are included, displays detailed information about the specified interface
+• show ip interface brief — displays a brief summary of interface status and configuration
+• show mac-address-table — displays the MAC forwarding table on a switch
+• show running-config — displays the active configuration file
+• shutdown; no shutdown — disables an interface; enables a disabled interface",Task 1: Examine the Network Configuration | Task 2: Explore the MAC Address Table,2,11,"Device Basics, IPv4 Addressing, Interface Configuration, NAT"
+15,Implement IPv4 Addressing,"In this lab, you will practice configuring Internet Protocol version 4 (IPv4) addressing on a complex network topology. The IPv4 addressing ranges used in this lab are reserved and typically used for either private networks or documentation only. You will appropriately subnet these IPv4 ranges and then configure one or more Internet Protocol (IP) addresses on each device.",configure terminal; enable; end; exit; interface type number; ip address ip-address subnet-mask; ipconfig /dg ip-address; ipconfig /ip ip-address subnet-mask; ping ip-address; shutdown; no shutdown; no switchport,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip address ip-address subnet-mask — assigns an IP address and subnet mask to an interface
+• ipconfig /dg ip-address — is used in NetSim to assign a default gateway IP address to a workstation interface
+• ipconfig /ip ip-address subnet-mask — is used in NetSim to assign an IP address and subnet mask to a workstation interface
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• shutdown; no shutdown — disables an interface; enables an interface
+• no switchport — disables Layer 2 switching on a switchport and allows the configuration of Layer 3 network addresses on the port",Task 1: Subnet IPv4 Networks | Task 2: Configure IPv4 Addressing,2,11,"Device Basics, IPv4 Addressing, Interface Configuration"
+16,Implement IPv6 Addressing,"In this lab, you will practice configuring Internet Protocol version 6 (IPv6) addressing. You will manually assign global unicast IPv6 addresses to some interfaces. In addition, you will configure other interfaces by using modified extended unique identifier (EUI)-64 and Stateless Address Autoconfiguration (SLAAC).",configure terminal; enable; end; exit; interface type number; ipconfig /all; ipconfig /ipv6 autoconfig; ipv6 address ipv6-address/prefix-length; ipv6 address autoconfig; ipv6 enable; ipv6 unicast-routing; ping ipv6 ipv6-address; show interfaces [type slot/port]; show ipv6 interface [brief] [type number]; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ipconfig /all — displays detailed IP configuration information on a host
+• ipconfig /ipv6 autoconfig — configures an IPv6 address on a host interface by using SLAAC
+• ipv6 address ipv6-address/prefix-length — configures an IPv6 address for an interface
+• ipv6 address autoconfig — configures an IPv6 address on an interface by using SLAAC
+• ipv6 enable — enables IPv6 on an interface
+• ipv6 unicast-routing — enables IPv6 routing
+• ping ipv6 ipv6-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified IPv6 address
+• show interfaces [type slot/port] — displays statistics for interfaces configured on the device
+• show ipv6 interface [brief] [type number] — displays a brief summary of each IPv6 interface’s configuration and status
+• show running-config — displays the active configuration file",Task 1: Manually Configure IPv6 Addresses | Task 2: Configure Modified EUI-64 IPv6 Addresses by Using SLAAC,2,15,"Device Basics, IPv4 Addressing, IPv6 Addressing, Interface Configuration"
+17,Boson CCNA Challenge Lab 1,"In this lab, you will configure a new, unconfigured network. When your work is complete, you should be able to ping every device on the local area network (LAN) from Host1 by using an Internet Protocol version 4 (IPv4) address. You will also configure Router1, Router2, DSW1, DSW2, Host1, Host2, and Host3 with an IP version 6 (IPv6) address.",configure terminal; copy running-config startup-config; enable; end; exit; hostname host-name; interface type number; ip address ip-address subnet-mask; ipconfig /dg ip-address; ipconfig /ip ip-address subnet-mask; ipconfig /ipv6 autoconfig; ipv6 address ipv6-address/prefix-length; ipv6 address autoconfig; ipv6 unicast-routing; ping ip-address; show interfaces [type slot/port]; show ipv6 interface [brief] [type number]; show running-config; shutdown; no shutdown,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• copy running-config startup-config — saves the configuration file
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• hostname host-name — configures a host name on a Cisco device
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip address ip-address subnet-mask — assigns an IP address and subnet mask to an interface
+• ipconfig /dg ip-address — is used in NetSim to assign a default gateway IP address to a workstation interface
+• ipconfig /ip ip-address subnet-mask — is used in NetSim to assign an IP address and subnet mask to a workstation interface
+• ipconfig /ipv6 autoconfig — configures an IPv6 address on a NetSim PC by using Stateless Address Autoconfiguration (SLAAC)
+• ipv6 address ipv6-address/prefix-length — configures an IPv6 address for an interface
+• ipv6 address autoconfig — configures an IPv6 address on an interface by using SLAAC
+• ipv6 unicast-routing — enables IPv6 routing
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show interfaces [type slot/port] — displays statistics for interfaces configured on the device
+• show ipv6 interface [brief] [type number] — displays a brief summary of each IPv6 interface’s configuration and status
+• show running-config — displays the active configuration file
+• shutdown; no shutdown — disables an interface; enables an interface",Task 1: Configure the IPv4 Network | Task 2: Configure the IPv6 Network,2,19,"Device Basics, IPv4 Addressing, IPv6 Addressing, Interface Configuration"
+18,Explore and Configure Switch Access Ports,"In this lab, you will learn how to create, configure, examine, and delete virtual LANs (VLANs) on a switch. You will also learn how to configure an interface to be an access port and how to assign the interface to a VLAN. Trunk ports between Switch1 and Switch2 have already been configured.",configure terminal; enable; end; exit; interface type number; interface range type [module/][slot/]starting-port - ending-port; ip address ip-address subnet-mask; name vlan-name; ping ip-address; show interfaces [type number]; show interfaces status; show vlan brief; shutdown; no shutdown; switchport access vlan vlan-id; switchport mode access; vlan number [name vlan-name],"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — enters interface configuration mode
+• interface range type [module/][slot/]starting-port - ending-port — enters interface configuration mode for a range of interfaces
+• ip address ip-address subnet-mask — assigns an Internet Protocol (IP) address and subnet mask to an interface
+• name vlan-name — configures a name for a VLAN
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show interfaces [type number] — displays interface statistics
+• show interfaces status — displays the line status of all interfaces
+• show vlan brief — displays parameters for all VLANs; contains the VLAN name, status, and ports assigned to it
+• shutdown; no shutdown — disables an interface; enables an interface
+• switchport access vlan vlan-id — assigns an access port to a VLAN
+• switchport mode access — configures an interface as an access port
+• vlan number [name vlan-name] — creates or configures a VLAN with an optional name",Task 1: Configure VLANs | Task 2: Configure Access Ports,2,16,"Device Basics, IPv4 Addressing, Interface Configuration, VLANs"
+19,Explore and Configure Switch Trunk Ports,"In this lab, you will learn how to configure and verify trunk ports on a switch. You will also learn about Dynamic Trunking Protocol (DTP) modes. Access ports on Switch1 and Switch2 have already been configured.",configure terminal; enable; end; exit; interface type number; ping ip-address; show interfaces [type number] switchport; show interfaces [type number] trunk; switchport mode {trunk | dynamic auto | dynamic desirable}; switchport nonegotiate; switchport trunk encapsulation dot1q,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — enters interface configuration mode
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show interfaces [type number] switchport — displays interface switchport information
+• show interfaces [type number] trunk — displays interface trunk information
+• switchport mode {trunk | dynamic auto | dynamic desirable} — configures the DTP mode for an interface
+• switchport nonegotiate — disables DTP on an interface
+• switchport trunk encapsulation dot1q — configures an interface to use 802.1Q encapsulation",Task 1: Understand Trunk Mode | Task 2: Understand Dynamic Auto Mode | Task 3: Understand Dynamic Desirable Mode | Task 4: Understand Nonegotiate Mode,4,11,"Device Basics, InterVLAN Routing, Interface Configuration, VLANs"
+20,Configure InterVLAN Routing,"A virtual local area network (VLAN) is a network virtualization mechanism that enables a Layer 2 switch to function as multiple virtual switches. Traffic within one VLAN is isolated from traffic in all other VLANs; therefore, hosts on one VLAN cannot communicate with hosts on other VLANs unless the traffic is routed between the VLANs by using a router or a Layer 3 switch. Routing between VLANs is called interVLAN routing.",configure terminal; enable; encapsulation dot1q vlan-id; end; exit; interface type number; interface type number subinterface-id; ip address ip-address subnet-mask; no shutdown; ping ip-address; show ip route; show running-config; switchport mode {trunk | dynamic auto | dynamic desirable}; switchport trunk encapsulation dot1q; switchport nonegotiate,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• encapsulation dot1q vlan-id — configures a router interface to use 802.1Q encapsulation for the specified VLAN ID
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — enters interface configuration mode
+• interface type number subinterface-id — creates a subinterface
+• ip address ip-address subnet-mask — assigns an IP address and subnet mask to an interface
+• no shutdown — enables an interface
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show ip route — displays the IP routing table
+• show running-config — displays the active configuration file
+• switchport mode {trunk | dynamic auto | dynamic desirable} — configures the DTP mode for an interface
+• switchport trunk encapsulation dot1q — configures an interface to use 802.1Q encapsulation
+• switchport nonegotiate — disables Dynamic Trunking Protocol (DTP)",Task 1: Verify the Current Configuration | Task 2: Configure InterVLAN Routing | Task 3: Verify InterVLAN Routing,3,15,"Device Basics, IPv4 Addressing, InterVLAN Routing, Interface Configuration, Routing Fundamentals, Static Routes, VLANs"
+21,Explore the Native VLAN,"The 802.1Q encapsulation protocol provides support for native virtual local area networks (VLANs). Each 802.1Q trunk port has exactly one native VLAN. Normally, when traffic is sent on a VLAN, a 4-byte VLAN tag is inserted into the Ethernet header to identify the VLAN to which the traffic belongs.",configure terminal; enable; end; interface type number; ping ip-address; show interfaces status; show interfaces [interface-id] switchport; show interfaces [interface-id] trunk; switchport trunk native vlan vlan-id; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• interface type number — changes from global configuration mode to interface configuration mode
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show interfaces status — displays the line status of all interfaces
+• show interfaces [interface-id] switchport — displays interface switchport information
+• show interfaces [interface-id] trunk — displays interface trunk information
+• switchport trunk native vlan vlan-id — modifies the native VLAN for an interface
+• show running-config — displays the active configuration file",Task 1: Explore the Current Configuration | Task 2: Explore the Native VLAN | Task 3: Understand VLAN Leaking,3,10,"Device Basics, Interface Configuration, NAT, VLANs"
+22,Configure and Verify VTP,"Manually configuring virtual local area networks (VLANs) on every switch in a large network can be a daunting task. To address this problem, Cisco created VLAN Trunking Protocol (VTP). VTP is a Layer 2 protocol that propagates VLAN configuration information from one switch to another throughout a network.",configure terminal; enable; exit; show running-config; show vlan brief; show vtp status; vlan number [name vlan-name]; vtp domain domain-name; vtp mode {server | transparent | client},"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• exit — exits one level in the menu structure
+• show running-config — displays the active configuration file
+• show vlan brief — displays parameters for all VLANs; contains the VLAN name, status, and ports assigned to it
+• show vtp status — displays the current VTP status
+• vlan number [name vlan-name] — creates or configures a VLAN with an optional name
+• vtp domain domain-name — assigns the VTP domain name
+• vtp mode {server | transparent | client} — configures the VTP mode",Task 1: Configure the VTP Domain | Task 2: Configure the VTP Mode | Task 3: Verify VTP Mode Operation,3,9,"Device Basics, VLANs, VTP"
+23,Configure and Verify CDP,"Cisco Discovery Protocol (CDP) is a Cisco-proprietary neighbor-discovery protocol that is natively supported by nearly every Cisco-branded hardware platform. CDP operates at Layer 2, the Data Link layer, of the Open Systems Interconnection (OSI) model; therefore, even devices that use different Layer 3 protocols can share neighbor information. In this lab, you will learn how to use CDP to view connected neighbor devices.",cdp enable; no cdp enable; cdp holdtime [seconds]; cdp run; no cdp run; cdp timer seconds; configure terminal; enable; end; interface type number; ping ip-address; show cdp; show cdp entry [* | hostname]; show cdp interface [interface-id]; show cdp neighbors; show cdp neighbors detail; show cdp traffic; show running-config,"• cdp enable; no cdp enable — enables CDP on an interface; disables CDP on an interface
+• cdp holdtime [seconds] — specifies the number of seconds that a device will retain a CDP entry before discarding it
+• cdp run; no cdp run — enables CDP globally; disables CDP globally
+• cdp timer seconds — specifies the number of seconds between CDP advertisements
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• interface type number — changes from global configuration mode to interface configuration mode
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show cdp — displays global CDP information
+• show cdp entry [* | hostname] — displays CDP information about a specific CDP neighbor
+• show cdp interface [interface-id] — displays CDP information for each local interface
+• show cdp neighbors — displays information about directly connected Cisco devices
+• show cdp neighbors detail — displays detailed information about directly connected Cisco devices
+• show cdp traffic — displays CDP traffic information
+• show running-config — displays the active configuration file",Task 1: View CDP Neighbors | Task 2: Verify and Modify the CDP Configuration | Task 3: Disable CDP Globally | Task 4: Disable CDP on an Interface,4,16,"CDP, Device Basics, Interface Configuration, NAT"
+24,Configure and Verify LLDP,"Link-Layer Discovery Protocol (LLDP) is a standards-based neighbor-discovery protocol. Non-Cisco devices do not support Cisco Discovery Protocol (CDP); therefore, LLDP is a suitable alternative for neighbor discovery when connecting Cisco devices to third-party devices. LLDP operates at Layer 2, the Data Link layer, of the Open Systems Interconnection (OSI) model; therefore, even devices that use different Layer 3 protocols can share neighbor information.",configure terminal; enable; end; interface type number; lldp holdtime [seconds]; lldp run; no lldp run; lldp receive; no lldp receive; lldp timer [seconds]; lldp transmit; no lldp transmit; show lldp; show lldp interface [interface-id]; show lldp neighbors; show lldp neighbors detail; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• interface type number — changes from global configuration mode to interface configuration mode
+• lldp holdtime [seconds] — specifies the number of seconds that a device will retain an LLDP entry before discarding it
+• lldp run; no lldp run — enables LLDP globally; disables LLDP globally
+• lldp receive; no lldp receive — enables LLDP reception on an interface; disables LLDP reception on an interface
+• lldp timer [seconds] — specifies the number of seconds between LLDP advertisements
+• lldp transmit; no lldp transmit — enables LLDP transmission on an interface; disables LLDP transmission on an interface
+• show lldp — displays global LLDP information
+• show lldp interface [interface-id] — displays LLDP information for each local interface
+• show lldp neighbors — displays information about directly connected network devices
+• show lldp neighbors detail — displays detailed information about directly connected network devices
+• show running-config — displays the active configuration file",Task 1: Enable LLDP Globally | Task 2: View LLDP Neighbors | Task 3: Verify and Modify the LLDP Configuration | Task 4: Disable LLDP Globally | Task 5: Disable and Enable LLDP on an Interface,5,14,"CDP, Device Basics, Interface Configuration, LLDP, NAT"
+25,Configure Layer 2 EtherChannel LACP,"EtherChannel can be used to provide high-bandwidth, redundant links between switches. Under ordinary circumstances, Spanning Tree Protocol (STP) would force all but one link between switches into the blocking state, thereby preventing switching loops. However, when EtherChannel is used to combine redundant physical ports into a single logical port, STP considers the EtherChannel port to be a single, nonredundant link.",configure terminal; channel-group channel-group-number mode {auto [non-silent] | desirable [non-silent] | on | active | passive}; enable; end; interface range type starting-port - ending-port; show cdp neighbors; show etherchannel [channel-group-number] {detail | load-balance | port | port-channel | summary | protocol}; show interfaces [type number]; show running-config; show spanning-tree,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• channel-group channel-group-number mode {auto [non-silent] | desirable [non-silent] | on | active | passive} — assigns an interface to an EtherChannel group
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• interface range type starting-port - ending-port — configures a range of interfaces
+• show cdp neighbors — displays information about directly-connected Cisco neighbors
+• show etherchannel [channel-group-number] {detail | load-balance | port | port-channel | summary | protocol} — displays EtherChannel information
+• show interfaces [type number] — displays interface statistics
+• show running-config — displays the active configuration file
+• show spanning-tree — displays the spanning tree configuration",Task 1: Review Initial Configurations | Task 2: Configure Layer 2 EtherChannel by Using LACP,2,10,"CDP, Device Basics, EtherChannel, Interface Configuration, STP"
+26,Configure Layer 3 EtherChannel LACP and Load Balancing,"EtherChannel can be used to provide high-bandwidth, redundant links between switches. Link aggregation is performed by either Port Aggregation Protocol (PAgP) or Link Aggregation Control Protocol (LACP). PAgP is a Cisco-proprietary protocol, and LACP is a standards-based protocol.",configure terminal; channel-group channel-group-number mode {auto [non-silent] | desirable [non-silent] | on | active | passive}; enable; end; interface type number; interface range type starting-port - ending-port; ip address ip-address subnet-mask; ip routing; ping ip-address; port-channel load-balance {dst-ip | dst-mac | src-dst-ip | src-dst-mac | src-ip | src-mac}; show etherchannel [channel-group-number] {detail | load-balance | port | port-channel | summary | protocol}; show interfaces [type number]; show running-config; switchport; no switchport,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• channel-group channel-group-number mode {auto [non-silent] | desirable [non-silent] | on | active | passive} — assigns an interface to an EtherChannel group
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• interface type number — changes from global configuration mode to interface configuration mode
+• interface range type starting-port - ending-port — configures a range of interfaces
+• ip address ip-address subnet-mask — assigns an IP address and subnet mask to an interface
+• ip routing — enables Layer 3 routing on a switch
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• port-channel load-balance {dst-ip | dst-mac | src-dst-ip | src-dst-mac | src-ip | src-mac} — configures the load balancing method used by EtherChannel
+• show etherchannel [channel-group-number] {detail | load-balance | port | port-channel | summary | protocol} — displays EtherChannel information
+• show interfaces [type number] — displays interface statistics
+• show running-config — displays the active configuration file
+• switchport; no switchport — configures a switch interface to be a switchport; configures a switch interface to be a routed port",Task 1: Configure Layer 3 | Task 2: Configure Layer 3 EtherChannel by Using LACP | Task 3: Configure EtherChannel Load Balancing,3,14,"Device Basics, EtherChannel, IPv4 Addressing, Interface Configuration"
+27,Explore Spanning Tree Protocol Port Roles,Spanning Tree Protocol (STP) is a Layer 2 protocol that is used to prevent switching loops from occurring on a network with redundant links. This process prevents the flooding of multiple copies of the same packet across a network by placing switch ports into either a forwarding state or a blocking state. Ports in the forwarding state will forward packets to the rest of the network.,configure terminal; enable; exit; show running-config; show spanning-tree; spanning-tree vlan vlan-id priority value; spanning-tree vlan vlan-id root primary,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• exit — exits one level in the menu structure
+• show running-config — displays the active configuration file
+• show spanning-tree — displays parameters for all virtual local area networks (VLANs); contains the VLAN name, status, and ports assigned to it
+• spanning-tree vlan vlan-id priority value — sets the spanning tree priority value; value must be a multiple of 4096
+• spanning-tree vlan vlan-id root primary — configures the spanning tree priority value to ensure the switch becomes the root bridge",Task 1: Determine the STP Root Bridge | Task 2: Determine STP Port Roles | Task 3: Influence the STP Root Bridge Election Process,3,7,"Device Basics, STP, VLANs"
+28,Explore Spanning Tree Protocol Port States and PortFast,"When a switch powers up, it will transition through a series of Spanning Tree Protocol (STP) port states: blocking, listening, learning, forwarding, and disabled. The complete STP cycle takes approximately 30 to 50 seconds; the time necessary to complete the STP process is known as convergence. The length of convergence is heavily influenced by STP timer values.",configure terminal; enable; exit; show running-config; show spanning-tree; shutdown; no shutdown; spanning-tree portfast; spanning-tree bpduguard enable,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• exit — exits one level in the menu structure
+• show running-config — displays the active configuration file
+• show spanning-tree — displays parameters for all virtual local area networks (VLANs); contains the VLAN name, status, and ports assigned to it
+• shutdown; no shutdown — disables an interface; enables an interface
+• spanning-tree portfast — enables PortFast on an interface
+• spanning-tree bpduguard enable — enables BPDU guard on an interface",Task 1: Explore STP Port States | Task 2: Verify STP Timer Values | Task 3: Configure and Verify PortFast and BPDU Guard,3,8,"Device Basics, Interface Configuration, STP"
+29,Configure a Wireless LAN by Using the WLC GUI,"In this lab, you will learn how to connect to the configuration interface of a Cisco 9800 wireless LAN controller (WLC). You will learn how to use the basic wireless network setup to create your location and wireless local area network (WLAN). You will also learn how to configure Dynamic Host Configuration Protocol (DHCP) settings for your WLAN.",,,Task 1: Access the WLC Configuration GUI | Task 2: Configure a Basic WLAN | Task 3: Configure DHCP for a WLAN,3,0,"DHCP, Interface Configuration, Wireless"
+30,Implement InterVLAN Routing,"InterVLAN routing is the process of forwarding traffic from a device that resides in one virtual local area network (VLAN) to a device that resides in another. Without interVLAN routing, a device can communicate only with other devices that reside in the same VLAN. Therefore, configuring devices to reside in a VLAN is similar to physically connecting devices to a single unmanaged switch or hub without a router.",configure terminal; description string; enable; end; encapsulation dot1q vlan-id; exit; interface type number; interface type number subinterface-id; ip address ip-address subnet-mask; ipconfig /dg ip-address; ipconfig /ip ip-address subnet-mask; ping ip-address; show interfaces trunk; show ip interface brief; show vlan; no shutdown,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• description string — string description of the interface configuration
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• encapsulation dot1q vlan-id — configures a router interface to use 802.1Q encapsulation for the specified VLAN ID
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• interface type number subinterface-id — creates a subinterface
+• ip address ip-address subnet-mask — assigns an IP address and subnet mask to an interface
+• ipconfig /dg ip-address — is used in NetSim to assign a default gateway IP address to a workstation interface
+• ipconfig /ip ip-address subnet-mask — is used in NetSim to assign an IP address and subnet mask to a workstation interface
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show interfaces trunk — displays port and module interface-trunk information
+• show ip interface brief — displays a brief summary of interface status and configuration
+• show vlan — displays VLAN information
+• no shutdown — enables an interface",Task 1: Configure VLAN Connectivity | Task 2: Configure InterVLAN Routing,2,16,"Device Basics, IPv4 Addressing, InterVLAN Routing, Interface Configuration, RIP, VLANs"
+31,Implement CDP and LLDP,"Cisco Discovery Protocol (CDP) is a Cisco-proprietary Layer 2 protocol that collects information about neighboring Cisco devices in a topology. Link-Layer Discovery Protocol (LLDP) is similar to CDP in function. However, LLDP is an Internet Engineering Task Force (IETF) standard.",Summary; enables CDP on an interface; disables CDP on an interface; specifies the number of seconds that a device will retain a CDP entry before discarding it; enables CDP globally; disables CDP globally; specifies the number of seconds between CDP advertisements; enters global configuration mode from privileged EXEC mode; enters privileged EXEC mode; ends and exits configuration mode; changes from global configuration mode to interface configuration mode; configures a range of interfaces; specifies the number of seconds that a device will retain an LLDP entry before discarding it; enables LLDP globally; disables LLDP globally; enables LLDP reception on an interface; disables LLDP reception on an interface; specifies the number of seconds between LLDP advertisements; enables LLDP transmission on an interface; disables LLDP transmission on an interface; displays global CDP information; displays CDP information about a specific CDP neighbor; displays CDP information for each local interface; displays information about directly connected Cisco devices; displays detailed information about directly connected Cisco devices; displays CDP traffic information; displays global LLDP information; displays LLDP information for each local interface; displays information about directly connected network devices; displays detailed information about directly connected network devices; displays the active configuration file,"• Summary — cdp enable; no cdp enable
+• enables CDP on an interface; disables CDP on an interface — cdp holdtime seconds
+• specifies the number of seconds that a device will retain a CDP entry before discarding it — cdp run; no cdp run
+• enables CDP globally; disables CDP globally — cdp timer seconds
+• specifies the number of seconds between CDP advertisements — configure terminal
+• enters global configuration mode from privileged EXEC mode — enable
+• enters privileged EXEC mode — end
+• ends and exits configuration mode — interface type number
+• changes from global configuration mode to interface configuration mode — interface range fastethernet slot/starting-port - ending-port
+• configures a range of interfaces — lldp holdtime seconds
+• specifies the number of seconds that a device will retain an LLDP entry before discarding it — lldp run; no lldp run
+• enables LLDP globally; disables LLDP globally — lldp receive; no lldp receive
+• enables LLDP reception on an interface; disables LLDP reception on an interface — lldp timer seconds
+• specifies the number of seconds between LLDP advertisements — lldp transmit; no lldp transmit
+• enables LLDP transmission on an interface; disables LLDP transmission on an interface — show cdp
+• displays global CDP information — show cdp entry [* | hostname]
+• displays CDP information about a specific CDP neighbor — show cdp interface [interface-id]
+• displays CDP information for each local interface — show cdp neighbors
+• displays information about directly connected Cisco devices — show cdp neighbors detail
+• displays detailed information about directly connected Cisco devices — show cdp traffic
+• displays CDP traffic information — show lldp
+• displays global LLDP information — show lldp interface [interface-id]
+• displays LLDP information for each local interface — show lldp neighbors
+• displays information about directly connected network devices — show lldp neighbors detail
+• displays detailed information about directly connected network devices — show running-config
+• displays the active configuration file — The IP addresses used in this lab are shown in the tables below.",Task 1: Explore and Configure CDP | Task 2: Explore and Configure LLDP,2,26,"CDP, Device Basics, Interface Configuration, LLDP"
+32,Implement PVST+,"Per-VLAN Spanning Tree Protocol (PVST) is a Cisco-proprietary protocol that enables a separate spanning tree to be established for each virtual local area network (VLAN). Because PVST can be used to enable separate spanning tree instances per VLAN, the switches in the topology can assume different roles. However, PVST is not capable of using 802.1Q encapsulation to tunnel traffic on a Cisco switch.",configure terminal; enable; end; exit; interface type number; show running-config; show spanning-tree; shutdown; no shutdown; spanning-tree portfast; spanning-tree vlan vlan-id priority value; spanning-tree vlan vlan-id root primary; spanning-tree vlan vlan-id root secondary,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• show running-config — displays the active configuration file
+• show spanning-tree — displays parameters for all VLANs; contains the VLAN name, status, and ports assigned to it
+• shutdown; no shutdown — disables an interface; enables an interface
+• spanning-tree portfast — enables PortFast on an interface
+• spanning-tree vlan vlan-id priority value — sets the spanning tree priority value; value must be a multiple of 4096
+• spanning-tree vlan vlan-id root primary — configures the spanning tree priority value to ensure the switch becomes the root bridge
+• spanning-tree vlan vlan-id root secondary — configures the spanning tree priority value to ensure the switch becomes the secondary root bridge","Task 1: Explore PVST+ Port Roles, and Configure the Root Bridge | Task 2: Explore PVST+ Port States, and Configure PortFast",2,12,"Device Basics, Interface Configuration, STP, VLANs"
+33,Boson CCNA Challenge Lab 2,"In this lab, you will configure a network in which packets are routed between two separate virtual local area networks (VLANs). When your work is complete, you should be able to ping every device on each LAN from Host1 by using an Internet Protocol version 4 (IPv4) address. This lab requires you to know how to configure IP addresses, configure Cisco Discovery Protocol (CDP) and Link Layer Discovery Protocol (LLDP), configure access ports and trunk ports, understand Rapid-Per-VLAN Spanning Tree Protocol+ (Rapid-PVST+), configure VLAN Trunking Protocol (VTP), configure EtherChannel with Link Aggregation Control Protocol (LACP), and configure interVLAN routing.",channel-group channel-group-number mode {auto [non-silent] | desirable [non-silent] | on | active | passive}; configure terminal; copy running-config startup-config; enable; encapsulation dot1q vlan-id; end; exit; interface type number; interface type number subinterface-id; interface range type starting-port - ending-port; ip address ip-address subnet-mask; ipconfig /dg ip-address; ipconfig /ip ip-address subnet-mask; lldp run; no lldp run; name vlan-name; ping ip-address; show cdp neighbors; show etherchannel [channel-group-number] {detail | load-balance | port | port-channel | summary | protocol}; show interfaces [type number]; show interfaces [type number] trunk; show lldp neighbors; show running-config; show spanning-tree; show vlan; show vtp status; shutdown; no shutdown; spanning-tree portfast; spanning-tree vlan vlan-id root primary; switchport access vlan vlan-id; switchport mode access; switchport mode {trunk | dynamic auto | dynamic desirable}; switchport nonegotiate; switchport trunk encapsulation dot1q; vlan number [name vlan-name]; vtp domain domain-name; vtp mode {server | transparent | client},"• channel-group channel-group-number mode {auto [non-silent] | desirable [non-silent] | on | active | passive} — assigns an interface to an EtherChannel group
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• copy running-config startup-config — saves the configuration file
+• enable — enters privileged EXEC mode
+• encapsulation dot1q vlan-id — configures a router interface to use 802.1Q encapsulation for the specified VLAN ID
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• interface type number subinterface-id — creates a subinterface
+• interface range type starting-port - ending-port — configures a range of interfaces
+• ip address ip-address subnet-mask — assigns an IP address and subnet mask to an interface
+• ipconfig /dg ip-address — is used in NetSim to assign a default gateway IP address to a workstation interface
+• ipconfig /ip ip-address subnet-mask — is used in NetSim to assign an IP address and subnet mask to a workstation interface
+• lldp run; no lldp run — enables LLDP globally; disables LLDP globally
+• name vlan-name — configures a name for a VLAN
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show cdp neighbors — displays information about directly connected Cisco neighbors
+• show etherchannel [channel-group-number] {detail | load-balance | port | port-channel | summary | protocol} — displays EtherChannel information
+• show interfaces [type number] — displays interface statistics
+• show interfaces [type number] trunk — displays interface trunk information
+• show lldp neighbors — displays information about directly connected network devices
+• show running-config — displays the active configuration file
+• show spanning-tree — displays the spanning tree configuration
+• show vlan — displays parameters for all VLANs; contains the VLAN name, status, and ports assigned to it
+• show vtp status — displays the current VTP status
+• shutdown; no shutdown — disables an interface; enables an interface
+• spanning-tree portfast — enables PortFast on an interface
+• spanning-tree vlan vlan-id root primary — configures the spanning tree priority value to ensure the switch becomes the root bridge
+• switchport access vlan vlan-id — assigns an access port to a VLAN
+• switchport mode access — configures an interface as an access port
+• switchport mode {trunk | dynamic auto | dynamic desirable} — configures the DTP mode for an interface
+• switchport nonegotiate — disables DTP on an interface
+• switchport trunk encapsulation dot1q — configures an interface to use 802.1Q encapsulation
+• vlan number [name vlan-name] — creates or configures a VLAN with an optional name
+• vtp domain domain-name — assigns the VTP domain name
+• vtp mode {server | transparent | client} — configures the VTP mode",Task 1: Configure the Basic Layer 2 Network | Task 2: Configure the Advanced Layer 2 Network | Task 3: Configure the Layer 3 Network,3,36,"CDP, Device Basics, EtherChannel, IPv4 Addressing, InterVLAN Routing, Interface Configuration, LLDP, STP, VLANs, VTP"
+34,Explore the Routing Table,"An Internet Protocol version 4 (IPv4) routing table contains lists of the routes that have been configured on or have been learned by the router. In this lab, you will learn to interpret the output of an IPv4 routing table. In addition, you will learn how and why changes to routing tables occur.",configure terminal; enable; end; exit; interface type number; show ip route; shutdown; no shutdown,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• show ip route — displays the IPv4 routing table
+• shutdown; no shutdown — disables an interface; enables an interface",Task 1: Explore the IPv4 Routing Table | Task 2: Modify the IPv4 Routing Table,2,7,"Device Basics, Interface Configuration, Routing Fundamentals, Static Routes"
+35,Route Selection by Using Administrative Distance,"The level of trustworthiness that is assigned to a specific path on a router is known as administrative distance (AD). For example, by default, static routes to a given destination are considered more trustworthy than routes that are learned dynamically. In this lab, you will learn how trustworthiness as determined by AD affects route selection.",configure terminal; enable; end; exit; ip route prefix mask {address | interface} [distance]; show ip route; traceroute ip-address,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• ip route prefix mask {address | interface} [distance] — establishes static routes
+• show ip route — displays the Internet Protocol version 4 (IPv4) routing table
+• traceroute ip-address — displays a hop-by-hop path through an Internet Protocol (IP) network",Task 1: Explore AD in the IPv4 Routing Table | Task 2: Modify Router Selection by Using AD,2,7,"Device Basics, Interface Configuration, NAT, Routing Fundamentals, Static Routes"
+36,Route Selection by Using Routing Protocol Metric,"If a router knows two paths to the same destination and those paths were generated by using the same dynamic routing protocol, the router relies on other values such as bandwidth or hop count to calculate the best path. These secondary values are known as metrics. Each routing protocol uses a different metric or set of metrics to calculate the best path to a destination network.",configure terminal; enable; end; exit; interface type number; ip ospf cost {cost}; show ip route; traceroute ip-address,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip ospf cost {cost} — changes the default OSPF cost value for an interface
+• show ip route — displays the Internet Protocol version 4 (IPv4) routing table
+• traceroute ip-address — displays a hop-by-hop path through an Internet Protocol (IP) network",Task 1: Explore Metric in the IPv4 Routing Table | Task 2: Modify Router Selection by Using Routing Protocol Metric,2,8,"Device Basics, Interface Configuration, NAT, OSPF, Routing Fundamentals, Static Routes"
+37,Manually Configure Default Routes on IPv4 Networks,"A default route is used to send packets that are destined for a location that is not listed elsewhere in the routing table. If a router were required to store a specific route to every destination network on the Internet, routing tables would grow exponentially and router performance would deteriorate. Default routes help keep routing tables small.",configure terminal; enable; end; exit; ip default-gateway ip-address; ip route destination-prefix destination-prefix-mask {ip-address | interface-type [ip-address]}; ping ip-address; show ip route,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• ip default-gateway ip-address — configures a default gateway Internet Protocol (IP) address to which traffic destined to remote networks will be forwarded
+• ip route destination-prefix destination-prefix-mask {ip-address | interface-type [ip-address]} — establishes a static route
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show ip route — displays the IP version 4 (IPv4) routing table",Task 1: Manually Configure Default Routes on Cisco Routers | Task 2: Manually Configure Default Routes on Cisco Switches,2,8,"Device Basics, Interface Configuration, NAT, Routing Fundamentals, Static Routes"
+38,Manually Configure Default Routes on IPv6 Networks,"A default route is used to send packets that are destined for a location that is not listed elsewhere in the routing table. If a router were required to store a specific route to every destination network on the Internet, routing tables would grow exponentially and router performance would deteriorate. Similar to default routes in Internet Protocol version 4 (IPv4), default routes in IP version 6 (IPv6) help keep routing tables small.",configure terminal; enable; end; exit; interface type/number; ipv6 address address/prefix-length; ipv6 route ipv6-prefix / prefix-length ipv6-address [administrative-distance]; ping ip-address; show ipv6 interface brief; show ipv6 route; shutdown; no shutdown,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type/number — changes from global configuration mode to interface configuration mode
+• ipv6 address address/prefix-length — configures an IPv6 address for an interface
+• ipv6 route ipv6-prefix / prefix-length ipv6-address [administrative-distance] — establishes an IPv6 static route
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show ipv6 interface brief — displays a summary of IPv6 interfaces
+• show ipv6 route — displays the IPv6 routing table
+• shutdown; no shutdown — disables and enables a network interface",Task 1: Manually Configure IPv6 Addresses on Router Interfaces | Task 2: Manually Configure IPv6 Default Routes on Cisco Routers | Task 2: Manually Configure Default Routes on Cisco Routers,3,11,"Device Basics, IPv6 Addressing, Interface Configuration, NAT, Routing Fundamentals, Static Routes"
+39,Manually Configure Network Routes on IPv4 Networks,"Similar to a default route, a manually configured network route is a static route that is used to send packets that are destined for a location that is not listed elsewhere in the routing table. Unlike default routes, a network route defines a specific path for the router to use to send packets that are destined for a specific network, not any unknown network. By default, a static route is considered less trustworthy than a route to a network that is directly connected to the router and more trustworthy than a route that has been learned dynamically.",configure terminal; enable; end; exit; ip route destination-prefix destination-prefix-mask {ip-address | interface-type [ip-address]}; ping ip-address; show ip route,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• ip route destination-prefix destination-prefix-mask {ip-address | interface-type [ip-address]} — establishes a static route
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show ip route — displays the IPv4 routing table",Task 1: Manually Configure Network Routes on Cisco Routers,1,7,"Device Basics, Interface Configuration, NAT, Routing Fundamentals, Static Routes"
+40,Manually Configure Network Routes on IPv6 Networks,"Similar to a default route, a manually configured Internet Protocol version 6 (IPv6) network route is a static route that is used to send packets that are destined for a location that is not listed elsewhere in the routing table. Unlike default routes, a network route defines a specific path for the router to use to send packets that are destined for a specific network, not any unknown network. By default, a static route is considered less trustworthy than a route to a network that is directly connected to the router and more trustworthy than a route that has been learned dynamically.",configure terminal; enable; end; exit; interface type/number; ipv6 address address/prefix-length; ipv6 route ipv6-prefix / prefix-length ipv6-address [administrative-distance]; ping ip-address; show ipv6 interface brief; show ipv6 route; shutdown; no shutdown,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type/number — changes from global configuration mode to interface configuration mode
+• ipv6 address address/prefix-length — configures an IPv6 address for an interface
+• ipv6 route ipv6-prefix / prefix-length ipv6-address [administrative-distance] — establishes an IPv6 static route
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show ipv6 interface brief — displays a summary of IPv6 interfaces
+• show ipv6 route — displays the IPv6 routing table
+• shutdown; no shutdown — disables and enables a network interface",Task 1: Manually Configure IPv6 Addresses on Router Interfaces | Task 2: Manually Configure IPv6 Network Routes on Cisco Routers,2,11,"Device Basics, IPv6 Addressing, Interface Configuration, NAT, Routing Fundamentals, Static Routes"
+41,Manually Configure Host Routes on IPv4 Networks,"Similar to a network route, a manually configured host route is a static route that is used to send packets that are destined for a location that is not listed elsewhere in the routing table. Unlike default routes and network routes, a host route defines a path for the router to use to send packets that are destined for a specific endpoint destination, not any unknown network or specific subnet. By default, a static route is considered less trustworthy than a route to a network that is directly connected to the router and more trustworthy than a route that has been learned dynamically.",configure terminal; enable; end; exit; ip route destination-prefix destination-prefix-mask {ip-address | interface-type [ip-address]}; ping ip-address; show ip route,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• ip route destination-prefix destination-prefix-mask {ip-address | interface-type [ip-address]} — establishes a static route
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show ip route — displays the Internet Protocol version 4 (IPv4) routing table",Task 1: Manually Configure Host Routes on Cisco Routers,1,7,"Device Basics, IPv4 Addressing, Interface Configuration, NAT, Routing Fundamentals, Static Routes"
+42,Manually Configure Host Routes on IPv6 Networks,"Similar to a network route, a manually configured Internet Protocol version 6 (IPv6) host route is a static route that is used to send packets that are destined for a location that is not listed elsewhere in the routing table. Unlike default routes and network routes, a host route defines a path for the router to use to send packets that are destined for a specific endpoint destination, not any unknown network or specific subnet. By default, a static route is considered less trustworthy than a route to a network that is directly connected to the router and more trustworthy than a route that has been learned dynamically.",configure terminal; enable; end; exit; interface type/number; ipv6 address address/prefix-length; ipv6 route ipv6-prefix / prefix-length ipv6-address [administrative-distance]; ping ip-address; show ipv6 interface brief; show ipv6 route; shutdown; no shutdown,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type/number — changes from global configuration mode to interface configuration mode
+• ipv6 address address/prefix-length — configures an IPv6 address for an interface
+• ipv6 route ipv6-prefix / prefix-length ipv6-address [administrative-distance] — establishes an IPv6 static route
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show ipv6 interface brief — displays a summary of IPv6 interfaces
+• show ipv6 route — displays the IPv6 routing table
+• shutdown; no shutdown — disables and enables a network interface",Task 1: Manually Configure IPv6 Addresses on Router Interfaces | Task 2: Manually Configure IPv6 Host Routes on Cisco Routers,2,11,"Device Basics, IPv4 Addressing, IPv6 Addressing, Interface Configuration, NAT, Routing Fundamentals, Static Routes"
+43,Configure OSPFv2 Adjacencies,"Before routers in an Open Shortest Path First (OSPF) area can exchange information, they must establish a neighbor relationship, which is also known as an adjacency. An OSPF router that has not yet exchanged information with a potential neighbor is considered to be in the Down neighbor state. OSPF routers establish adjacencies by sending Hello packets.",configure terminal; enable; end; exit; interface type number; ip ospf process-id area area-id; network network-address wildcard-mask area area-id; ping ip-address; router ospf process-id; show ip ospf interface [type number] [brief]; show ip ospf [process-id [area-id]] neighbor; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip ospf process-id area area-id — places an interface in a specified OSPF process and area
+• network network-address wildcard-mask area area-id — activates OSPF on the specified network and places the matching interface in the specified area
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• router ospf process-id — enters router configuration mode for an OSPF process
+• show ip ospf interface [type number] [brief] — displays OSPF interface information
+• show ip ospf [process-id [area-id]] neighbor — displays OSPF neighbor information
+• show running-config — displays the active configuration file",Task 1: Configure and Verify OSPF,1,12,"Device Basics, Interface Configuration, NAT, OSPF"
+44,Configure Point-to-Point OSPFv2,A point-to-point leased line is one of the most common wide area network (WAN) connections. This type of connection uses a Serial interface to connect through a service provider to another Serial device at a remote location. Open Shortest Path First (OSPF) behaves differently over point-to-point links between routers than it does over point-to-multipoint or local area network (LAN) links.,configure terminal; enable; end; exit; interface type number; ip ospf process-id area area-id; network network-address wildcard-mask area area-id; ping ip-address; router ospf process-id; show interfaces interface-name type/number; show ip interface brief; show ip ospf; show ip ospf interface [type number] [brief]; show ip ospf [process-id [area-id]] neighbor; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip ospf process-id area area-id — places an interface in a specified OSPF process and area
+• network network-address wildcard-mask area area-id — activates OSPF on the specified network and places the matching interface in the specified area
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• router ospf process-id — enters router configuration mode for an OSPF process
+• show interfaces interface-name type/number — displays detailed information about an interface
+• show ip interface brief — displays a summary of interfaces on the device
+• show ip ospf — displays information about the OSPF process running on the device
+• show ip ospf interface [type number] [brief] — displays OSPF interface information
+• show ip ospf [process-id [area-id]] neighbor — displays OSPF neighbor information
+• show running-config — displays the active configuration file",Task 1: Configure OSPF,1,15,"Device Basics, Interface Configuration, NAT, OSPF"
+45,Explore OSPFv2 DR and BDR Router Selection,"Open Shortest Path First version 2 (OSPFv2) is the version of the Open Shortest Path First (OSPF) routing protocol that runs on Internet Protocol version 4 (IPv4) networks. This is in contrast to OSPF version 3 (OSPFv3), which runs on IP version 6 (IPv6) networks. OSPF handles router elections, timer settings, and neighbor adjacencies differently depending on the type of interface through which an OSPF router connects to its neighbors.",configure terminal; clear ip ospf process; enable; end; exit; interface type number; ip ospf process-id area area-id; ip ospf priority priority; network network-address wildcard-mask area area-id; ping ip-address; router-id ip-address; router ospf process-id; show ip interface brief; show ip ospf; show ip ospf interface [type number] [brief]; show ip ospf [process-id [area-id]] neighbor; show ip protocols; show ip route; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• clear ip ospf process — stops and restarts the OSPF process
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip ospf process-id area area-id — places an interface in a specified OSPF process and area
+• ip ospf priority priority — manually configures an OSPF router priority
+• network network-address wildcard-mask area area-id — activates OSPF on the specified network and places the matching interface in the specified area
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• router-id ip-address — assigns a router ID to an OSPF router
+• router ospf process-id — enters router configuration mode for an OSPF process
+• show ip interface brief — displays a summary of interfaces configured on the device
+• show ip ospf — displays information about the OSPF process running on the router
+• show ip ospf interface [type number] [brief] — displays OSPF interface information
+• show ip ospf [process-id [area-id]] neighbor — displays OSPF neighbor information
+• show ip protocols — displays information about active routing protocols
+• show ip route — displays the routing table
+• show running-config — displays the active configuration file",Task 1: Configure and Verify OSPF | Task 2: Explore DR and BDR Selection,2,19,"Device Basics, IPv6 Addressing, Interface Configuration, NAT, OSPF, Routing Fundamentals, Static Routes"
+46,Explore and Configure OSPFv2 Router IDs,"The Open Shortest Path First (OSPF) router ID is used to uniquely identify each router on the network. Router IDs can be manually configured in OSPF router configuration mode. However, an OSPF router that is not manually configured with a router ID will perform a router ID selection process.",configure terminal; enable; end; exit; interface type number; ip ospf process-id area area-id; network network-address wildcard-mask area area-id; router ospf process-id; router-id ip-address; show ip interface brief; show ip ospf; show ip ospf interface [type number] [brief]; show ip ospf [process-id [area-id]] neighbor; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip ospf process-id area area-id — places an interface in a specified OSPF process and area
+• network network-address wildcard-mask area area-id — activates OSPF on the specified network and places the matching interface in the specified area
+• router ospf process-id — enters router configuration mode for an OSPF process
+• router-id ip-address — configures a 32-bit dotted-decimal OSPF router ID
+• show ip interface brief — displays a summary of interfaces configured on the device
+• show ip ospf — displays information about the OSPF process running on the router
+• show ip ospf interface [type number] [brief] — displays OSPF interface information
+• show ip ospf [process-id [area-id]] neighbor — displays OSPF neighbor information
+• show running-config — displays the active configuration file",Task 1: Explore Router IP Configurations | Task 2: Configure and Verify OSPFv2,2,14,"Device Basics, Interface Configuration, NAT, OSPF"
+47,Plan and Configure Single-Area OSPF,"Plan, implement, and verify Open Shortest Path First (OSPF) operation over local area network (LAN) interfaces.",configure terminal; enable; end; exit; interface type number; ip address ip-address subnet-mask; ip ospf priority number-value; network network-address wildcard-mask area area-id; ping ip-address; router ospf process-id; show ip interface brief; show ip ospf [process-id [area-id]] database [router]; show ip ospf interface [type number] [brief]; show ip route; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip address ip-address subnet-mask — assigns an Internet Protocol (IP) address and subnet mask to an interface
+• ip ospf priority number-value — sets the router priority, which helps determine the designated router (DR) for the network
+• network network-address wildcard-mask area area-id — activates OSPF on the specified network and places the matching interface in the specified area
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• router ospf process-id — enters router configuration mode for an OSPF process
+• show ip interface brief — displays a brief summary of interface status and configuration
+• show ip ospf [process-id [area-id]] database [router] — displays the OSPF link state database
+• show ip ospf interface [type number] [brief] — displays OSPF interface information
+• show ip route — displays the Internet Protocol version 4 (IPv4) routing table
+• show running-config — displays the active configuration file",Task 1: Verify Initial Configurations | Task 2: Plan for OSPF | Task 3: Implement OSPF Configuration | Task 4: Verify OSPF,4,15,"Device Basics, IPv4 Addressing, Interface Configuration, NAT, OSPF, Routing Fundamentals, Static Routes"
+48,Explore HSRP,"First-Hop Redundancy Protocols (FHRPs) are technologies that provide router redundancy and high availability (HA) for Cisco networks. There are a number of different FHRPs, each of which differs in scalability and support among vendors. One such FHRP is Hot Standby Router Protocol (HSRP).",configure terminal; enable; end; exit; interface type number; ping ip-address; show ip interface brief; show standby; shutdown; no shutdown; standby [group-number] ip [ip-address]; standby [group-number] preempt; standby [group-number] priority priority,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show ip interface brief — displays a brief summary of interface status and configuration
+• show standby — displays HSRP information
+• shutdown; no shutdown — disables an interface; enables an interface
+• standby [group-number] ip [ip-address] — creates or enables the HSRP group with a group number and virtual Internet Protocol (IP) address
+• standby [group-number] preempt — enables preemption for HSRP on a device
+• standby [group-number] priority priority — sets the priority value used in choosing the active router; the default value is 100, and the configurable priority value range is from 1 through 255, with 255 being the highest priority",Task 1: Explore HSRP,1,12,"Device Basics, HSRP, Interface Configuration"
+49,Explore VRRP,"First-Hop Redundancy Protocols (FHRPs) are technologies that provide router redundancy and high availability (HA) for Cisco networks. There are a number of different FHRPs, each of which differs in scalability and support among vendors. One such FHRP is Virtual Router Redundancy Protocol (VRRP).",configure terminal; enable; end; exit; interface type number; ping ip-address; show ip interface brief; show vrrp; shutdown; no shutdown; vrrp [group-number] ip [ip-address]; vrrp [group-number] preempt; vrrp [group-number] priority priority,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show ip interface brief — displays a brief summary of interface status and configuration
+• show vrrp — displays HSRP information
+• shutdown; no shutdown — disables an interface; enables an interface
+• vrrp [group-number] ip [ip-address] — creates or enables the HSRP group with a group number and virtual Internet Protocol (IP) address
+• vrrp [group-number] preempt — enables preemption for HSRP on a device
+• vrrp [group-number] priority priority — sets the priority value used in choosing the active router; the default value is 100, and the configurable priority value range is from 1 through 254; 255 is the highest priority, but 255 cannot be configured manually",Task 1: Explore VRRP,1,12,"Device Basics, Interface Configuration, VRRP"
+50,Implement Route Selection,"Routers choose the best path to a destination by using a number of different methods, such as administrative distance (AD) and routing protocol metrics. The level of trustworthiness that is assigned to a specific path on a router is known as AD. For example, by default, static routes to a given destination are assigned an AD of 1 and are thus considered more trustworthy than routes that are learned dynamically.",configure terminal; enable; end; exit; show running-config; interface type number; ip ospf cost (cost); ip route prefix mask {address | interface} [distance]; show ip route; traceroute ip-address,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• show running-config — displays the active configuration file
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip ospf cost (cost) — changes the default OSPF cost value for an interface
+• ip route prefix mask {address | interface} [distance] — establishes static routes
+• show ip route — displays the Internet Protocol version 4 (IPv4) routing table
+• traceroute ip-address — displays a hop-by-hop path through an Internet Protocol (IP) network",Task 1: Influence Route Selection by Using AD | Task 2: Influence Route Selection by Using OSPF Metrics,2,10,"Device Basics, Interface Configuration, NAT, OSPF, Routing Fundamentals, Static Routes"
+51,Implement Static and Default Routes,"A default route is used to send packets that are destined for a location that is not listed elsewhere in the routing table. If a router were required to store a specific route to every destination network on the Internet, routing tables would grow exponentially and router performance would deteriorate. Default routes help keep routing tables small.",configure terminal; enable; end; exit; ip default-gateway ip-address; ip route destination-prefix destination-prefix-mask {ip-address | interface-type [ip-address]}; ip routing; ping ip-address; show ip route,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• ip default-gateway ip-address — configures a default gateway Internet Protocol (IP) address to which traffic destined to remote networks will be forwarded
+• ip route destination-prefix destination-prefix-mask {ip-address | interface-type [ip-address]} — establishes a static route
+• ip routing — enables IP version 4 (IPv4) routing on a Cisco router or Layer 3 switch
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show ip route — displays the IPv4 routing table",Task 1: Manually Configure Default Routes on Cisco Switches | Task 2: Manually Configure Default and Network Routes on Cisco Routers | Task 1: Manually Configure Default Routes on Cisco Routers,3,9,"Device Basics, Interface Configuration, NAT, Routing Fundamentals, Static Routes"
+52,Implement Single-Area OSPFv2,"Open Shortest Path First version 2 (OSPFv2) is a dynamic routing protocol that learns paths to destinations on an Internet Protocol version 4 (IPv4) network. Before routers in an OSPF area can exchange information, they must establish a neighbor relationship, which is also known as an adjacency. An OSPF router that has not yet exchanged information with a potential neighbor is considered to be in the Down neighbor state.",configure terminal; enable; end; exit; interface type number; ip ospf process-id area area-id; network network-address wildcard-mask area area-id; ping ip-address; router ospf process-id; router-id ip-address; show ip ospf; show ip ospf [process-id [area-id]] neighbor; show ip route; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip ospf process-id area area-id — places an interface in a specified OSPF process and area
+• network network-address wildcard-mask area area-id — activates OSPF on the specified network and places the matching interface in the specified area
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• router ospf process-id — enters router configuration mode for an OSPF process
+• router-id ip-address — configures an OSPF router with a 32-bit router ID
+• show ip ospf — displays information about the OSPF processes that are running on the router
+• show ip ospf [process-id [area-id]] neighbor — displays OSPF neighbor information
+• show ip route — displays the routing table
+• show running-config — displays the active configuration file",Task 1: Configure OSPFv2 Router Processes | Task 2: Configure OSPFv2 Router Adjacencies,2,14,"Device Basics, Interface Configuration, NAT, OSPF, Routing Fundamentals, Static Routes"
+53,Implement HSRP,"First-Hop Redundancy Protocols (FHRPs) are technologies that provide router redundancy and high availability (HA) for Cisco networks. There are a number of different FHRPs, each of which differs in scalability and support among vendors. One such FHRP is Hot Standby Router Protocol (HSRP).",configure terminal; enable; end; exit; interface type number; ipconfig; ipconfig /dg ip-address; show standby; shutdown; no shutdown; standby [group-number] ip [ip-address]; standby [group-number] preempt; standby [group-number] priority priority; tracert ip-address,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ipconfig — displays the IP address configuration on a PC
+• ipconfig /dg ip-address — configures a default gateway on a PC
+• show standby — displays HSRP information
+• shutdown; no shutdown — disables an interface; enables an interface
+• standby [group-number] ip [ip-address] — creates or enables the HSRP group with a group number and virtual Internet Protocol (IP) address
+• standby [group-number] preempt — enables preemption for HSRP on a device
+• standby [group-number] priority priority — sets the priority value used in choosing the active router; the default value is 100, and the configurable priority value range is from 1 through 255, with 255 being the highest priority
+• tracert ip-address — traces the path from a source to a destination on a PC",Task 1: Explore the Routing Topology | Task 2: Configure HSRP,2,13,"Device Basics, HSRP, IPv4 Addressing, Interface Configuration"
+54,Implement VRRP,"First-Hop Redundancy Protocols (FHRPs) are technologies that provide router redundancy and high availability (HA) for Cisco networks. There are a number of different FHRPs, each of which differs in scalability and support among vendors. One such FHRP is Virtual Router Redundancy Protocol (VRRP).",configure terminal; enable; end; exit; interface type number; ipconfig; ipconfig /dg ip-address; show vrrp; shutdown; no shutdown; vrrp [group-number] ip [ip-address]; vrrp [group-number] preempt; vrrp [group-number] priority priority; tracert ip-address,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ipconfig — displays the Internet Protocol (IP) address configuration on a PC
+• ipconfig /dg ip-address — configures a default gateway on a PC
+• show vrrp — displays VRRP information
+• shutdown; no shutdown — disables an interface; enables an interface
+• vrrp [group-number] ip [ip-address] — creates or enables the HSRP group with a group number and virtual IP address
+• vrrp [group-number] preempt — enables preemption for Hot Standby Router Protocol (HSRP) on a device
+• vrrp [group-number] priority priority — sets the priority value used in choosing the active router; the default value is 100, and the configurable priority value range is from 1 through 255, with 255 being the highest priority
+• tracert ip-address — traces the path from a source to a destination on a PC",Task 1: Explore the Routing Topology | Task 2: Configure VRRP,2,13,"Device Basics, IPv4 Addressing, Interface Configuration, VRRP"
+55,Troubleshoot an OSPFv2 Configuration,"Troubleshoot Open Shortest Path First (OSPF) operation over local area network (LAN) interfaces and wide area network (WAN) interfaces. You will correct any missing or incorrect configurations and verify OSPF operation for multiple areas. When you have completed this lab, all routers will have formed an OSPF neighbor relationship with their directly connected neighbors.",configure terminal; debug ip ospf [[adjacency] [database-timer] [events] [flooding] [hello]]; enable; end; exit; network network-address wildcard-mask area area-id; router ospf process-id; show cdp neighbors; show ip interface brief; show ip ospf interface [type number] [brief]; show ip ospf neighbor; show ip protocols; show running-config; show running-config interface type number,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• debug ip ospf [[adjacency] [database-timer] [events] [flooding] [hello]] — displays information on OSPF-related events, such as adjacencies, flooding information, designated router selection, and shortest path first (SPF) calculation
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• network network-address wildcard-mask area area-id — activates OSPF on the specified network and places the matching interface in the specified area
+• router ospf process-id — enters router configuration mode for an OSPF process
+• show cdp neighbors — displays information about directly connected neighbors
+• show ip interface brief — displays a brief summary of interface status and configuration
+• show ip ospf interface [type number] [brief] — displays OSPF interface information
+• show ip ospf neighbor — displays OSPF neighbor information
+• show ip protocols — displays information about active routing protocols
+• show running-config — displays the active configuration file
+• show running-config interface type number — displays the specified interface’s active configuration file","Task 1: Troubleshoot, Correct, and Verify the OSPF Configuration on the Link Between Router3 and Router1 | Task 2: Troubleshoot, Correct, and Verify the OSPF Configuration on the Link Between Router1 and Router4 | Task 3: Troubleshoot, Correct, and Verify the OSPF Configuration on the Link Between Router2 and Router4",3,14,"CDP, Device Basics, Interface Configuration, NAT, OSPF"
+56,Boson CCNA Challenge Lab 3,"In this lab, you will configure Cisco IOS routing features on a network with multiple virtual local area networks (VLANs). You will explore a previously configured implementation of Hot Standby Router Protocol (HSRP). You will also configure default routes where appropriate.",configure terminal; enable; end; exit; interface type number; ip default-gateway ip-address; ip ospf process-id area area-id; ip route destination-prefix destination-prefix-mask {ip-address | interface-type [ip-address]}; network network-address wildcard-mask area area-id; ping ip-address; router ospf process-id; router-id ip-address; show ip ospf; show ip ospf [process-id [area-id]] neighbor; show ip route; show running-config; show standby; shutdown; no shutdown; tracert ip-address,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip default-gateway ip-address — configures a default gateway Internet Protocol (IP) address to which traffic destined to remote networks will be forwarded
+• ip ospf process-id area area-id — places an interface in a specified OSPF process and area
+• ip route destination-prefix destination-prefix-mask {ip-address | interface-type [ip-address]} — establishes a static route
+• network network-address wildcard-mask area area-id — activates OSPF on the specified network and places the matching interface in the specified area
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• router ospf process-id — enters router configuration mode for an OSPF process
+• router-id ip-address — configures an OSPF router with a 32-bit router ID
+• show ip ospf — displays information about the OSPF processes that are running on the router
+• show ip ospf [process-id [area-id]] neighbor — displays OSPF neighbor information
+• show ip route — displays the IPv4 routing table
+• show running-config — displays the active configuration file
+• show standby — displays HSRP information
+• shutdown; no shutdown — disables an interface; enables an interface
+• tracert ip-address — traces the path from a source to a destination on a PC",Task 1: Explore HSRP | Task 2: Configure Default Routes and Static Routes | Task 3: Configure Single-Area OSPFv2,3,19,"Device Basics, HSRP, Interface Configuration, NAT, OSPF, Routing Fundamentals, Static Routes, VLANs"
+57,Configure Static NAT,"Network Address Translation (NAT) is commonly used to translate private Internet Protocol (IP) addresses on a local area network (LAN) into globally unique IP addresses on the Internet, which is a global wide area network (WAN). In this lab, you will configure static NAT to enable a specific host on a private LAN to communicate with an Internet host that is configured with a public IP address. An enable secret password is configured on the ISP router and on SwitchA to prevent you from accessing them in this scenario.",configure terminal; enable; end; exit; interface type number; ip nat inside; ip nat inside source static inside-local-address inside-global-address; ip nat outside; ping ip-address; show ip nat translations; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip nat inside — defines the inside interface for NAT
+• ip nat inside source static inside-local-address inside-global-address — creates a static NAT translation
+• ip nat outside — configures an interface to be an outside interface
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo request to the specified address
+• show ip nat translations — displays the NAT translation table
+• show running-config — displays the active configuration file",Task 1: Plan for NAT | Task 2: Implement NAT | Task 3: Verify NAT,3,11,"Device Basics, IPv4 Addressing, Interface Configuration, NAT, Password Security"
+58,Configure Dynamic NAT,"Dynamic Network Address Translation (NAT) is commonly used to translate a range of private Internet Protocol (IP) addresses on a local area network (LAN) into one or more globally unique IP addresses on the Internet, which is a global wide area network (WAN). In this lab, you will configure dynamic NAT to enable a specified range of hosts on a private LAN to communicate with an Internet host that is configured with a public IP address. An enable secret password is configured on the ISP router and on SwitchA to prevent you from accessing them in this scenario.",access-list access-list-number {deny | permit} source-address source-wildcard; configure terminal; end; exit; interface type number; ip nat inside; ip nat inside source list access-list-number pool pool-name; ip nat outside; ip nat pool pool-name start-address end-address netmask subnet-mask; ping ip-address; show ip interface brief; show ip nat translations; show running-config,"• access-list access-list-number {deny | permit} source-address source-wildcard — creates an access control list (ACL) that denies or permits IP traffic from the specified address or address range
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip nat inside — defines the inside interface for NAT
+• ip nat inside source list access-list-number pool pool-name — translates anything that matches the ACL to an address from the pool
+• ip nat outside — configures an interface to be an outside interface
+• ip nat pool pool-name start-address end-address netmask subnet-mask — creates an address pool for NAT
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo request to the specified address
+• show ip interface brief — displays a brief summary of interface status and configuration
+• show ip nat translations — displays the NAT translation table
+• show running-config — displays the active configuration file",Task 1: Plan for NAT | Task 2: Implement NAT | Task 3: Verify NAT,3,13,"ACLs, Device Basics, IPv4 Addressing, Interface Configuration, NAT, Password Security"
+59,Configure PAT,"Port Address Translation (PAT) is a form of Network Address Translation (NAT) commonly used to translate a range of private Internet Protocol (IP) addresses on a local area network (LAN) into a single globally unique IP address on the Internet, which is a global wide area network (WAN). In this lab, you will configure PAT to enable a specified range of hosts on a private LAN to communicate with an Internet host that is configured with a public IP address. An enable secret password is configured on the ISP router and on SwitchA to prevent you from accessing them in this scenario.",access-list access-list-number {deny | permit} source-address source-wildcard; configure terminal; end; exit; interface type number; ip nat inside; ip nat inside source list access-list-number interface type number overload; ip nat outside; ping ip-address; show ip interface brief; show ip nat translations; show running-config,"• access-list access-list-number {deny | permit} source-address source-wildcard — creates an access control list (ACL) that denies or permits IP traffic from the specified address or address range
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip nat inside — defines the inside interface for NAT
+• ip nat inside source list access-list-number interface type number overload — translates anything matching the ACL to the IP address of the interface specified; overload indicates that PAT will be used
+• ip nat outside — configures an interface to be an outside interface
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo request to the specified address
+• show ip interface brief — displays a brief summary of interface status and configuration
+• show ip nat translations — displays the NAT translation table
+• show running-config — displays the active configuration file",Task 1: Plan for PAT | Task 2: Implement PAT | Task 3: Verify PAT,3,12,"ACLs, Device Basics, IPv4 Addressing, Interface Configuration, NAT, Password Security"
+60,Configure an NTP Server,"Network Time Protocol (NTP) is essential to the functioning of many network services, particularly those that provide event logging, authentication, or encryption. Because these services can be manipulated or even disrupted by inaccurate times, it is vital that mechanisms are put in place to validate NTP packets and to restrict NTP synchronization to authenticated devices. In this lab, you will learn how to configure client devices to authenticate NTP packets from the master NTP server and how to use access control lists (ACLs) and NTP access groups to restrict NTP synchronization from the master NTP server and to the NTP clients.",access-list access-list-number {deny | permit} source-address source-wildcard; clock set hh:mm:ss day month year; configure terminal; enable; end; exit; no ntp; ntp access-group {peer | serve | serve-only | query-only} access-list-number; ntp authenticate; ntp authentication-key number md5 value; ntp master [stratum]; ntp server ip-address [key key-id]; ntp trusted-key key-number; ping ip-address; show access-lists [access-list-number | access-list-name]; show clock [detail]; show ntp associations [detail]; show ntp status; show running-config,"• access-list access-list-number {deny | permit} source-address source-wildcard — creates an ACL that denies or permits Internet Protocol (IP) traffic from the specified address or address range
+• clock set hh:mm:ss day month year — sets the system software clock
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• no ntp — removes an entire NTP configuration from a Cisco device, including any NTP authentication or access groups configured on the device
+• ntp access-group {peer | serve | serve-only | query-only} access-list-number — configures an access group to control NTP access and applies a standard IP access list
+• ntp authenticate — enables NTP authentication
+• ntp authentication-key number md5 value — defines an authentication key for NTP
+• ntp master [stratum] — configures the Cisco IOS software as an NTP master clock to which peers synchronize themselves
+• ntp server ip-address [key key-id] — allows the Cisco IOS software clock to be synchronized by an NTP time server
+• ntp trusted-key key-number — authenticates the identity of a system to which NTP will synchronize
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo request to the specified address
+• show access-lists [access-list-number | access-list-name] — displays the contents of current ACLs
+• show clock [detail] — displays the time and date from the system software clock
+• show ntp associations [detail] — shows the status of NTP associations
+• show ntp status — shows the status of the NTP
+• show running-config — displays the active configuration file",Task 1: Configure NTP | Task 2: Configure NTP Source Security | Task 3: Configure NTP Client Security,3,19,"ACLs, Device Basics, NTP, Syslog"
+61,Configure an NTP Client,"Network Time Protocol (NTP) is used to synchronize the time on network devices, such as routers, switches, desktop computers, and Internet Protocol (IP) phones. Synchronized time is an essential component of many network services, particularly those that provide event logging, authentication, or encryption. When configured to use NTP, a network device will typically query an NTP server to receive time information.",clock set hh:mm:ss day month year; configure terminal; enable; end; exit; interface type number; ntp master [stratum]; ntp server ip-address [key key-id]; ping ip-address; show clock [detail]; show ip interface brief; show ntp associations [detail]; show ntp status; show running-config,"• clock set hh:mm:ss day month year — sets the system software clock
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ntp master [stratum] — configures the Cisco IOS software as an NTP master clock to which peers synchronize themselves
+• ntp server ip-address [key key-id] — allows the Cisco IOS software clock to be synchronized by an NTP time server
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo request to the specified address
+• show clock [detail] — displays the time and date from the system software clock
+• show ip interface brief — displays a brief summary of interface status and configuration
+• show ntp associations [detail] — shows the status of NTP associations
+• show ntp status — shows the status of the NTP
+• show running-config — displays the active configuration file",Task 1: Perform Initial Configurations | Task 2: Configure the NTP Master | Task 3: Configure the NTP Clients | Task 3: Configure NTP Clients,4,14,"Device Basics, Interface Configuration, NTP, Syslog"
+62,Configure and Test a DNS Server,"Domain Name System (DNS) is a mechanism that translates the host name of a network device into its corresponding Internet Protocol (IP) address. DNS clients send lookup queries to a DNS server on User Datagram Protocol (UDP) port 53 unless the query is larger than 512 bytes. If the query is larger than 512 bytes, the DNS traffic will be sent to Transmission Control Protocol (TCP) port 53.",configure terminal; enable; end; domain-name domain; dns-server address; interface type number; ip dns server; ip domain name domain-name; ip domain-lookup; ip domain-name domain-name; ip host host-name ip-address; ip name-server ip-address; ipconfig /all; ipconfig /dns ip-address; ping ip-address; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• domain-name domain — specifies the domain name for a Dynamic Host Configuration Protocol (DHCP) client
+• dns-server address — specifies the DNS IP servers available to a DHCP client
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip dns server — enables the DNS server on a router
+• ip domain name domain-name — defines a default domain name to complete unqualified host names (is used on routers)
+• ip domain-lookup — enables the DNS lookup feature
+• ip domain-name domain-name — configures the domain name for the device (is used on switches)
+• ip host host-name ip-address — configures a static host-name–to–address mapping in the host cache of a device
+• ip name-server ip-address — configures the name server for the device
+• ipconfig /all — displays detailed IP addressing information on a Boson NetSim host
+• ipconfig /dns ip-address — configures a Boson NetSim host’s DNS client to use the specified DNS server for name resolution
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo request to the specified address
+• show running-config — displays the active configuration file",Task 1: Configure and Test a DNS Server,1,16,"DNS, Device Basics, IPv4 Addressing, Interface Configuration"
+63,Explore Syslog Output,"System message logging can be used on Cisco devices to convey system information to the console, a virtual terminal (VTY) session, or a Syslog server. Cisco devices run a local instance of the Syslog service and generate system log messages which are formatted in the Berkeley Software Distribution (BSD) Syslog format. This format creates system log messages that are intended to be easily parsed by both human assets and automated systems.",logging buffered [buffer-size] [severity-level]; logging console severity-level; logging monitor [severity-level]; logging origin-id [hostname | ip | ipv6 | string user-defined-id]; logging synchronous [level severity-level | all] [limit number-of-lines]; service sequence-numbers,"• logging buffered [buffer-size] [severity-level] — enables logging messages to the local buffer
+• logging console severity-level — enables logging messages to the console port
+• logging monitor [severity-level] — enables logging messages to the terminal lines
+• logging origin-id [hostname | ip | ipv6 | string user-defined-id] — adds an origin identifier to logging messages sent to remote hosts
+• logging synchronous [level severity-level | all] [limit number-of-lines] — enables synchronous logging of messages
+• service sequence-numbers — enables sequential numbering of logging messages",Task 1: Explore Syslog Output,1,6,"Device Basics, IPv6 Addressing, Syslog"
+64,Explore and Configure Syslog Levels,"The Syslog protocol enables a device to display and store event notifications or messages that are generated by debug commands. By default, Syslog is enabled on Cisco devices and sends system messages to the console on Cisco routers and switches. However, Syslog can be configured to send those messages to other locations, such as a Telnet session or a Syslog server, which is a device that captures and stores the messages in Syslog format.",configure terminal; enable; end; exit; logging host ip-address; logging trap severity-level; ping ip-address; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• logging host ip-address — logs messages to a system logging (Syslog) server host
+• logging trap severity-level — limits messages logged to the Syslog servers based on severity
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo request to the specified address
+• show running-config — displays the active configuration file",Task 1: Configure System Message Logging,1,8,"Device Basics, Syslog"
+65,Configure DHCP for IPv4 Networks,"Dynamic Host Configuration Protocol (DHCP) is an Application-layer protocol that is commonly used to provide Internet Protocol (IP) configuration information to network devices. DHCP version 4 (DHCPv4), which is typically referred to as simply DHCP, can be used to provide configuration information for IP version 4 (IPv4) networks, whereas DHCP version 6 (DHCPv6) can be used to provide configuration information for IP version 6 (IPv6) networks. A DHCP server is configured to allocate IP configuration information to devices, or DHCP clients, on a particular network segment.",configure terminal; enable; end; exit; default-router address; domain-name domain; interface type number; ip address dhcp; ipconfig /all; ipconfig /ip dhcp; ip dhcp client lease {days [hours] [minutes] | infinite}; ip dhcp excluded-address ip-address [last-ip-address]; ip dhcp pool pool-name; lease {days [hours [minutes]] | infinite}; network ip-address subnet-mask; [no] service dhcp; show dhcp lease; show dhcp server; show ip dhcp binding; show ip dhcp pool; show ip dhcp server statistics; show ip interface brief; show ip route; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• default-router address — specifies the IP address of a default gateway for DHCP clients
+• domain-name domain — specifies the domain name for a DHCP client
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip address dhcp — configures a router as a DHCP client
+• ipconfig /all — is used in NetSim to display the IP addresses and Media Access Control (MAC) address on a workstation
+• ipconfig /ip dhcp — is used in NetSim to configure the workstation to obtain IP addressing information from a DHCP server
+• ip dhcp client lease {days [hours] [minutes] | infinite} — requests a custom lease duration for DHCP clients
+• ip dhcp excluded-address ip-address [last-ip-address] — configures a range of excluded addresses
+• ip dhcp pool pool-name — creates an IP address pool
+• lease {days [hours [minutes]] | infinite} — configures a custom lease duration for DHCP assignments
+• network ip-address subnet-mask — enables a DHCP server for a particular network segment
+• [no] service dhcp — configure the router to respond to any DHCP requests; the no form disables the DHCP service and prevents a DHCP relay agent from forwarding DHCP requests
+• show dhcp lease — displays the IP address lease duration
+• show dhcp server — displays IP configuration information contained in DHCPOFFER packets
+• show ip dhcp binding — displays active DHCP-assigned IP addresses
+• show ip dhcp pool — displays a basic summary of a configured DHCP pool
+• show ip dhcp server statistics — displays general operating statics for a DHCP server process
+• show ip interface brief — displays a brief summary of interface status and configuration
+• show ip route — displays the IP routing table
+• show running-config — displays the active configuration file",Task 1: Configure a DHCP Server on RouterA | Task 2: Configure a DHCP Server on RouterB | Task 3: Configure DHCP Clients | Task 4: Verify DHCP Client Functionality | Task 5: Verify DHCP Server Functionality,5,24,"DHCP, Device Basics, IPv4 Addressing, IPv6 Addressing, Interface Configuration, Routing Fundamentals, Static Routes"
+66,Configure DHCP Relay for IPv4 Networks,"DHCP version 4 (DHCPv4), which is typically referred to as simply DHCP, can be used to provide configuration information for Internet Protocol version 4 (IPv4) networks, whereas DHCP version 6 (DHCPv6) can be used to provide configuration information for IP version 6 (IPv6) networks. When a DHCP server is configured on the network, clients can automatically obtain an IP address rather than requiring an administrator to manually configure an IP address on each computer. However, because DHCP relies on broadcast packets and routers do not forward broadcast packets by default, the DHCP server and its clients must be on the same network segment.",configure terminal; enable; end; exit; default-router address; domain-name domain; interface type number; ip address dhcp; ipconfig /ip dhcp; ip dhcp client lease {days [hours] [minutes] | infinite}; [no] ip dhcp excluded-address ip-address [last-ip-address]; [no] ip dhcp pool pool-name; ip helper-address ip-address; lease {days [hours [minutes]] | infinite}; network ip-address subnet-mask; [no] service dhcp; show ip dhcp binding; show ip dhcp pool; show ip dhcp server statistics; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• default-router address — specifies the IP address of a default gateway for DHCP clients
+• domain-name domain — specifies the domain name for a DHCP client
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip address dhcp — configures a router as a DHCP client
+• ipconfig /ip dhcp — is used in NetSim to configure the workstation to obtain IP addressing information from a DHCP server
+• ip dhcp client lease {days [hours] [minutes] | infinite} — requests a custom lease duration for DHCP clients
+• [no] ip dhcp excluded-address ip-address [last-ip-address] — configures a range of excluded addresses; the no form removes the specified address from the list of excluded addresses
+• [no] ip dhcp pool pool-name — creates an IP address pool; the no form removes the specified DHCP pool
+• ip helper-address ip-address — configures a DHCP relay agent for a particular interface
+• lease {days [hours [minutes]] | infinite} — configures a custom lease duration for DHCP assignments
+• network ip-address subnet-mask — enables a DHCP server for a particular network segment
+• [no] service dhcp — configure the router to respond to any DHCP requests; the no form disables the DHCP service and prevents a DHCP relay agent from forwarding DHCP requests
+• show ip dhcp binding — displays active DHCP-assigned IP addresses
+• show ip dhcp pool — displays basic summary of a configured DHCP pool
+• show ip dhcp server statistics — displays general operating statics for a DHCP server process
+• show running-config — displays the active configuration file",Task 1: Examine the Existing DHCP Server Configurations | Task 2: Configure DHCP Relay Agents | Task 3: Configure RouterC as a DHCP Server | Task 4: Configure DHCP Clients | Task 5: Verify DHCP Server Functionality,5,20,"DHCP, Device Basics, IPv4 Addressing, IPv6 Addressing, Interface Configuration"
+67,Configure SSH,"Secure Shell (SSH) is a virtual terminal (VTY) protocol that can be used to securely replace Telnet. It uses public key cryptography to encrypt both the authentication process and the connection between the SSH client, or host, and SSH server. Before you can configure SSH on a Cisco device, you should ensure that the device is running a K9, or cryptographic, IOS image.",configure terminal; end; exit; ip domain-name name; ip ssh version [1 | 2],"• configure terminal — enters global configuration mode from privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• ip domain-name name — defines a default domain name to complete unqualified host names
+• ip ssh version [1 | 2] — specifies the version of SSH to be run on a device",Task 1: Configure SSH | Task 2: Verify SSH,2,5,"DNS, Device Basics, SSH"
+68,Explore and Configure TFTP,"Both Trivial File Transfer Protocol (TFTP) and File Transfer Protocol (FTP) are protocols that are used to transfer files between devices. In a Cisco environment, either protocol can be used as a means of backing up and restoring configurations. However, TFTP requires less overhead in that it is a connectionless protocol that does not require authentication.",configure terminal; copy running-config {rcp | startup-config | tftp | device:filename}; copy tftp {running-config | startup-config | device:filename}; enable; end; erase startup-config; exit; hostname host-name; ipconfig /dg ip-address; ipconfig /ip ip-address subnet-mask; ping ip-address; show startup-config; show tftp-configs,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• copy running-config {rcp | startup-config | tftp | device:filename} — copies a device’s running configuration file to another destination
+• copy tftp {running-config | startup-config | device:filename} — copies a file from a TFTP server to another destination
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• erase startup-config — deletes the startup configuration file in non-volatile random access memory (NVRAM)
+• exit — exits one level in the menu structure
+• hostname host-name — sets the device name
+• ipconfig /dg ip-address — is used in NetSim to assign a default gateway Internet Protocol (IP) address to a workstation interface
+• ipconfig /ip ip-address subnet-mask — is used in NetSim to assign an IP address and subnet mask to a workstation interface
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show startup-config — displays the backup configuration file
+• show tftp-configs — is used in NetSim to display a list of files copied using TFTP and stored on a PC",Task 1: Configure and Verify TFTP,1,13,"Device Basics, FTP/TFTP, IPv4 Addressing"
+69,Explore and Configure FTP,"Both Trivial File Transfer Protocol (TFTP) and File Transfer Protocol (FTP) are protocols that are used to transfer files between devices. In a Cisco environment, either protocol can be used as a means of backing up and restoring configurations. FTP is a bidirectional and more robust protocol that can handle larger file sizes.",,,Task 1: Explore and Configure FTP,1,0,FTP/TFTP
+70,Implement NAT,"Network Address Translation (NAT) can be used to enable hosts with private IP addresses to access public networks, such as the Internet. NAT is commonly configured to dynamically create address mappings between private and public Internet Protocol (IP) addresses; however, NAT can also be used to create static mappings between specific private and public IP addresses. In this lab, you will configure dynamic NAT to provide Internet access to hosts on multiple virtual local area networks (VLANs) and you will configure static NAT to enable a specific host on a private local area network (LAN) to be accessible from the Internet through a specific public IP address.",access-list access-list-number {deny | permit} source-address source-wildcard; configure terminal; enable; end; exit; interface type number; ip nat inside; ip nat inside source list access-list-number pool pool-name; ip nat inside source static inside-local-address inside-global-address; ip nat outside; ip nat pool pool-name start-address end-address netmask subnet-mask; ping ip-address; show ip interface brief; show ip nat translations; show ip route; show running-config; tracert ip-address,"• access-list access-list-number {deny | permit} source-address source-wildcard — creates an access control list (ACL) that denies or permits IP traffic from the specified address or address range
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip nat inside — defines the inside interface for NAT
+• ip nat inside source list access-list-number pool pool-name — translates anything that matches the ACL to an address from the pool
+• ip nat inside source static inside-local-address inside-global-address — creates a static NAT translation
+• ip nat outside — configures an interface to be an outside interface
+• ip nat pool pool-name start-address end-address netmask subnet-mask — creates an address pool for NAT
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo request to the specified address
+• show ip interface brief — displays a brief summary of interface status and configuration
+• show ip nat translations — displays the NAT translation table
+• show ip route — displays the IP routing table
+• show running-config — displays the active configuration file
+• tracert ip-address — traces the path from a source to a destination on a PC",Task 1: Explore the Current Topology | Task 2: Implement Static NAT | Task 3: Implement Dynamic NAT,3,17,"ACLs, Device Basics, IPv4 Addressing, Interface Configuration, NAT, Routing Fundamentals, Static Routes, VLANs"
+71,Implement NTP,"In this lab, you will configure Network Time Protocol (NTP) on several NTP client devices. In addition, you will configure each of the client devices to authenticate NTP packets from the master NTP server. You will also use access control lists (ACLs) and NTP access groups to restrict NTP synchronization from the master NTP server and to the NTP clients.",access-list access-list-number {deny | permit} source-address source-wildcard; configure terminal; enable; end; exit; no ntp; ntp access-group {peer | serve | serve-only | query-only} access-list-number; ntp authenticate; ntp authentication-key number md5 value; ntp master [stratum]; ntp server ip-address [key key-id]; ntp trusted-key key-number; ping ip-address; show clock [detail]; show ntp associations [detail]; show ntp status; show running-config,"• access-list access-list-number {deny | permit} source-address source-wildcard — creates an ACL that denies or permits Internet Protocol (IP) traffic from the specified address or address range
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• no ntp — removes an entire NTP configuration from a Cisco device, including any NTP authentication or access groups configured on the device
+• ntp access-group {peer | serve | serve-only | query-only} access-list-number — configures an access group to control NTP access and applies a standard IP access list
+• ntp authenticate — enables NTP authentication
+• ntp authentication-key number md5 value — defines an authentication key for NTP
+• ntp master [stratum] — configures the Cisco IOS software as an NTP master clock to which peers synchronize themselves
+• ntp server ip-address [key key-id] — allows the Cisco IOS software clock to be synchronized by an NTP time server
+• ntp trusted-key key-number — authenticates the identity of a system to which NTP will synchronize
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo request to the specified address
+• show clock [detail] — displays the time and date from the system software clock
+• show ntp associations [detail] — shows the status of NTP associations
+• show ntp status — shows the status of the NTP
+• show running-config — displays the active configuration file",Task 1: Configure Core NTP Clients | Task 2: Configure Distribution and Access Layer NTP Clients | Task 3: Configure NTP Source Security | Task 4: Configure NTP Client Security,4,17,"ACLs, Device Basics, NTP"
+72,Implement DNS,"Domain Name System (DNS) is a commonly used Application-layer protocol that can translate the host name of a network device into its corresponding Internet Protocol (IP) address. By default, DNS clients send User Datagram Protocol (UDP) lookup queries to a DNS server on port 53. However, if the query is larger than 512 bytes, the DNS client will send Transmission Control Protocol (TCP) lookup queries to the DNS server on port 53.",configure terminal; enable; end; exit; ip dns server; ip host host-name ip-address; ip name-server ip-address; ping {ip-address | host-name}; show hosts; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• ip dns server — enables the DNS server on a router
+• ip host host-name ip-address — configures a static host name-to-address mapping in the host cache of a device
+• ip name-server ip-address — configures the name server for the device
+• ping {ip-address | host-name} — sends an Internet Control Message Protocol (ICMP) Echo request to the specified address or host name
+• show hosts — displays the default domain name, a list of name server hosts, and a cached list of host names and addresses
+• show running-config — displays the active configuration file",Task 1: Configure DNS on Router1 | Task 2: Configure DNS on Router2,2,10,"DNS, Device Basics"
+73,Implement DHCP,"In this lab, you will implement Dynamic Host Configuration Protocol (DHCP) relay agents to consolidate the DHCP configurations in an existing network installation. A DHCP server is used to automatically provide Internet Protocol (IP) addresses to clients. When a DHCP server is configured on the network, clients can automatically obtain an IP address, rather than requiring an administrator to manually configure an IP address on each computer.",configure terminal; default-router address; dns-server address; domain-name domain; enable; end; exit; interface type number; ipconfig /all; ipconfig /ip dhcp; [no] ip dhcp excluded-address ip-address [last-ip-address]; [no] ip dhcp pool pool-name; ip helper-address ip-address; [no] lease {days [hours [minutes]] | infinite}; network ip-address subnet-mask; [no] service dhcp; show ip dhcp binding; show ip dhcp pool; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• default-router address — specifies the IP address of a default gateway for DHCP clients
+• dns-server address — specifies the Domain Name System (DNS) IP servers available to a DHCP client
+• domain-name domain — specifies the domain name for a DHCP client
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ipconfig /all — is used in NetSim to display the IP addresses and Media Access Control (MAC) address on a workstation
+• ipconfig /ip dhcp — is used in NetSim to configure the workstation to obtain IP addressing information from a DHCP server
+• [no] ip dhcp excluded-address ip-address [last-ip-address] — configures a range of excluded addresses; the no form removes the specified address from the list of excluded addresses
+• [no] ip dhcp pool pool-name — creates an IP address pool; the no form removes the specified DHCP pool
+• ip helper-address ip-address — configures a DHCP relay agent for a particular interface
+• [no] lease {days [hours [minutes]] | infinite} — configures a custom lease duration for DHCP assignments; the no form returns the duration to the default
+• network ip-address subnet-mask — enables a DHCP server for a particular network segment
+• [no] service dhcp — configure the router to respond to any DHCP requests; the no form disables the DHCP service and prevents a DHCP relay agent from forwarding DHCP requests
+• show ip dhcp binding — displays active DHCP-assigned IP addresses
+• show ip dhcp pool — displays basic summary of a configured DHCP pool
+• show running-config — displays the active configuration file","Task 1: Configure a DHCP Pool for Each VLAN | Task 2: Configure and Verify DHCP Clients | Task 3: Configure DHCP Relay Agents, and Verify DHCP Clients",3,19,"DHCP, DNS, Device Basics, IPv4 Addressing, Interface Configuration"
+74,Implement SSH,"Secure Shell (SSH) is a virtual terminal (VTY) protocol that can be used to securely replace Telnet. It uses public key cryptography to encrypt both the authentication process and the connection between the SSH client, or host, and SSH server. Before you can configure SSH on a Cisco device, you should ensure that the device is running a K9, or cryptographic, IOS image.",configure terminal; enable secret password; end; exit; ip domain-name name; ip ssh version [1 | 2],"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable secret password — creates an encrypted enable password in the running configuration
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• ip domain-name name — defines a default domain name to complete unqualified host names
+• ip ssh version [1 | 2] — specifies the version of SSH to be run on a device",Task 1: Examine the Existing Configuration | Task 2: Configure Users and Secure Passwords | Task 3: Configure and Verify SSH,3,6,"DNS, Device Basics, Password Security, SSH"
+75,Boson CCNA Challenge Lab 4,"In this lab, you will configure some common Cisco Internet Protocol (IP) services on routers and switches. Dynamic Host Configuration Protocol (DHCP) and DHCP relay are used to dynamically assign IP addresses to devices. Network Time Protocol (NTP) is used to ensure that time is synchronized across devices.",access-list access-list-number {deny | permit} source-address source-wildcard; clock set hh:mm:ss day month year; configure terminal; domain-name domain; dns-server address; enable; end; exit; ip default-gateway; ip dhcp client lease {days [hours] [minutes] | infinite}; ip dhcp excluded-address ip-address [last-ip-address]; ip dhcp pool pool-name; ip dns server; ip domain name domain-name; ip domain-lookup; ip domain-name domain-name; ip helper-address address; ip host host-name ip-address; ip name-server ip-address; ip nat inside; ip nat inside source list access-list-number interface interface overload; ip nat outside; ip nat pool pool-name start-address end-address netmask subnet-mask; interface type number; ipconfig /all; ipconfig /ip dhcp; lease {days [hours [minutes]] | infinite}; network ip-address subnet-mask; ntp master [stratum]; ntp server ip-address [key key-id]; ping ip-address; show clock [detail]; show ip dhcp binding; show ip nat translations; show ntp associations [detail]; show ntp status; show running-config,"• access-list access-list-number {deny | permit} source-address source-wildcard — creates an access control list (ACL) that denies or permits IP traffic from the specified address or address range
+• clock set hh:mm:ss day month year — sets the system software clock
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• domain-name domain — specifies the domain name for a DHCP client
+• dns-server address — specifies the DNS IP servers available to a DHCP client
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• ip default-gateway — configures a default gateway on a Cisco switch
+• ip dhcp client lease {days [hours] [minutes] | infinite} — requests a custom lease duration for DHCP clients
+• ip dhcp excluded-address ip-address [last-ip-address] — configures a range of excluded addresses
+• ip dhcp pool pool-name — creates an IP address pool
+• ip dns server — enables the DNS server on a router
+• ip domain name domain-name — defines a default domain name to complete unqualified host names (is used on routers)
+• ip domain-lookup — enables the DNS lookup feature
+• ip domain-name domain-name — configures the domain name for the device (is used on switches)
+• ip helper-address address — configures a DHCP relay agent for a particular interface
+• ip host host-name ip-address — configures a static host-name–to–address mapping in the host cache of a device
+• ip name-server ip-address — configures the name server for the device
+• ip nat inside — defines the inside interface for NAT
+• ip nat inside source list access-list-number interface interface overload — translates anything that matches the ACL to the IP address that is assigned to the specified interface and uses port numbers to map translations
+• ip nat outside — configures an interface to be an outside interface
+• ip nat pool pool-name start-address end-address netmask subnet-mask — creates an address pool
+• interface type number — changes from global configuration mode to interface configuration mode
+• ipconfig /all — is used in NetSim to display the IP addresses and Media Access Control (MAC) address on a workstation
+• ipconfig /ip dhcp — is used in NetSim to configure the workstation to obtain IP addressing information from a DHCP server
+• lease {days [hours [minutes]] | infinite} — configures a custom lease duration for DHCP assignments
+• network ip-address subnet-mask — enables a DHCP server for a particular network segment
+• ntp master [stratum] — configures the Cisco IOS software as an NTP master clock to which peers synchronize themselves
+• ntp server ip-address [key key-id] — allows the Cisco IOS software clock to be synchronized by an NTP time server
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo request to the specified address
+• show clock [detail] — displays the time and date from the system software clock
+• show ip dhcp binding — displays active DHCP-assigned IP addresses
+• show ip nat translations — displays the NAT translation table
+• show ntp associations [detail] — shows the status of NTP associations
+• show ntp status — shows the status of NTP
+• show running-config — displays the active configuration file",Task 1: Configure DHCP and DNS | Task 2: Configure PAT | Task 3: Configure NTP,3,37,"ACLs, DHCP, DNS, Device Basics, IPv4 Addressing, Interface Configuration, NAT, NTP, Routing Fundamentals"
+76,Configure the Enable Password,Devices on a network should be protected with passwords to prevent unauthorized individuals from accessing and modifying those devices. One of the passwords that can be used to protect Cisco devices is the enable password. The enable password protects access to privileged EXEC mode on a Cisco device.,configure terminal; enable; enable password password; exit; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• enable password password — sets the enable password
+• exit — exits one level in the menu structure
+• show running-config — displays the active configuration file",Task 1: Configure the Enable Password | Task 2: Modify the Enable Password,2,5,"Device Basics, Password Security"
+77,Configure the Enable Secret Password,"By default, the enable password is stored as unencrypted clear text. The enable secret command is a more secure method of protecting access to privileged EXEC mode because it stores the password as a Message Digest 5 (MD5) hash. In this lab, you will learn how to configure an encrypted enable secret password on a Cisco device by using the enable secret command.",configure terminal; enable; enable secret password; exit; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• enable secret password — sets the enable secret password
+• exit — exits one level in the menu structure
+• show running-config — displays the active configuration file",Task 1: Configure the Enable Secret Password | Task 2: Copy the Enable Secret Password,2,5,"Device Basics, Password Security"
+78,Configure Local User Accounts,"The enable password, enable secret password, console port password, and virtual terminal (VTY) line password are shared passwords; if multiple people want to be able to log in to a Cisco device, they must all share these passwords. However, you can configure local user accounts to allow granular administration of Cisco devices. In this way, you can create a separate account for each user, each with its own password.",configure terminal; enable; end; exit,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure",Task 1: Configure Local User Accounts | Task 2: Configure the Console Port and VTY Lines,2,4,"Device Basics, Password Security"
+79,Secure the Console and VTY Ports,"The enable password and the enable secret password protect access to privileged EXEC mode but do not protect access to user EXEC mode. To protect access to user EXEC mode, you need to configure password protection for the console port and virtual terminal (VTY) lines. The console port is used for local administration of Cisco devices, and VTY lines are used for remote administration of Cisco devices.",configure terminal; enable; end; exit,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure",Task 1: Configure Password Protection for the Console Port | Task 2: Configure Password Protection for the VTY Lines,2,4,"Device Basics, Password Security"
+80,Encrypt Passwords on a Cisco Device,"Most passwords that are configured on Cisco devices are not encrypted by default. Because the passwords are stored in an unencrypted state, anyone who can access the configuration files will have access to the stored passwords. However, you can issue the service password-encryption command to encrypt existing enable, console, or virtual terminal (VTY) passwords.",configure terminal; enable; enable password password; enable secret password; exit; no enable password,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• enable password password — sets the enable password
+• enable secret password — sets the enable secret password
+• exit — exits one level in the menu structure
+• no enable password — removes the enable password",Task 1: Configure Password Encryption | Task 2: Verify Password Encryption | Task 3: Remove Password Encryption,3,6,"Device Basics, Password Security"
+81,Explore Password Complexity,"Passwords can be vulnerable to hacking, especially if those passwords are short, are reused in multiple locations, and use obvious words or personal information. Complex passwords ensure that passwords remain secure because they are difficult to crack. To increase password security, Cisco recommends that users change passwords frequently.",configure terminal; enable; enable password password; exit; no enable password; show running-config; username name password password,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• enable password password — sets the enable password
+• exit — exits one level in the menu structure
+• no enable password — removes the enable password
+• show running-config — displays the active configuration file
+• username name password password — creates a local user name and password pair",Task 1: Recognize Vulnerable Passwords | Task 2: Improve Password Security,2,7,"Device Basics, Password Security"
+82,Explore and Configure Standard Numbered ACLs,"Learn to configure standard access control lists (ACLs). Configure the appropriate settings on Router1, Router2, and Router4.",access-list access-list-number {deny | permit} source-address source-wildcard; configure terminal; enable; end; exit; interface type number; ip access-group {access-list-number | access-list-name} {in | out}; ping ip-address; show access-lists [access-list-number | access-list-name]; show ip interface [type number]; show running-config,"• access-list access-list-number {deny | permit} source-address source-wildcard — creates an ACL that denies or permits Internet Protocol (IP) traffic from the specified address or address range
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip access-group {access-list-number | access-list-name} {in | out} — controls access to an interface
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show access-lists [access-list-number | access-list-name] — displays the contents of current ACLs
+• show ip interface [type number] — displays IP information for an interface
+• show running-config — displays the active configuration file",Task 1: Configure Standard ACLs | Task 2: Edit Standard ACLs | Task 3: Verify ACLs,3,11,"ACLs, Device Basics, Interface Configuration"
+83,Explore and Configure Extended Numbered ACLs,"Learn to configure extended access control lists (ACLs). Verify the ACLs by using show commands and network connectivity tests. Configure the appropriate settings on Router1, Router2, and Router4.",access-list access-list-number {deny | permit} protocol source source-wildcard [operator [port]] destination destination-wildcard [operator [port]] [log]; configure terminal; disconnect {ip-address | console}; enable; end; exit; interface type number; ip access-group {access-list-number | access-list-name} {in | out},"• access-list access-list-number {deny | permit} protocol source source-wildcard [operator [port]] destination destination-wildcard [operator [port]] [log] — defines an extended IP access control list (ACL) for the traffic type specified by the protocol parameter
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• disconnect {ip-address | console} — closes an active console port or Telnet session
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip access-group {access-list-number | access-list-name} {in | out} — controls access to an interface",Task 1: Configure Extended ACLs | Task 2: Verify Extended ACLs,2,8,"ACLs, Device Basics, Interface Configuration, NAT"
+84,Explore and Configured Numbered IP ACLs,Build standard and extended Internet Protocol (IP) access control lists (ACLs) to filter inbound traffic on Router1’s Serial 0/0 interface.,access-list access-list-number {deny | permit} source-address source-wildcard; access-list access-list-number {deny | permit} protocol source source-wildcard [operator [port]] destination destination-wildcard [operator [port]]; configure terminal; enable; end; exit; interface type number; ip access-group {access-list-number | access-list-name} {in | out}; ping ip-address; show running-config; telnet ip-address,"• access-list access-list-number {deny | permit} source-address source-wildcard — creates an access list that denies or permits IP traffic from the specified address or address range
+• access-list access-list-number {deny | permit} protocol source source-wildcard [operator [port]] destination destination-wildcard [operator [port]] — defines an extended IP ACL for the traffic type specified by the protocol parameter
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip access-group {access-list-number | access-list-name} {in | out} — controls access to an interface
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show running-config — displays the active configuration file
+• telnet ip-address — starts the terminal emulation program from a PC, router, or switch that permits you to access devices remotely over the network",Task 1: Configure Numbered IP ACLs,1,11,"ACLs, Device Basics, Interface Configuration, NAT"
+85,Configure Standard Named ACLs,"There are three basic types of Internet Protocol (IP) access control lists (ACLs): standard ACLs, extended ACLs, and named ACLs. Named ACLs can be either standard ACLs or extended ACLs. They are identified by a string of characters and the keyword standard or the keyword extended.",access-class {access-list-number | access-list-name} {in | out}; configure terminal; [sequence-number] [deny | permit] [host ip-address | source source-wildcard | any] [log | log-input]; deny any; enable; end; exit; ip access-list {standard | extended} access-list-name,"• access-class {access-list-number | access-list-name} {in | out} — restricts incoming and outgoing connections between a particular virtual terminal (VTY) and the addresses in an access list
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• [sequence-number] [deny | permit] [host ip-address | source source-wildcard | any] [log | log-input] — specifies conditions under which a packet cannot pass the access list
+• deny any — denies any packets not explicitly permitted by an ACL
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• ip access-list {standard | extended} access-list-name — defines an IP access list by name",Task 1: Configure a Named Standard ACL for Router1 | Task 2: Configure Named Standard ACLs on Switch1 and Switch2,2,8,"ACLs, Device Basics"
+86,Configure Extended Named ACLs,"There are three basic types of Internet Protocol (IP) access control lists (ACLs): standard ACLs, extended ACLs, and named ACLs. Named ACLs can be either standard ACLs or extended ACLs. They are identified by a string of characters and the keyword standard or the keyword extended.",configure terminal; enable; end; exit; interface type number; ip access-group {access-list-number | access-list-name} {in | out}; ip access-list {standard | extended} access-list-name; [sequence-number] permit {protocol} {any | source source-wildcard} {any | destination destination-wildcard} [operator [port]] [log]; {permit | deny} protocol {any | host source | source source-wildcard} {any | host destination | destination destination-wildcard} [log]; ping ip-address; show running-config,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip access-group {access-list-number | access-list-name} {in | out} — controls access to an interface
+• ip access-list {standard | extended} access-list-name — defines an IP access list by name
+• [sequence-number] permit {protocol} {any | source source-wildcard} {any | destination destination-wildcard} [operator [port]] [log] — sets condition to allow packets for a specific protocol to pass a named access list
+• {permit | deny} protocol {any | host source | source source-wildcard} {any | host destination | destination destination-wildcard} [log] — defines an extended IP ACL
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show running-config — displays the active configuration file",Task 1: Configure a Named ACL | Task 2: Verify Named ACLs,2,11,"ACLs, Device Basics, Interface Configuration, NAT"
+87,Explore and Configure Port Security,"By default, every network interface on a Cisco switch is an active port. Before you deploy a switch on a network, you should take steps to ensure that every trunk port and access port on the switch is secured and that every unused port on the switch is disabled. To protect switch interfaces against Media Access Control (MAC) flooding attacks, you should enable port security on all access mode interfaces on the switch.",configure terminal; enable; end; exit; interface type number; interface range type/number - number; ipconfig /all; show ip interface brief; show port-security [interface type number]; show running-config; show running-config interface type number; shutdown; no shutdown; switchport mode {access | dynamic {auto | desirable} | trunk}; switchport port-security; switchport port-security mac-address mac-address; switchport port-security maximum value; switchport port-security violation {protect | restrict | shutdown},"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• interface range type/number - number — changes from global configuration mode to interface range configuration mode
+• ipconfig /all — is used in NetSim to display the Internet Protocol (IP) addresses and MAC address on a workstation
+• show ip interface brief — displays a summary of interface states on a device
+• show port-security [interface type number] — displays port-security settings for an interface or for the switch
+• show running-config — displays the active configuration file
+• show running-config interface type number — displays the specified interface’s active configuration file
+• shutdown; no shutdown — disables an interface; enables an interface
+• switchport mode {access | dynamic {auto | desirable} | trunk} — configures the virtual local area network (VLAN) membership mode of a port
+• switchport port-security — enables port security on an interface
+• switchport port-security mac-address mac-address — specifies a secure MAC address for a port
+• switchport port-security maximum value — sets the maximum number of secure MAC addresses for an interface
+• switchport port-security violation {protect | restrict | shutdown} — sets the security violation mode or the action to be taken if port security is violated",Task 1: Examine Switch1 Port Security | Task 2: Configure Port Security,2,17,"Device Basics, IPv4 Addressing, Interface Configuration, Port Security"
+88,Explore AAA,"Access controls use varying methods of Authentication, Authorization, and Accounting (AAA) to verify the identity of a user, prevent unauthorized access to sensitive data, and record user activity on a system. External AAA servers, such as a Remote Authentication Dial-In User Service (RADIUS) server or a Terminal Access Controller Access-Control System Plus (TACACS+) server, remove the burden of authentication from local devices by centralizing identity-based authentication for an entire network regardless of the network location of the device that is requesting the network service or the device that is hosting the service. In this lab, you will explore AAA on Cisco devices.",aaa authentication ppp authentication-list tacacs local; aaa new-model; clock rate clock-rate; configure terminal; enable; encapsulation ppp; end; exit; interface type number; ip address ip-address subnet-mask; network network-address; ppp authentication pap [authentication-list]; ppp pap sent-username user-name password password; router rip; show ip interface brief; show running-config; shutdown; no shutdown; tacacs-server host ip-address; tacacs-server key shared-key; tacacs-server timeout seconds; username name password password; version 2,"• aaa authentication ppp authentication-list tacacs local — configures TACACS authentication to be used first; if it errors out, then the local user database is used for authentication
+• aaa new-model — enables the AAA model
+• clock rate clock-rate — sets the clock rate for a Data Communications Equipment (DCE) interface
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• encapsulation ppp — enables Point-to-Point Protocol (PPP) encapsulation
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip address ip-address subnet-mask — assigns an Internet Protocol (IP) address to an interface
+• network network-address — activates the specified routing protocol on the specified network
+• ppp authentication pap [authentication-list] — enables Password Authentication Protocol (PAP) authentication
+• ppp pap sent-username user-name password password — determines which user name and password combination PAP sends as part of its authentication process
+• router rip — enables Routing Information Protocol (RIP) routing
+• show ip interface brief — displays a brief summary of interface status and configuration
+• show running-config — displays the active configuration file
+• shutdown; no shutdown — disables an interface; enables an interface
+• tacacs-server host ip-address — identifies the TACACS+ server
+• tacacs-server key shared-key — identifies the password required to use the TACACS+ server for AAA
+• tacacs-server timeout seconds — sets the response timeout value in seconds
+• username name password password — creates a local user name and password pair
+• version 2 — enables RIP version 2 (RIPv2)",Task 1: Explore AAA,1,22,"AAA, Device Basics, IPv4 Addressing, Interface Configuration, Password Security, RIP"
+89,Implement Passwords,"Devices on a network should be protected with passwords to prevent unauthorized individuals from accessing and modifying those devices. Passwords that can be used to protect privileged EXEC mode on Cisco devices are the enable password and the encrypted enable secret password. However, the enable password and the enable secret password do not protect access to user EXEC mode.",configure terminal; disable; enable; enable password password; enable secret password; end; exit,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• disable — returns to user EXEC mode
+• enable — enters privileged EXEC mode
+• enable password password — sets the enable password
+• enable secret password — sets the enable secret password
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure",Task 1: Secure Privileged EXEC Mode | Task 2: Secure User EXEC Mode | Task 3: Encrypt All Passwords,3,7,"Device Basics, Password Security"
+90,Implement Local User Accounts,"The enable password, enable secret password, console port password, and virtual terminal (VTY) line password are shared passwords. If multiple people want to be able to log into a Cisco device, they must all share these passwords. However, you can configure local user accounts to allow granular administration of Cisco devices.",configure terminal; enable; end; exit,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure",Task 1: Configure Local User Accounts on Router1 | Task 2: Configure Local User Accounts on Switch1 and Switch2,2,4,"Device Basics, Password Security"
+91,Implement Standard ACLs,"There are three basic types of Internet Protocol (IP) access control lists (ACLs): standard ACLs, extended ACLs, and named ACLs. Named ACLs can be either standard ACLs or extended ACLs. They are identified by a string of characters and the keyword standard or the keyword extended.",access-class {access-list-number | access-list-name} {in | out}; access-list access-list-number {deny | permit} source-address source-wildcard; configure terminal; [sequence-number] [deny | permit] [host ip-address | source source-wildcard | any] [log | log-input]; deny any; enable; end; exit; interface type number; ip access-group {access-list-number | access-list-name} {in | out}; ip access-list {standard | extended} access-list-number | access-list-name; ping ip-address; show access-lists [access-list-number | access-list-name]; show ip interface [type number]; show running-config,"• access-class {access-list-number | access-list-name} {in | out} — restricts incoming and outgoing connections between a particular virtual terminal (VTY) and the addresses in an access list
+• access-list access-list-number {deny | permit} source-address source-wildcard — creates an ACL that denies or permits IP traffic from the specified address or address range
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• [sequence-number] [deny | permit] [host ip-address | source source-wildcard | any] [log | log-input] — specifies conditions under which a packet cannot pass the access list
+• deny any — denies any packets not explicitly permitted by an ACL
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip access-group {access-list-number | access-list-name} {in | out} — controls access to an interface
+• ip access-list {standard | extended} access-list-number | access-list-name — defines an IP access list by name
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show access-lists [access-list-number | access-list-name] — displays the contents of current ACLs
+• show ip interface [type number] — displays IP information for an interface
+• show running-config — displays the active configuration file",Task 1: Configure Standard Numbered ACLs | Task 2: Configure and Edit Standard Named ACLs,2,15,"ACLs, Device Basics, Interface Configuration"
+92,Implement Extended ACLs,"There are three basic types of Internet Protocol (IP) access control lists (ACLs): standard ACLs, extended ACLs, and named ACLs. Named ACLs can be either standard ACLs or extended ACLs. They are identified by a string of characters and the keyword standard or the keyword extended.",access-class {access-list-number | access-list-name} {in | out}; access-list access-list-number {deny | permit} source-address source-wildcard; configure terminal; [sequence-number] [deny | permit] [host ip-address | source source-wildcard | any] [log | log-input]; deny any; enable; end; exit; interface type number; ip access-group {access-list-number | access-list-name} {in | out}; ip access-list {standard | extended} access-list-number | access-list-name; ping ip-address; show access-lists [access-list-number | access-list-name]; show ip interface [type number]; show running-config,"• access-class {access-list-number | access-list-name} {in | out} — restricts incoming and outgoing connections between a particular virtual terminal (VTY) and the addresses in an access list
+• access-list access-list-number {deny | permit} source-address source-wildcard — creates an ACL that denies or permits IP traffic from the specified address or address range
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• [sequence-number] [deny | permit] [host ip-address | source source-wildcard | any] [log | log-input] — specifies conditions under which a packet cannot pass the access list
+• deny any — denies any packets not explicitly permitted by an ACL
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ip access-group {access-list-number | access-list-name} {in | out} — controls access to an interface
+• ip access-list {standard | extended} access-list-number | access-list-name — defines an IP access list by name
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show access-lists [access-list-number | access-list-name] — displays the contents of current ACLs
+• show ip interface [type number] — displays IP information for an interface
+• show running-config — displays the active configuration file",Task 1: Configure Extended Numbered ACLs | Task 2: Configure and Edit Extended Named ACLs | Task 2: Configure and Edit Extended Named ACLs.,3,15,"ACLs, Device Basics, Interface Configuration"
+93,Implement Port Security,"By default, every network interface on a Cisco switch is an active port. Before you deploy a switch on a network, you should take steps to ensure that every trunk port and access port on the switch is secured and that every unused port on the switch is disabled. To protect switch interfaces against Media Access Control (MAC) flooding attacks, you should enable port security on all access mode interfaces on the switch.",configure terminal; copy running-config startup-config; enable; end; exit; interface type number; interface range type/number - number; ipconfig /all; show interfaces type number; show interfaces trunk; show ip interface brief; show port-security [interface type number]; show running-config; show running-config interface type number; show vlan brief; shutdown; no shutdown; switchport mode {access | dynamic {auto | desirable} | trunk}; switchport port-security; switchport port-security mac-address mac-address; switchport port-security maximum value; switchport port-security violation {protect | restrict | shutdown},"• configure terminal — enters global configuration mode from privileged EXEC mode
+• copy running-config startup-config — saves the configuration file
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• interface range type/number - number — changes from global configuration mode to interface range configuration mode
+• ipconfig /all — is used in NetSim to display the Internet Protocol (IP) addresses and MAC address on a workstation
+• show interfaces type number — displays information about interfaces
+• show interfaces trunk — displays interface trunk information
+• show ip interface brief — displays a summary of interface states on a device
+• show port-security [interface type number] — displays port-security settings for an interface or for the switch
+• show running-config — displays the active configuration file
+• show running-config interface type number — displays the specified interface’s active configuration file
+• show vlan brief — displays parameters for all virtual local area networks (VLANs); contains the VLAN’s name, status, and ports assigned to it
+• shutdown; no shutdown — disables an interface; enables an interface
+• switchport mode {access | dynamic {auto | desirable} | trunk} — configures the VLAN membership mode of a port
+• switchport port-security — enables port security on an interface
+• switchport port-security mac-address mac-address — specifies a secure MAC address for a port
+• switchport port-security maximum value — sets the maximum number of secure MAC addresses for an interface
+• switchport port-security violation {protect | restrict | shutdown} — sets the security violation mode or the action to be taken if port security is violated",Task 1: Disable Unused Ports on Switch1 and Switch2 | Task 2: Configure Port Security,2,21,"Device Basics, IPv4 Addressing, Interface Configuration, Port Security, VLANs"
+94,Troubleshoot Port Security,Learn how to configure and troubleshoot port security on a switch.,configure terminal; enable; end; exit; interface type number; ipconfig /all; ping ip-address; show interfaces [type number]; show port-security [interface type number]; show running-config; show running-config interface type number; shutdown; no shutdown; switchport port-security; switchport port-security mac-address mac-address,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• ipconfig /all — is used in NetSim to display the Internet Protocol (IP) addresses and Media Access Control (MAC) address on a workstation
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show interfaces [type number] — displays statistics for interfaces on a device
+• show port-security [interface type number] — displays port-security settings for an interface or for the switch
+• show running-config — displays the active configuration file
+• show running-config interface type number — displays the specified interface’s active configuration file
+• shutdown; no shutdown — disables an interface; enables an interface
+• switchport port-security — enables port security on an interface
+• switchport port-security mac-address mac-address — specifies a secure MAC address for a port",Task 1: Verify the Port Security Configuration | Task 2: Correct the Port Security Configuration,2,14,"Device Basics, IPv4 Addressing, Interface Configuration, Port Security"
+95,Troubleshoot ACLs,"Identify configuration issues, and use access control lists (ACLs) to fix problems throughout the example.com network. Ensure that all virtual local area networks (VLANs) with networks on Switch2 can ping all devices on the network by Internet Protocol (IP) address, by host name, and by fully qualified domain name (FQDN).",configure terminal; enable; end; exit; ip access-list {standard | extended} name; [sequence-number] {permit | deny} protocol source source-wildcard [operator port] destination destination-wildcard [operator port] [log]; ping {ip-address | host-name}; show access-lists [number | name]; show ip interface [type number]; show ip interface brief; show running-config; show vlan,"• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• ip access-list {standard | extended} name — creates a named access list and places the router into ACL configuration mode
+• [sequence-number] {permit | deny} protocol source source-wildcard [operator port] destination destination-wildcard [operator port] [log] — defines a sequential extended IP ACL statement
+• ping {ip-address | host-name} — sends an Internet Control Message Protocol (ICMP) Echo Request to the specified address
+• show access-lists [number | name] — displays the contents of current ACLs
+• show ip interface [type number] — displays IP information for an interface
+• show ip interface brief — displays a brief summary of interface status and configuration
+• show running-config — displays the active configuration file
+• show vlan — displays VLAN information","Task 1: Examine the Network, and Verify the Problem | Task 2: Repair the ACL Configuration | Task 3: Verify the ACL Configuration",3,12,"ACLs, Device Basics, Interface Configuration, NAT, VLANs"
+96,Troubleshooting ACLs 1: Extended ACLs,Practice troubleshooting access control lists (ACLs) on Cisco routers. Verify the ACLs by using show commands and network connectivity tests.,[no] access-list access-list-number {deny | permit} protocol source source-wildcard [operator [port]] destination destination-wildcard [operator [port]]; configure terminal; enable; end; exit; ping ip-address; show access-lists [access-list-number | access-list-name]; show ip interface [type number]; show running-config; telnet ip-address,"• [no] access-list access-list-number {deny | permit} protocol source source-wildcard [operator [port]] destination destination-wildcard [operator [port]] — creates an Internet Protocol (IP) extended ACL; the no form removes the ACL
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo request to the specified address
+• show access-lists [access-list-number | access-list-name] — displays the contents of current ACLs
+• show ip interface [type number] — displays IP information for an interface
+• show running-config — displays the active configuration file
+• telnet ip-address — starts the terminal emulation program from a PC, router, or switch; permits you to access devices remotely over the network",Task 1: Practice Troubleshooting ACLs,1,10,"ACLs, Device Basics, Interface Configuration, NAT"
+97,Troubleshooting ACLs 2: Standard ACLs,Practice troubleshooting access control lists (ACLs) on Cisco routers. Verify the ACLs by using show commands and network connectivity tests.,[no] access-list access-list-number {deny | permit} source-address source-wildcard; configure terminal; enable; end; exit; interface type number; [no] ip access-group {access-list-number | access-list-name} {in | out}; ping ip-address; show access-lists [access-list-number | access-list-name]; show ip interface [type number]; show running-config,"• [no] access-list access-list-number {deny | permit} source-address source-wildcard — creates an ACL that denies or permits Internet Protocol (IP) traffic from the specified address or address range; the no form removes the ACL
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• [no] ip access-group {access-list-number | access-list-name} {in | out} — controls access to an interface; the no form removes the configuration
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo request to the specified address
+• show access-lists [access-list-number | access-list-name] — displays the contents of current ACLs
+• show ip interface [type number] — displays IP information for an interface
+• show running-config — displays the active configuration file",Task 1: Practice Troubleshooting ACLs,1,11,"ACLs, Device Basics, Interface Configuration"
+98,Troubleshooting ACLs 3: Named ACLs,Practice troubleshooting access control lists (ACLs) on Cisco routers. Verify the ACLs by using show commands and network connectivity tests.,[no] [sequence-number] deny {protocol} {any | source source-wildcard} {any | destination destination-wildcard} [operator [port]] [log]; [no] [sequence-number] permit {protocol} {any | source source-wildcard} {any | destination destination-wildcard} [operator [port]] [log]; configure terminal; enable; end; exit; ip access-list {standard | extended} access-list-name; ping ip-address; show access-lists [access-list-number | access-list-name]; show ip interface; show running-config; telnet ip-address,"• [no] [sequence-number] deny {protocol} {any | source source-wildcard} {any | destination destination-wildcard} [operator [port]] [log] — sets condition to deny packets for a specific protocol to pass a named access list; the no form removes the condition
+• [no] [sequence-number] permit {protocol} {any | source source-wildcard} {any | destination destination-wildcard} [operator [port]] [log] — sets condition to allow packets for a specific protocol to pass a named access list; the no form removes the condition
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• enable — enters privileged EXEC mode
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• ip access-list {standard | extended} access-list-name — defines an Internet Protocol (IP) access list by name
+• ping ip-address — sends an Internet Control Message Protocol (ICMP) Echo request to the specified address
+• show access-lists [access-list-number | access-list-name] — displays the contents of current ACLs
+• show ip interface — displays IP information for an interface
+• show running-config — displays the active configuration file
+• telnet ip-address — starts the terminal emulation program from a PC, router, or switch; permits you to access devices remotely over the network",Task 1: Troubleshoot ACLs,1,12,"ACLs, Device Basics, Interface Configuration, NAT"
+99,Boson CCNA Challenge Lab 5,"In this lab, you will configure Cisco security features on routers and switches. Password, encrypted passwords, user accounts with specific privileges, access control lists (ACLs), and port security all play a role in securing network devices. Ideally, you should complete this lab only after you have completed other labs that cover this material.",access-class {access-list-number | access-list-name} {in | out}; access-list access-list-number {deny | permit} source-address source-wildcard; configure terminal; [sequence-number] [deny | permit] [host ip-address | source source-wildcard | any] [log | log-input]; deny any; enable; enable password password; enable secret password; end; exit; interface type number; interface range type/number - number; ip access-group {access-list-number | access-list-name} {in | out}; ip access-list {standard | extended} access-list-number | access-list-name; ipconfig /all; ip ospf process-id area area-id,"• access-class {access-list-number | access-list-name} {in | out} — restricts incoming and outgoing connections between a particular virtual terminal (VTY) and the addresses in an access list
+• access-list access-list-number {deny | permit} source-address source-wildcard — creates an ACL that denies or permits Internet Protocol (IP) traffic from the specified address or address range
+• configure terminal — enters global configuration mode from privileged EXEC mode
+• [sequence-number] [deny | permit] [host ip-address | source source-wildcard | any] [log | log-input] — specifies conditions under which a packet cannot pass the access list
+• deny any — denies any packets not explicitly permitted by an ACL
+• enable — enters privileged EXEC mode
+• enable password password — sets the enable password
+• enable secret password — sets the enable secret password
+• end — ends and exits configuration mode
+• exit — exits one level in the menu structure
+• interface type number — changes from global configuration mode to interface configuration mode
+• interface range type/number - number — changes from global configuration mode to interface range configuration mode
+• ip access-group {access-list-number | access-list-name} {in | out} — controls access to an interface
+• ip access-list {standard | extended} access-list-number | access-list-name — defines an IP access list by name
+• ipconfig /all — is used in NetSim to display the IP addresses and Media Access Control (MAC) address on a workstation
+• ip ospf process-id area area-id — places an interface in a specified Open Shortest Path First (OSPF) process and area",Task 1: Configure Port Security | Task 2: Configure User Accounts and Encrypted Passwords | Task 3: Configure ACLs,3,16,"ACLs, Device Basics, IPv4 Addressing, Interface Configuration, OSPF, Password Security"
+100,Compare a Traditional Network to a Controller-Based Network,"Networks can be divided into two types depending on where network decisions are made and how devices in the network are managed. In a traditional network, network flow decisions are made by multiple routers in a decentralized fashion. In a controller-based network, flow decisions are made by a central controller.",,,Task 1: Compare a Traditional Network to a Controller-Based Network,1,0,
+101,Explore HTTP Server Verbs,"Hypertext Transfer Protocol (HTTP) verbs are also known as HTTP methods. They are specific actions that can be performed by an HTTP server upon request by an HTTP client. For example, when a browser requests a webpage from a web server, the client sends the server a specific verb request along with the directory path to the information on the server that the client wants to render.",,,Task 1: Explore HTTP Server Verbs,1,0,"NAT, Network Automation"
+102,"Submit and Explore Ansible, Chef, and Puppet Queries","Configuration management tools are used to automate the installation, configuration, and maintenance of multiple computer systems, including the software that runs on those systems. The use of such tools typically requires less administrative overhead than using Simple Network Management Protocol (SNMP) to manage the same systems. In this lab, you will learn the differences between three common configuration management mechanisms: Ansible, Chef, and Puppet.",,,"Task 1: Submit and Explore Ansible, Chef, and Puppet Queries",1,0,"Network Automation, SNMP"
+103,Obtain and Interpret JSON Output,"JavaScript Object Notation (JSON) is a data encoding format that is commonly used by Representational State Transfer (REST) Application Programming Interfaces (APIs) as an alternative to Extensible Markup Language (XML). JSON returns data in the form of an object that contains key and value pairs. In this lab, you will learn how JSON output is obtained and how to interpret JSON output.",,,Task 1: Obtain and Interpret JSON Output,1,0,"Interface Configuration, NAT, Network Automation, RIP"

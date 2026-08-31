@@ -1,0 +1,12 @@
+# Netscape HTTP Cookie File
+# https://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file! Do not edit.
+
+.youtube.com	TRUE	/	TRUE	1788139971	GPS	1
+.youtube.com	TRUE	/	TRUE	1822698174	PREF	tz=America.New_York&f6=40000000&f7=100
+.youtube.com	TRUE	/	TRUE	1788138780	CONSISTENCY	AHDYFaFCkRu9-Rg88HsfiM5tl9pujZk5ZmFEF-S7rZZXczr6c9-7KwSLIGZMWCsHQP7FtWNEMQv7t16gpgXICPcV6NdESww32W2hCTfifvmoFgrNat1roXz7nDw8HpN_VS5oAqx9CG0obQ003ov7Zns
+.youtube.com	TRUE	/	TRUE	0	YSC	H419nHmdT5Q
+.youtube.com	TRUE	/	TRUE	1803690172	VISITOR_INFO1_LIVE	eXNrT1dj5nU
+.youtube.com	TRUE	/	TRUE	1803690172	VISITOR_PRIVACY_METADATA	CgJVUxIEGgAgRg%3D%3D
+.youtube.com	TRUE	/	TRUE	1803690170	__Secure-YNID	21.YT=DbQr-X4UBmKjnMjzmfRMrRuSQ7nQEF6w0ohAzi1inYgdYaH-Xpe7VtYzKQ2F5OAmvvdAvqcZrasG966P6q9ICZaSN-3SVlb9oVZ8t4deqCIRiKMdqEobTfHPwE3zctNYWy9QlYUvtk0xXf6C-gIwAAGUirtuCo2_UTp2l7fq4EcXnLRfuKDYvUqDSacncSXYqZYJcj1mWpy87Mbg8zJZZHYK5X10griHixXvzy6baHzgYTbEQg5bJF5DpI91D0KfbqvrKbVJ5-cxzR-PwhUGT1_5NxjJ2qz9nk2DNpS52sDRypeeHXP9GiB8ld691MmQSAur8W9jwueXIfw1QdE-cw
+.youtube.com	TRUE	/	TRUE	1803690172	__Secure-ROLLOUT_TOKEN	CMS2o7j4_OarORCSq4Xh1cmWAxi0ns7h1cmWAw%3D%3D

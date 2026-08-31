@@ -1,0 +1,56 @@
+Done,Date,Day_Type,Jeremy_Days,Videos,Boson_Labs,Total_Est_Min
+TRUE,08/06/2026,Weekday,1,Network Devices | Anki Flashcards | Packet Tracer Introduction,Configure PAT | Route Selection by Using Routing Protocol Metric,152
+TRUE,08/07/2026,Weekday,2,Interfaces and Cables | Connecting Devices,Troubleshoot an OSPFv2 Configuration | Configure PAT | Configure Point-to-Point OSPFv2 | Plan and Configure Single-Area OSPF,264
+TRUE,08/08/2026,Weekend,"3, 4",How the TCP/IP Model Actually Works | OSI Model | Intro to the CLI | Basic Device Security,Configure PAT | Explore and Configure TFTP | Configure an NTP Client,234
+TRUE,08/09/2026,Weekend,5,Ethernet LAN Switching (Part 1),Configure PAT | Implement InterVLAN Routing | Plan and Configure Single-Area OSPF | Troubleshoot an OSPFv2 Configuration,247
+TRUE,08/10/2026,Weekday,6,Ethernet LAN Switching (Part 2) | Analyzing Ethernet Switching,Implement InterVLAN Routing | Configure Static NAT | Configure Dynamic NAT | Configure PAT,237
+TRUE,08/11/2026,Weekday,7,IPv4 Addressing (Part 1),Configure PAT | Configure IPv6 Address Types | Configure Static NAT | Configure Dynamic NAT,245
+TRUE,08/12/2026,Weekday,8,IPv4 Addressing (Part 2) | Configuring IP Addresses,Subnet an IPv4 Network | Boson CCNA Challenge Lab 1 | Configure Global IPv4 Addressing | Implement IPv4 Addressing,218
+TRUE,08/13/2026,Weekday,9,Switch Interfaces | Configuring Interfaces,Explore and Configure Switch Access Ports | Configure InterVLAN Routing | Implement InterVLAN Routing | Explore and Configure Port Security,171
+TRUE,08/14/2026,Weekday,10,IPv4 Header,Configure IPv6 Address Types | Configure PAT | Manually Configure Host Routes on IPv6 Networks | Configure Static NAT,217
+TRUE,08/15/2026,Weekend,11,Routing Fundamentals | Static Routing | Configuring Static Routes | Troubleshooting Static Routes,Boson CCNA Challenge Lab 3 | Manually Configure Host Routes on IPv6 Networks | Implement Route Selection | Configuration Demo 1,286
+TRUE,08/16/2026,Weekend,"12, 13",The Life of a Packet | Life of a Packet | Subnetting (Part 1),Boson CCNA Challenge Lab 3 | Configure IPv6 Address Types | Subnet an IPv4 Network | Configure VLSM on an IPv4 Network | Implement IPv4 Addressing | Manually Configure Host Routes on IPv4 Networks,326
+TRUE,08/17/2026,Weekday,14,Subnetting (Part 2),Subnet an IPv4 Network | Configure VLSM on an IPv4 Network | Implement IPv4 Addressing | Manually Configure Host Routes on IPv4 Networks,130
+TRUE,08/18/2026,Weekday,15,Subnetting (Part 3 - VLSM) | Subnetting (VLSM),Subnet an IPv4 Network | Configure VLSM on an IPv4 Network | Implement IPv4 Addressing | Manually Configure Host Routes on IPv4 Networks,143
+TRUE,08/19/2026,Weekday,16,VLANs (Part 1) | VLANs (Part 1),Boson CCNA Challenge Lab 2 | Explore and Configure Switch Access Ports | Implement InterVLAN Routing | Configure InterVLAN Routing,230
+TRUE,08/20/2026,Weekday,17,VLANs (Part 2) | VLANs (Part 2),Boson CCNA Challenge Lab 2 | Configure InterVLAN Routing | Implement InterVLAN Routing | Explore and Configure Switch Access Ports,263
+TRUE,08/21/2026,Weekday,18,VLANs (Part 3) | VLANs (Part 3),Boson CCNA Challenge Lab 2 | Configure InterVLAN Routing | Boson CCNA Challenge Lab 3 | Implement InterVLAN Routing,325
+TRUE,08/22/2026,Weekend,19,DTP/VTP | DTP/VTP,Boson CCNA Challenge Lab 2 | Configure and Verify VTP | Explore and Configure Switch Trunk Ports,234
+TRUE,08/23/2026,Weekend,20,Spanning Tree Protocol (Part 1) | Analyzing STP,Boson CCNA Challenge Lab 2 | Implement PVST+ | Explore Spanning Tree Protocol Port States and PortFast | Explore Spanning Tree Protocol Port Roles,286
+TRUE,08/24/2026,Weekday,21,Spanning Tree Protocol (Part 2) | PortFast (STP Toolkit) | BPDU Guard & BPDU Filter (STP Toolkit) | Root Guard (STP Toolkit) | Loop Guard (STP Toolkit) | Configuring STP (PVST+),Boson CCNA Challenge Lab 2 | Explore Spanning Tree Protocol Port States and PortFast | Implement PVST+ | Explore Spanning Tree Protocol Port Roles,387
+TRUE,08/25/2026,Weekday,22,Rapid Spanning Tree Protocol | Rapid STP,Boson CCNA Challenge Lab 2 | Configure Layer 2 EtherChannel LACP | Explore Spanning Tree Protocol Port Roles | Explore Spanning Tree Protocol Port States and PortFast,302
+TRUE,08/26/2026,Weekday,23,EtherChannel | Configuring EtherChannel,Configure Layer 2 EtherChannel LACP | Configure Layer 3 EtherChannel LACP and Load Balancing | Boson CCNA Challenge Lab 2,246
+TRUE,08/27/2026,Weekday,24,Dynamic Routing | Floating Static Routes,Configuration Demo 1 | Router Basics | Configure IPv6 Address Types | Configure InterVLAN Routing,208
+TRUE,08/28/2026,Weekday,25,RIP & EIGRP | Configuring EIGRP,Obtain and Interpret JSON Output | Configuration Demo 1 | Configure IPv6 Address Types | Implement InterVLAN Routing,210
+FALSE,08/31/2026,Weekday,26,OSPF Part 1 | Configuring OSPF (1),Configure OSPFv2 Adjacencies | Configure Point-to-Point OSPFv2 | Explore OSPFv2 DR and BDR Router Selection | Explore and Configure OSPFv2 Router IDs,271
+FALSE,09/01/2026,Weekday,27,OSPF Part 2 | Configuring OSPF (2),Configure OSPFv2 Adjacencies | Configure Point-to-Point OSPFv2 | Explore OSPFv2 DR and BDR Router Selection | Explore and Configure OSPFv2 Router IDs,268
+FALSE,09/02/2026,Weekday,28,OSPF Part 3 | Configuring OSPF (3),Configure OSPFv2 Adjacencies | Configure Point-to-Point OSPFv2 | Explore OSPFv2 DR and BDR Router Selection | Explore and Configure OSPFv2 Router IDs,280
+FALSE,09/03/2026,Weekday,29,First Hop Redundancy Protocols | Configuring HSRP,Explore HSRP | Implement HSRP | Boson CCNA Challenge Lab 3,222
+FALSE,09/04/2026,Weekday,30,TCP & UDP | Wireshark Demo (TCP/UDP),,73
+FALSE,09/05/2026,Weekend,31,IPv6 Part 1 | Configuring IPv6 (Part 1),Configure IPv6 Address Types | Configure IPv6 by Using Modified EUI-64 | Implement IPv6 Addressing | Boson CCNA Challenge Lab 1,277
+FALSE,09/06/2026,Weekend,32,IPv6 Part 2 | Configuring IPv6 (Part 2),Configure IPv6 Address Types | Configure IPv6 by Using Modified EUI-64 | Implement IPv6 Addressing | Boson CCNA Challenge Lab 1,280
+FALSE,09/07/2026,Holiday,33,IPv6 Part 3 | Configuring IPv6 (Part 3),Configure IPv6 Address Types | Configure IPv6 by Using Modified EUI-64 | Implement IPv6 Addressing | Boson CCNA Challenge Lab 1,283
+FALSE,09/08/2026,Weekday,34,Standard ACLs | Standard ACLs,Configure an NTP Server | Implement NTP | Explore and Configure Standard Numbered ACLs | Explore and Configure Extended Numbered ACLs,235
+FALSE,09/09/2026,Weekday,35,Extended ACLs | Extended ACLs,Configure an NTP Server | Implement NTP | Explore and Configure Standard Numbered ACLs | Explore and Configure Extended Numbered ACLs,223
+FALSE,09/10/2026,Weekday,36,CDP & LLDP | CDP & LLDP,Configure and Verify LLDP | Implement CDP and LLDP | Boson CCNA Challenge Lab 2 | Configure and Verify CDP,248
+FALSE,09/11/2026,Weekday,37,NTP | NTP,Configure an NTP Server | Configure an NTP Client | Implement NTP | Boson CCNA Challenge Lab 4,242
+FALSE,09/12/2026,Weekend,"38, 39",DNS | DNS | DHCP | DHCP,Configure and Test a DNS Server | Implement DNS | Configure SSH | Implement DHCP | Configure VLSM on an IPv4 Network | Configure a Wireless LAN by Using the WLC GUI | Configure DHCP for IPv4 Networks | Configure DHCP Relay for IPv4 Networks,352
+FALSE,09/13/2026,Weekend,"40, 41, 42",SNMP | SNMP | Syslog | Syslog | SSH | SSH,"Submit and Explore Ansible, Chef, and Puppet Queries | Configure an NTP Server | Configure an NTP Client | Explore Syslog Output | Explore and Configure Syslog Levels | Configure SSH | Implement SSH",350
+FALSE,09/14/2026,Weekday,43,FTP & TFTP | FTP & TFTP,Explore and Configure TFTP | Explore and Configure FTP,113
+FALSE,09/15/2026,Weekday,44,NAT (Part 1) | Static NAT,Configure IPv6 Address Types | Explore the MAC Address Table | Explore the Native VLAN | Configure and Verify CDP,199
+FALSE,09/16/2026,Weekday,45,NAT (part 2) | Dynamic NAT,Configure IPv6 Address Types | Explore the MAC Address Table | Explore the Native VLAN | Configure and Verify CDP,197
+FALSE,09/17/2026,Weekday,"46, 47",QoS (Part 1) | Voice VLANs | QoS (Part 2) | QoS,,167
+FALSE,09/18/2026,Weekday,48,Security Fundamentals | Kali Linux Demo,Configure a Cisco Device | Configure Static NAT | Configure Dynamic NAT | Configure PAT,233
+FALSE,09/19/2026,Weekend,49,Port Security | Port Security,Explore and Configure Port Security | Implement Port Security | Troubleshoot Port Security | Boson CCNA Challenge Lab 5,230
+FALSE,09/20/2026,Weekend,"50, 51",DHCP Snooping | DHCP Snooping | Dynamic ARP Inspection | Dynamic ARP Inspection,Configure VLSM on an IPv4 Network | Configure a Wireless LAN by Using the WLC GUI | Configure DHCP for IPv4 Networks | Configure DHCP Relay for IPv4 Networks | Configuration Demo 1 | Explore Cisco Devices | Switch Basics | Configure a Cisco Device,346
+FALSE,09/21/2026,Weekday,52,LAN Architectures | STP & FHRP Synchronization,,74
+FALSE,09/22/2026,Weekday,53,WAN Architectures | GRE Tunnels,Configure Point-to-Point OSPFv2 | Troubleshoot an OSPFv2 Configuration | Configure Static NAT | Configure Dynamic NAT,268
+FALSE,09/23/2026,Weekday,54,Virtualization & Cloud | Containers | VRF | Oracle VirtualBox,"Submit and Explore Ansible, Chef, and Puppet Queries | Explore HTTP Server Verbs | Obtain and Interpret JSON Output",174
+FALSE,09/24/2026,Weekday,55,Wireless Fundamentals,Configure a Wireless LAN by Using the WLC GUI,109
+FALSE,09/25/2026,Weekday,56,Wireless Architectures,Configure a Wireless LAN by Using the WLC GUI,112
+FALSE,09/26/2026,Weekend,"57, 58",Wireless Security | Wireless Configuration | Wireless LANs,Configure a Wireless LAN by Using the WLC GUI | Configure a Cisco Device | Configure Static NAT | Configure Dynamic NAT | Configure a Wireless LAN by Using the WLC GUI,357
+FALSE,09/27/2026,Weekend,"59, 60","Intro to Network Automation | AI & Machine Learning | JSON, XML, & YAML","Submit and Explore Ansible, Chef, and Puppet Queries | Explore HTTP Server Verbs | Obtain and Interpret JSON Output | Explore HTTP Server Verbs | Obtain and Interpret JSON Output | Boson CCNA Challenge Lab 2",359
+FALSE,09/28/2026,Weekday,61,REST APIs | REST API Authentication,Explore HTTP Server Verbs | Obtain and Interpret JSON Output,135
+FALSE,09/29/2026,Weekday,62,Software-Defined Networking,Compare a Traditional Network to a Controller-Based Network | Configure a Wireless LAN by Using the WLC GUI | Explore AAA,140
+FALSE,09/30/2026,Weekday,63,"Ansible, Puppet, & Chef | Terraform","Submit and Explore Ansible, Chef, and Puppet Queries | Explore HTTP Server Verbs | Obtain and Interpret JSON Output",134
+FALSE,10/01/2026,Weekday,64,Complete Network Configuration,,178
