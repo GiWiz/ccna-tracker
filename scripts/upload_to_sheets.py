@@ -70,7 +70,7 @@ def main():
             
         # Update data
         print(f"  Uploading {len(data)} rows...")
-        worksheet.update(values=data, range_name=f"A1")
+        worksheet.update(values=data, range_name="A1", value_input_option="USER_ENTERED")
         
         # Formatting for Schedule tab
         if tab_name == "Schedule":

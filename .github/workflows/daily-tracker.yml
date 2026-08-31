@@ -33,6 +33,8 @@ jobs:
         run: python scripts/download_from_sheets.py
 
       - name: Generate Adjusted Schedule
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: python scripts/generate_schedule.py
 
       - name: Upload New Schedule

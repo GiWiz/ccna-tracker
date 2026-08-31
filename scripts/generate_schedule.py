@@ -1,6 +1,8 @@
 import csv
 import os
 import datetime
+import json
+import requests
 from datetime import timedelta
 
 JEREMY_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'cleaned', 'jeremy_curriculum.csv')
@@ -199,6 +201,22 @@ def load_data():
 
     return jeremy_days
 
+def send_discord_notification(is_on_track, missed_days=0, mega_lab_date=None):
+    webhook_url = os.environ.get('DISCORD_WEBHOOK')
+    if not webhook_url:
+        return
+
+    if is_on_track:
+        content = "✅ **CCNA Tracker Update**: Great job! You are perfectly on track. Your schedule has been updated with today's tasks."
+    else:
+        content = f"⚠️ **CCNA Tracker Update**: It looks like you missed {missed_days} day(s) of study! Don't worry, I've automatically pushed your schedule forward. Your new Mega Lab date is now **{mega_lab_date}**."
+
+    data = {"content": content}
+    try:
+        requests.post(webhook_url, json=data)
+    except Exception as e:
+        print(f"Failed to send Discord notification: {e}")
+
 def generate_schedule():
     jeremy_days = load_data()
     
@@ -276,7 +294,6 @@ def generate_schedule():
     # Load pending labs
     pending_labs = set()
     try:
-        import json
         with open(r"C:\Users\swrav\.gemini\antigravity-ide\brain\beffb45c-4358-4cc5-ac87-97c70f1f958b\scratch\pending_boson.json", 'r', encoding='utf-8') as f:
             pending_labs = set(json.load(f))
         print(f"Loaded {len(pending_labs)} pending labs in generate_schedule.py")
@@ -341,6 +358,16 @@ def generate_schedule():
         add_item(item['item'], item['cat'], item['j_day'], item['min'])
     close_day()
 
+    # Determine tracking status
+    missed_days = (today - (last_history_date + timedelta(days=1))).days
+    is_on_track = missed_days <= 0
+    
+    mega_lab_date = None
+    for row in schedule:
+        if '64' in row['j_days_involved']:
+            mega_lab_date = row['date'].strftime('%A, %B %d, %Y')
+            break
+
     fieldnames = ['Done', 'Date', 'Day_Type', 'Jeremy_Days', 'Lectures_Total_Hrs', 'Lectures', 'PT_Labs', 'Boson_Labs', 'Total_Est_Hrs']
     with open(OUTPUT_CSV, 'w', encoding='utf-8', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -372,10 +399,13 @@ def generate_schedule():
                 'Lectures': ' | '.join(row['lectures']),
                 'PT_Labs': ' | '.join(row['pt_labs']),
                 'Boson_Labs': ' | '.join(row['boson_labs']),
-                'Total_Est_Hrs': f"{hours_val:.1f}"
+                'Total_Est_Hrs': hours_val
             })
             
     print(f"Schedule generated successfully: {OUTPUT_CSV}")
+    
+    # Send notification
+    send_discord_notification(is_on_track, missed_days, mega_lab_date)
 
 if __name__ == '__main__':
     generate_schedule()
