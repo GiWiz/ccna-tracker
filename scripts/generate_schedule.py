@@ -320,23 +320,8 @@ def generate_schedule():
             else:
                 temp_schedule_items.append({'item': boson['title'], 'cat': 'boson_labs', 'j_day': j_day, 'min': boson['min']})
 
-    first_day_26 = True
     first_day_64 = True
     for item in temp_schedule_items:
-        if int(item['j_day']) == 26 and first_day_26:
-            close_day()
-            
-            # Shift all past days forward so they seamlessly end the day before 08/31
-            if schedule:
-                last_day_date = schedule[-1]['date']
-                offset = datetime.date(2026, 8, 30) - last_day_date
-                for day in schedule:
-                    day['date'] += offset
-                    
-            current_date = datetime.date(2026, 8, 31)
-            curr_day['date'] = current_date
-            first_day_26 = False
-            
         if item['j_day'] == 64 and first_day_64:
             close_day()
             
