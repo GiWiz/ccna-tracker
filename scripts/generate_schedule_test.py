@@ -225,17 +225,15 @@ def generate_schedule():
     history_rows = []
     last_history_date = datetime.date(2026, 7, 19)
     
-    today = datetime.date.today()
     try:
         with open('data/cleaned/current_schedule.csv', 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                # Parse date
-                m, d, y = map(int, row['Date'].split('/'))
-                row_date = datetime.date(y, m, d)
-                
                 if row.get('Done') == 'TRUE':
                     history_rows.append(row)
+                    # Parse date
+                    m, d, y = map(int, row['Date'].split('/'))
+                    row_date = datetime.date(y, m, d)
                     if row_date > last_history_date:
                         last_history_date = row_date
                     
@@ -245,24 +243,11 @@ def generate_schedule():
                         for pt in row['PT_Labs'].split(' | '): completed_items.add(pt.strip())
                     if row.get('Boson_Labs'):
                         for b in row['Boson_Labs'].split(' | '): completed_items.add(b.strip())
-                else:
-                    if row_date < today:
-                        # Missed day tracking
-                        row['Day_Type'] = "Missed Day"
-                        row['Jeremy_Days'] = ""
-                        row['Lectures'] = ""
-                        row['PT_Labs'] = ""
-                        row['Boson_Labs'] = ""
-                        row['Lectures_Total_Hrs'] = "0.0"
-                        row['Total_Est_Hrs'] = "0.0"
-                        history_rows.append(row)
-                        
-                        if row_date > last_history_date:
-                            last_history_date = row_date
     except FileNotFoundError:
         pass
     
     # Calculate start date for future scheduling
+    today = datetime.date.today()
     start_date = max(today, last_history_date + timedelta(days=1))
     current_date = start_date
     
@@ -309,8 +294,7 @@ def generate_schedule():
     # Load pending labs
     pending_labs = set()
     try:
-        pending_json_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'pending_boson.json')
-        with open(pending_json_path, 'r', encoding='utf-8') as f:
+        with open(r"C:\Users\swrav\.gemini\antigravity-ide\brain\beffb45c-4358-4cc5-ac87-97c70f1f958b\scratch\pending_boson.json", 'r', encoding='utf-8') as f:
             pending_labs = set(json.load(f))
         print(f"Loaded {len(pending_labs)} pending labs in generate_schedule.py")
     except Exception as e:
@@ -387,10 +371,12 @@ def generate_schedule():
             day_type = f"{day_name} (Holiday)" if actual_date in HOLIDAYS_2026 else day_name
             hours_val = round(row['total_min'] / 60.0, 1)
             
+            # Determine if day is completely done (Catch-up days are NOT done)
+            all_done = all((jd != 'Catch-up' and int(jd) < 26) for jd in row['j_days_involved'])
             lec_min = sum(l['min'] for l in temp_schedule_items if l['item'] in row['lectures'])
             
             writer.writerow({
-                'Done': 'FALSE',
+                'Done': 'TRUE' if all_done else 'FALSE',
                 'Date': actual_date.strftime('%m/%d/%Y'),
                 'Day_Type': day_type,
                 'Jeremy_Days': ', '.join(sorted(row['j_days_involved'], key=lambda x: 999 if x == 'Catch-up' else int(x))),
@@ -404,7 +390,7 @@ def generate_schedule():
     print(f"Schedule generated successfully: {OUTPUT_CSV}")
     
     # Send notification
-    send_discord_notification(is_on_track, missed_days, mega_lab_date)
+    # send_discord_notification(is_on_track, missed_days, mega_lab_date)
 
 if __name__ == '__main__':
     generate_schedule()

@@ -122,7 +122,7 @@ def main():
     except gspread.exceptions.WorksheetNotFound:
         pass
 
-    print("\n✅ All imports completed successfully!")
+    print("\nAll imports completed successfully!")
 
 if __name__ == "__main__":
     main()
