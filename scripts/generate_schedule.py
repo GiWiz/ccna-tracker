@@ -11,6 +11,8 @@ BOSON_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'cleaned', 'bo
 DETAILED_BOSON_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'cleaned', 'Boson_CCNA_Master_Index_Detailed.csv')
 CURRENT_SCHEDULE_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'cleaned', 'current_schedule.csv')
 OUTPUT_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'cleaned', 'final_schedule_v3.csv')
+CURRENT_MASTER_LIST_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'cleaned', 'current_master_list.csv')
+OUTPUT_MASTER_LIST_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'cleaned', 'master_task_list.csv')
 
 HOLIDAYS_2026 = [
     datetime.date(2026, 9, 7),   # Labor Day
@@ -248,24 +250,55 @@ def load_data():
 
     return jeremy_days
 
-def send_discord_notification(is_on_track, missed_days=0, mega_lab_date=None, deadline_warning=False):
+def send_discord_notification(schedule, is_on_track, mega_lab_date):
     webhook_url = os.environ.get('DISCORD_WEBHOOK')
     if not webhook_url:
         return
 
-    if is_on_track:
-        content = "✅ **CCNA Tracker Update**: Great job! You are perfectly on track. Your schedule has been updated with today's tasks."
+    last_scheduled_date = schedule[-1]['date'] if schedule else datetime.date.today()
+    exam_date = datetime.date(2026, 10, 31)
+    exam_overflow = (last_scheduled_date - exam_date).days
+    
+    if exam_overflow > 0:
+        exam_status = f"🔴 **Warning**: Schedule overflows past Exam Date by {exam_overflow} days!"
     else:
-        content = f"⚠️ **CCNA Tracker Update**: It looks like you missed {missed_days} day(s) of study! Don't worry, I've automatically pushed your schedule forward. Your new Mega Lab date is now **{mega_lab_date}**."
+        buffer = -exam_overflow
+        exam_status = f"🟢 **On Track!** You finish all ExSim prep on **{last_scheduled_date.strftime('%m/%d/%Y')}** ({buffer} days before the Halloween Exam)."
+
+    daily_status = "✅ **Daily Status**: On Track" if is_on_track else "⚠️ **Daily Status**: Partial Completion / Rest Day - Tasks shifted forward!"
+    
+    next_up_txt = "No tasks remaining!"
+    if len(schedule) > 0:
+        next_day = schedule[0]
+        nd_date = next_day['date'].strftime('%A, %m/%d')
+        nd_hrs = round(next_day['total_min'] / 60, 1)
+        lec_count = len(next_day['lectures'])
+        pt_count = len(next_day['pt_labs'])
+        b_count = len(next_day['boson_labs'])
         
-    if deadline_warning:
-        content += "\n🚨 **WARNING**: Your schedule now overflows past the October 17th ExSim prep deadline! You may need to increase your daily limits or skip some labs."
+        items = []
+        if lec_count: items.append(f"- {lec_count} Lecture(s)")
+        if pt_count: items.append(f"- {pt_count} PT Lab(s)")
+        if b_count: items.append(f"- {b_count} Boson/ExSim Task(s)")
+        items_str = "\n".join(items)
+        
+        next_up_txt = f"**Next Up ({nd_date})**:\n⏱️ **Estimated Time**: {nd_hrs} hrs\n{items_str}"
+
+    content = f"""**CCNA Tracker Update**
+
+{daily_status}
+📚 **Study Days Remaining**: {len(schedule)} *(Includes ExSim)*
+
+**Milestone Tracking:**
+🏗️ **Main Curriculum (Mega Lab)**: Finishes on **{mega_lab_date}**
+🎓 **Exam Readiness**: {exam_status}
+
+{next_up_txt}"""
 
     data = {"content": content}
     try:
         requests.post(webhook_url, json=data)
     except Exception as e:
-        # Safely print without emojis in case console doesn't support utf-8
         print("Failed to send Discord notification:", str(e))
 
 def generate_schedule():
@@ -310,6 +343,16 @@ def generate_schedule():
                         
                         if row_date > last_history_date:
                             last_history_date = row_date
+    except FileNotFoundError:
+        pass
+        
+    # Also load completed items from the Master Task List (if user checked them there)
+    try:
+        with open(CURRENT_MASTER_LIST_CSV, 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                if row.get('Done') == 'TRUE':
+                    completed_items.add(row['Task Title'].strip())
     except FileNotFoundError:
         pass
     
@@ -373,18 +416,7 @@ def generate_schedule():
             if boson['title'] in completed_items:
                 continue
                 
-            # Determine if this Jeremy Day is fully "past" (all lectures and PT labs done)
-            is_past = True
-            for lec in data['lectures']:
-                if lec['title'] not in completed_items:
-                    is_past = False
-                    break
-            for pt in data['labs']:
-                if pt['title'] not in completed_items:
-                    is_past = False
-                    break
-                    
-            if is_past:
+            if j_day <= 25:
                 catchup_queue.append({'item': boson['title'], 'cat': 'boson_labs', 'j_day': 'Catch-up', 'min': boson['min']})
             else:
                 temp_schedule_items.append({'item': boson['title'], 'cat': 'boson_labs', 'j_day': j_day, 'min': boson['min']})
@@ -403,6 +435,28 @@ def generate_schedule():
             curr_day['date'] = current_date
             first_day_64 = False
         add_item(item['item'], item['cat'], item['j_day'], item['min'])
+        
+    # Add Boson ExSim Prep Block
+    exsim_tasks = [
+        "Boson ExSim: Exam A (Baseline Test in Simulation Mode)",
+        "Boson ExSim: Review Exam A Explanations (Questions 1-50)",
+        "Boson ExSim: Review Exam A Explanations (Questions 51-100)",
+        "Boson ExSim: Exam B (Baseline Test in Simulation Mode)",
+        "Boson ExSim: Review Exam B Explanations (Questions 1-50)",
+        "Boson ExSim: Review Exam B Explanations (Questions 51-100)",
+        "Boson ExSim: Exam C (Baseline Test in Simulation Mode)",
+        "Boson ExSim: Review Exam C Explanations (Questions 1-50)",
+        "Boson ExSim: Review Exam C Explanations (Questions 51-100)",
+        "Targeted Review: Weak Areas (Subnetting/Routing)",
+        "Targeted Review: Weak Areas (Security/Automation)",
+        "Boson ExSim: Retake Random Exams in Simulation Mode",
+        "Final Review & Rest 1",
+        "Final Review & Rest 2"
+    ]
+    for task in exsim_tasks:
+        if task not in completed_items:
+            add_item(task, 'boson_labs', 'ExSim', 120)
+            
     close_day()
 
     # Determine tracking status
@@ -442,7 +496,7 @@ def generate_schedule():
                 'Done': 'FALSE',
                 'Date': actual_date.strftime('%m/%d/%Y'),
                 'Day_Type': day_type,
-                'Jeremy_Days': ', '.join(sorted(row['j_days_involved'], key=lambda x: 999 if x == 'Catch-up' else int(x))),
+                'Jeremy_Days': ', '.join(sorted(row['j_days_involved'], key=lambda x: 999 if x == 'Catch-up' else (1000 if x == 'ExSim' else int(x)))),
                 'Lectures_Total_Hrs': round(lec_min / 60.0, 1),
                 'Lectures': ' | '.join(row['lectures']),
                 'PT_Labs': ' | '.join(row['pt_labs']),
@@ -454,22 +508,40 @@ def generate_schedule():
     
     # Validation & Summary Statistics
     last_scheduled_date = schedule[-1]['date'] if schedule else today
-    exam_prep_deadline = datetime.date(2026, 10, 17)
-    overflow_days = (last_scheduled_date - exam_prep_deadline).days
-    deadline_warning = overflow_days > 0
+    exam_date = datetime.date(2026, 10, 31)
+    overflow_days = (last_scheduled_date - exam_date).days
     
     print("\n--- Schedule Summary ---")
-    print(f"Remaining Study Days: {len(schedule)}")
-    print(f"Final Scheduled Day (Mega Lab): {last_scheduled_date.strftime('%m/%d/%Y')}")
-    if deadline_warning:
-        print(f"WARNING: Schedule exceeds ExSim prep deadline (10/17) by {overflow_days} days!")
+    print(f"Remaining Study Days: {len(schedule)} (includes ExSim)")
+    print(f"Mega Lab Date: {mega_lab_date}")
+    print(f"Final ExSim Day: {last_scheduled_date.strftime('%m/%d/%Y')}")
+    if overflow_days > 0:
+        print(f"WARNING: Schedule overflows past EXAM DATE (10/31) by {overflow_days} days!")
     else:
         buffer_days = -overflow_days
-        print(f"On track! You have a {buffer_days}-day buffer before the ExSim prep deadline.")
+        print(f"On track! You have a {buffer_days}-day buffer before the Exam.")
     print("------------------------\n")
     
+    # Generate Master Task List CSV
+    with open(OUTPUT_MASTER_LIST_CSV, 'w', encoding='utf-8', newline='') as mf:
+        mwriter = csv.DictWriter(mf, fieldnames=['Done', 'Day', 'Type', 'Task Title', 'Est_Time'])
+        mwriter.writeheader()
+        
+        # Write all tasks chronologically
+        for j_day in sorted(jeremy_days.keys()):
+            data = jeremy_days[j_day]
+            for lec in data['lectures']:
+                mwriter.writerow({'Done': 'TRUE' if lec['title'] in completed_items else 'FALSE', 'Day': j_day, 'Type': 'Lecture', 'Task Title': lec['title'], 'Est_Time': round(lec['min'] / 60.0, 1)})
+            for pt in data['labs']:
+                mwriter.writerow({'Done': 'TRUE' if pt['title'] in completed_items else 'FALSE', 'Day': j_day, 'Type': 'PT Lab', 'Task Title': pt['title'], 'Est_Time': round((pt['min'] + pt['pt_attempt_min']) / 60.0, 1)})
+            for boson in data['boson']:
+                mwriter.writerow({'Done': 'TRUE' if boson['title'] in completed_items else 'FALSE', 'Day': j_day, 'Type': 'Boson Lab', 'Task Title': boson['title'], 'Est_Time': round(boson['min'] / 60.0, 1)})
+        # Write ExSim tasks
+        for task in exsim_tasks:
+            mwriter.writerow({'Done': 'TRUE' if task in completed_items else 'FALSE', 'Day': 'ExSim', 'Type': 'ExSim / Review', 'Task Title': task, 'Est_Time': 2.0})
+
     # Send notification
-    send_discord_notification(is_on_track, missed_days, mega_lab_date, deadline_warning)
+    send_discord_notification(schedule, is_on_track, mega_lab_date)
 
 if __name__ == '__main__':
     generate_schedule()

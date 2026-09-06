@@ -14,9 +14,7 @@ CREDENTIALS_FILE = os.path.join(os.path.dirname(__file__), "..", "credentials.js
 # Map of tab names to their source CSV files
 TABS_TO_IMPORT = {
     "Schedule": "final_schedule_v3.csv",
-    "Boson_Master_Index": "Boson_CCNA_Master_Index_Detailed.csv",
-    "Jeremy_Curriculum": "jeremy_curriculum.csv",
-    "Topic_Mapping": "topic_mapping.csv"
+    "Master_Task_List": "master_task_list.csv"
 }
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "cleaned")
@@ -72,14 +70,14 @@ def main():
         print(f"  Uploading {len(data)} rows...")
         worksheet.update(values=data, range_name="A1", value_input_option="USER_ENTERED")
         
-        # Formatting for Schedule tab
-        if tab_name == "Schedule":
+        # Formatting for Schedule and Master_Task_List tabs
+        if tab_name in ["Schedule", "Master_Task_List"]:
             # Add checkboxes to the 'Done' column (Column A) for rows 2 to len(data)
-            # In gspread, we can use DataValidationRule
             from gspread.utils import a1_to_rowcol
             
-            # Format header
-            worksheet.format("A1:I1", {
+            # Format header dynamically based on columns
+            header_col = chr(ord('A') + len(data[0]) - 1)
+            worksheet.format(f"A1:{header_col}1", {
                 "textFormat": {"bold": True},
                 "backgroundColor": {"red": 0.9, "green": 0.9, "blue": 0.9}
             })
@@ -112,7 +110,7 @@ def main():
                     ]
                 }
             )
-            print("  Added checkboxes to Schedule -> Done column")
+            print(f"  Added checkboxes to {tab_name} -> Done column")
 
     # Clean up default Sheet1 if it exists
     try:
