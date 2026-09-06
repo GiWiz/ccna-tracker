@@ -8,7 +8,8 @@ from datetime import timedelta
 JEREMY_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'cleaned', 'jeremy_curriculum.csv')
 MAPPING_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'cleaned', 'topic_mapping.csv')
 BOSON_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'cleaned', 'boson_labs_cleaned.csv')
-DETAILED_BOSON_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'Boson_CCNA_Master_Index_Detailed.csv')
+DETAILED_BOSON_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'cleaned', 'Boson_CCNA_Master_Index_Detailed.csv')
+CURRENT_SCHEDULE_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'cleaned', 'current_schedule.csv')
 OUTPUT_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'cleaned', 'final_schedule_v3.csv')
 
 HOLIDAYS_2026 = [
@@ -247,7 +248,7 @@ def load_data():
 
     return jeremy_days
 
-def send_discord_notification(is_on_track, missed_days=0, mega_lab_date=None):
+def send_discord_notification(is_on_track, missed_days=0, mega_lab_date=None, deadline_warning=False):
     webhook_url = os.environ.get('DISCORD_WEBHOOK')
     if not webhook_url:
         return
@@ -256,12 +257,16 @@ def send_discord_notification(is_on_track, missed_days=0, mega_lab_date=None):
         content = "✅ **CCNA Tracker Update**: Great job! You are perfectly on track. Your schedule has been updated with today's tasks."
     else:
         content = f"⚠️ **CCNA Tracker Update**: It looks like you missed {missed_days} day(s) of study! Don't worry, I've automatically pushed your schedule forward. Your new Mega Lab date is now **{mega_lab_date}**."
+        
+    if deadline_warning:
+        content += "\n🚨 **WARNING**: Your schedule now overflows past the October 17th ExSim prep deadline! You may need to increase your daily limits or skip some labs."
 
     data = {"content": content}
     try:
         requests.post(webhook_url, json=data)
     except Exception as e:
-        print(f"Failed to send Discord notification: {e}")
+        # Safely print without emojis in case console doesn't support utf-8
+        print("Failed to send Discord notification:", str(e))
 
 def generate_schedule():
     jeremy_days = load_data()
@@ -273,7 +278,7 @@ def generate_schedule():
     
     today = datetime.date.today()
     try:
-        with open('data/cleaned/current_schedule.csv', 'r', encoding='utf-8') as f:
+        with open(CURRENT_SCHEDULE_CSV, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
                 # Parse date
@@ -352,16 +357,6 @@ def generate_schedule():
         if curr_day['total_min'] >= target_min:
             pass
 
-    # Load pending labs
-    pending_labs = set()
-    try:
-        pending_json_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'pending_boson.json')
-        with open(pending_json_path, 'r', encoding='utf-8') as f:
-            pending_labs = set(json.load(f))
-        print(f"Loaded {len(pending_labs)} pending labs in generate_schedule.py")
-    except Exception as e:
-        print("Error loading JSON:", e)
-
     # Build temp items
     temp_schedule_items = []
     catchup_queue = []
@@ -377,7 +372,19 @@ def generate_schedule():
         for boson in data['boson']: 
             if boson['title'] in completed_items:
                 continue
-            if j_day < 26 and boson['raw_title'] in pending_labs:
+                
+            # Determine if this Jeremy Day is fully "past" (all lectures and PT labs done)
+            is_past = True
+            for lec in data['lectures']:
+                if lec['title'] not in completed_items:
+                    is_past = False
+                    break
+            for pt in data['labs']:
+                if pt['title'] not in completed_items:
+                    is_past = False
+                    break
+                    
+            if is_past:
                 catchup_queue.append({'item': boson['title'], 'cat': 'boson_labs', 'j_day': 'Catch-up', 'min': boson['min']})
             else:
                 temp_schedule_items.append({'item': boson['title'], 'cat': 'boson_labs', 'j_day': j_day, 'min': boson['min']})
@@ -393,13 +400,6 @@ def generate_schedule():
                 add_item(catchup_item['item'], catchup_item['cat'], catchup_item['j_day'], catchup_item['min'])
             close_day()
             
-            # Push Day 64 to land on October 3rd (Saturday), or the next Saturday if it overflows
-            target_date = datetime.date(2026, 10, 3)
-            if current_date < target_date:
-                current_date = target_date
-            else:
-                while current_date.weekday() != 5: # Saturday
-                    current_date += timedelta(days=1)
             curr_day['date'] = current_date
             first_day_64 = False
         add_item(item['item'], item['cat'], item['j_day'], item['min'])
@@ -419,6 +419,9 @@ def generate_schedule():
     with open(OUTPUT_CSV, 'w', encoding='utf-8', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
+        
+        # Sort history chronologically before writing
+        history_rows.sort(key=lambda r: datetime.datetime.strptime(r['Date'], '%m/%d/%Y'))
         
         # Write history rows first
         for h_row in history_rows:
@@ -449,8 +452,24 @@ def generate_schedule():
             
     print(f"Schedule generated successfully: {OUTPUT_CSV}")
     
+    # Validation & Summary Statistics
+    last_scheduled_date = schedule[-1]['date'] if schedule else today
+    exam_prep_deadline = datetime.date(2026, 10, 17)
+    overflow_days = (last_scheduled_date - exam_prep_deadline).days
+    deadline_warning = overflow_days > 0
+    
+    print("\n--- Schedule Summary ---")
+    print(f"Remaining Study Days: {len(schedule)}")
+    print(f"Final Scheduled Day (Mega Lab): {last_scheduled_date.strftime('%m/%d/%Y')}")
+    if deadline_warning:
+        print(f"WARNING: Schedule exceeds ExSim prep deadline (10/17) by {overflow_days} days!")
+    else:
+        buffer_days = -overflow_days
+        print(f"On track! You have a {buffer_days}-day buffer before the ExSim prep deadline.")
+    print("------------------------\n")
+    
     # Send notification
-    send_discord_notification(is_on_track, missed_days, mega_lab_date)
+    send_discord_notification(is_on_track, missed_days, mega_lab_date, deadline_warning)
 
 if __name__ == '__main__':
     generate_schedule()

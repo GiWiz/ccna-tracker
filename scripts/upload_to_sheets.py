@@ -14,7 +14,7 @@ CREDENTIALS_FILE = os.path.join(os.path.dirname(__file__), "..", "credentials.js
 # Map of tab names to their source CSV files
 TABS_TO_IMPORT = {
     "Schedule": "final_schedule_v3.csv",
-    "Boson_Master_Index": "boson_labs_cleaned.csv",
+    "Boson_Master_Index": "Boson_CCNA_Master_Index_Detailed.csv",
     "Jeremy_Curriculum": "jeremy_curriculum.csv",
     "Topic_Mapping": "topic_mapping.csv"
 }
