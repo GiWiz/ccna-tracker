@@ -46,4 +46,4 @@ FALSE,09/29/2026,Tuesday,Catch-up,0,,,Security Fundamentals -> Implement Local U
 FALSE,09/30/2026,Wednesday,Catch-up,0,,,IP Connectivity -> Implement Static and Default Routes | Network Access -> Explore and Configure Switch Access Ports | Network Access -> Explore and Configure Switch Trunk Ports | Network Access -> Configure InterVLAN Routing,1.9
 FALSE,10/01/2026,Thursday,Catch-up,0,,,Network Access -> Explore the Native VLAN | Network Access -> Implement InterVLAN Routing | Network Access -> Configure and Verify VTP | Network Access -> Boson CCNA Challenge Lab 2,2
 FALSE,10/03/2026,Saturday,64,0,,Complete Network Configuration,,3.3
-TRUE,08/31/2026,Monday,29,0.7,First Hop Redundancy Protocols,Configuring HSRP,IP Connectivity -> Explore HSRP | IP Connectivity -> Explore VRRP | IP Connectivity -> Implement HSRP | IP Connectivity -> Implement VRRP,3.0
+TRUE,08/31/2026,Monday,26,0.8,OSPF Part 1,Configuring OSPF (1),,1.9

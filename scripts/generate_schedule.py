@@ -8,6 +8,7 @@ from datetime import timedelta
 JEREMY_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'cleaned', 'jeremy_curriculum.csv')
 MAPPING_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'cleaned', 'topic_mapping.csv')
 BOSON_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'cleaned', 'boson_labs_cleaned.csv')
+DETAILED_BOSON_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'Boson_CCNA_Master_Index_Detailed.csv')
 OUTPUT_CSV = os.path.join(os.path.dirname(__file__), '..', 'data', 'cleaned', 'final_schedule_v3.csv')
 
 HOLIDAYS_2026 = [
@@ -136,16 +137,61 @@ def get_daily_limits(current_date):
     return 120, 120
 
 def load_data():
+    import re
+    # 1. Load detailed steps for Boson labs
+    detailed_data = {}
+    try:
+        with open(DETAILED_BOSON_CSV, 'r', encoding='utf-8') as f:
+            for row in csv.DictReader(f):
+                title = row.get('Lab Title', '').strip()
+                if title:
+                    detailed_data[title] = {
+                        'steps': int(row.get('Total Steps') or 0),
+                        'breakdown': row.get('Task Breakdown (with Steps)', '')
+                    }
+    except FileNotFoundError:
+        print("Warning: Detailed Boson CSV not found. Times will fallback.")
+
     boson_metadata = {}
     with open(BOSON_CSV, 'r', encoding='utf-8') as f:
         for row in csv.DictReader(f):
             lab_id = row['Lab_ID']
-            task_count = int(row['Task_Count'] or 0)
-            cmd_count = int(row['Command_Count'] or 0)
-            est_time = (task_count * 5) + (cmd_count * 1)
-            est_time = max(10, min(est_time, 45))
+            title = row['Lab_Title'].strip()
             
-            title = row['Lab_Title']
+            # Calculate weighted time estimate
+            est_time = 0
+            if title in detailed_data and detailed_data[title]['breakdown']:
+                breakdown = detailed_data[title]['breakdown']
+                tasks = breakdown.split(' | ')
+                
+                for task in tasks:
+                    match = re.match(r'(Task \d+: .+?) \((\d+) steps?\)', task.strip())
+                    if match:
+                        task_name = match.group(1).lower()
+                        steps = int(match.group(2))
+                        
+                        if any(kw in task_name for kw in ['verify', 'explore', 'view', 'examine', 'display']):
+                            est_time += steps * 1.25
+                        elif any(kw in task_name for kw in ['troubleshoot', 'diagnose', 'debug']):
+                            est_time += steps * 3.0
+                        elif any(kw in task_name for kw in ['configure', 'implement', 'create', 'set up', 'assign', 'enable']):
+                            est_time += steps * 2.5
+                        else:
+                            est_time += steps * 2.0
+            
+            if est_time == 0:
+                # Fallback if detailed data is missing or couldn't be parsed
+                steps = detailed_data.get(title, {}).get('steps', 0)
+                if steps > 0:
+                    est_time = steps * 2.0
+                else:
+                    task_count = int(row.get('Task_Count') or 0)
+                    cmd_count = int(row.get('Command_Count') or 0)
+                    est_time = (task_count * 5) + (cmd_count * 1)
+            
+            # Cap at 90 minutes max to prevent extreme outliers
+            est_time = max(10, min(int(est_time), 90))
+            
             category = BOSON_CATEGORIES.get(title, 'Unknown Category')
             formatted_title = f"{category} -> {title}"
             
