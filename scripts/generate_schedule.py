@@ -141,7 +141,6 @@ def get_daily_limits(current_date):
 
 def load_data():
     import re
-    # 1. Load detailed steps for Boson labs
     detailed_data = {}
     try:
         with open(DETAILED_BOSON_CSV, 'r', encoding='utf-8') as f:
@@ -153,7 +152,7 @@ def load_data():
                         'breakdown': row.get('Task Breakdown (with Steps)', '')
                     }
     except FileNotFoundError:
-        print("Warning: Detailed Boson CSV not found. Times will fallback.")
+        pass
 
     boson_metadata = {}
     with open(BOSON_CSV, 'r', encoding='utf-8') as f:
@@ -161,18 +160,15 @@ def load_data():
             lab_id = row['Lab_ID']
             title = row['Lab_Title'].strip()
             
-            # Calculate weighted time estimate
             est_time = 0
             if title in detailed_data and detailed_data[title]['breakdown']:
                 breakdown = detailed_data[title]['breakdown']
                 tasks = breakdown.split(' | ')
-                
                 for task in tasks:
                     match = re.match(r'(Task \d+: .+?) \((\d+) steps?\)', task.strip())
                     if match:
                         task_name = match.group(1).lower()
                         steps = int(match.group(2))
-                        
                         if any(kw in task_name for kw in ['verify', 'explore', 'view', 'examine', 'display']):
                             est_time += steps * 1.25
                         elif any(kw in task_name for kw in ['troubleshoot', 'diagnose', 'debug']):
@@ -183,7 +179,6 @@ def load_data():
                             est_time += steps * 2.0
             
             if est_time == 0:
-                # Fallback if detailed data is missing or couldn't be parsed
                 steps = detailed_data.get(title, {}).get('steps', 0)
                 if steps > 0:
                     est_time = steps * 2.0
@@ -192,9 +187,7 @@ def load_data():
                     cmd_count = int(row.get('Command_Count') or 0)
                     est_time = (task_count * 5) + (cmd_count * 1)
             
-            # Cap at 90 minutes max to prevent extreme outliers
             est_time = max(10, min(int(est_time), 90))
-            
             category = BOSON_CATEGORIES.get(title, 'Unknown Category')
             formatted_title = f"{category} -> {title}"
             
@@ -222,15 +215,8 @@ def load_data():
                 pt_attempt = 15
                 if duration_min > 20: pt_attempt = 40
                 elif duration_min > 12: pt_attempt = 25
-                
-                jeremy_days[day]['labs'].append({
-                    'title': title, 
-                    'min': duration_min, 
-                    'pt_attempt_min': pt_attempt,
-                    'is_pt': True
-                })
+                jeremy_days[day]['labs'].append({'title': title, 'min': duration_min, 'pt_attempt_min': pt_attempt, 'is_pt': True})
             elif type_col in ('Extra', 'Toolkit', 'Quiz'):
-                # We skip these per user request
                 continue
             else:
                 jeremy_days[day]['lectures'].append({'title': title, 'min': duration_min})
@@ -247,10 +233,9 @@ def load_data():
                             'raw_title': boson_metadata[lab_id]['raw_title'],
                             'min': boson_metadata[lab_id]['est_min']
                         })
-
     return jeremy_days
 
-def send_discord_notification(schedule, is_on_track, mega_lab_date):
+def send_discord_notification(schedule, streak, perf_stats, mega_lab_date):
     webhook_url = os.environ.get('DISCORD_WEBHOOK')
     if not webhook_url:
         return
@@ -265,13 +250,35 @@ def send_discord_notification(schedule, is_on_track, mega_lab_date):
         buffer = -exam_overflow
         exam_status = f"🟢 **On Track!** You finish all ExSim prep on **{last_scheduled_date.strftime('%m/%d/%Y')}** ({buffer} days before the Halloween Exam)."
 
-    daily_status = "✅ **Daily Status**: On Track" if is_on_track else "⚠️ **Daily Status**: Partial Completion / Rest Day - Tasks shifted forward!"
+    # Streak logic
+    streak_txt = f"🔥 **{streak}-Day Study Streak!**\n" if streak >= 2 else ""
     
+    # Recent Performance logic
+    if perf_stats['status'] == 'perfect':
+        perf_status_txt = "✅ **Status**: Fully Completed"
+    elif perf_stats['status'] == 'missed':
+        perf_status_txt = "❌ **Status**: Missed Day"
+    else:
+        perf_status_txt = "⚠️ **Status**: Partial Completion / Shifted"
+
+    missed_shame_txt = ""
+    if perf_stats['missed_names']:
+        truncated_names = perf_stats['missed_names'][:2]
+        remaining = len(perf_stats['missed_names']) - 2
+        names_str = ", ".join(truncated_names)
+        if remaining > 0:
+            names_str += f", +{remaining} more"
+        missed_shame_txt = f"\n❌ **Missed Items**: {names_str}"
+
+    extra_txt = f"\n🌟 **Worked Ahead**: {perf_stats['extra_count']} Extra Task(s) ({perf_stats['extra_hrs']} hrs)" if perf_stats['extra_count'] > 0 else ""
+
     next_up_txt = "No tasks remaining!"
     if len(schedule) > 0:
         next_day = schedule[0]
         nd_date = next_day['date'].strftime('%A, %m/%d')
         nd_hrs = round(next_day['total_min'] / 60, 1)
+        limit_hrs = round(get_daily_limits(next_day['date'])[1] / 60, 1)
+        
         lec_count = len(next_day['lectures'])
         pt_count = len(next_day['pt_labs'])
         b_count = len(next_day['boson_labs'])
@@ -282,20 +289,24 @@ def send_discord_notification(schedule, is_on_track, mega_lab_date):
         if b_count: items.append(f"- {b_count} Boson/ExSim Task(s)")
         items_str = "\n".join(items)
         
-        next_up_txt = f"**Next Up ({nd_date})**:\n⏱️ **Estimated Time**: {nd_hrs} hrs\n{items_str}"
+        next_up_txt = f"**📅 Today's Agenda ({nd_date})**:\n⏱️ **Target**: {nd_hrs} hrs (Limit: {limit_hrs} hrs)\n{items_str}"
 
-    content = f"""**CCNA Tracker Update**
+    content = f"""**CCNA Tracker Daily Brief**
+{streak_txt}
+**📊 Recent Performance (Since Last Run)**
+{perf_status_txt}
+🎯 **Scheduled**: {perf_stats['sched_count']} Tasks ({perf_stats['sched_hrs']} hrs)
+✅ **Completed**: {perf_stats['comp_count']} Tasks ({perf_stats['comp_hrs']} hrs)
+⏭️ **Pushed to Queue**: {perf_stats['missed_count']} Tasks ({perf_stats['missed_hrs']} hrs shifted forward){missed_shame_txt}{extra_txt}
 
-{daily_status}
+{next_up_txt}
+
+**🚀 Milestone Trajectory**
 📚 **Study Days Remaining**: {len(schedule)} *(Includes ExSim)*
+🏗️ **Mega Lab Finish Date**: {mega_lab_date}
+🎓 **Exam Readiness**: {exam_status}"""
 
-**Milestone Tracking:**
-🏗️ **Main Curriculum (Mega Lab)**: Finishes on **{mega_lab_date}**
-🎓 **Exam Readiness**: {exam_status}
-
-{next_up_txt}"""
-
-    data = {"content": content}
+    data = {"content": content.strip()}
     try:
         requests.post(webhook_url, json=data)
     except Exception as e:
@@ -304,49 +315,59 @@ def send_discord_notification(schedule, is_on_track, mega_lab_date):
 def generate_schedule():
     jeremy_days = load_data()
     
-    # Load state from Google Sheets download
+    # Build item metadata lookup for time extraction
+    item_metadata = {}
+    for j_day, data in jeremy_days.items():
+        for l in data['lectures']: item_metadata[l['title']] = {'cat': 'lectures', 'min': l['min'], 'j_day': str(j_day)}
+        for pt in data['labs']: item_metadata[pt['title']] = {'cat': 'pt_labs', 'min': pt['min'] + pt['pt_attempt_min'], 'j_day': str(j_day)}
+        for b in data['boson']: item_metadata[b['title']] = {'cat': 'boson_labs', 'min': b['min'], 'j_day': str(j_day)}
+    
+    exsim_tasks = [
+        "Boson ExSim: Exam A (Baseline Test in Simulation Mode)", "Boson ExSim: Review Exam A Explanations (Questions 1-50)", "Boson ExSim: Review Exam A Explanations (Questions 51-100)",
+        "Boson ExSim: Exam B (Baseline Test in Simulation Mode)", "Boson ExSim: Review Exam B Explanations (Questions 1-50)", "Boson ExSim: Review Exam B Explanations (Questions 51-100)",
+        "Boson ExSim: Exam C (Baseline Test in Simulation Mode)", "Boson ExSim: Review Exam C Explanations (Questions 1-50)", "Boson ExSim: Review Exam C Explanations (Questions 51-100)",
+        "Targeted Review: Weak Areas (Subnetting/Routing)", "Targeted Review: Weak Areas (Security/Automation)",
+        "Boson ExSim: Retake Random Exams in Simulation Mode", "Final Review & Rest 1", "Final Review & Rest 2"
+    ]
+    for task in exsim_tasks:
+        item_metadata[task] = {'cat': 'boson_labs', 'min': 120, 'j_day': 'ExSim'}
+
+    # 1. Load History Items (explicitly checked `Done=TRUE` or previously recorded `Partial Day` content)
+    history_items = set()
     completed_items = set()
     history_rows = []
     last_history_date = datetime.date(2026, 7, 19)
-    
     today = datetime.date.today()
+    
+    # Raw historical state loading
     try:
         with open(CURRENT_SCHEDULE_CSV, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                # Parse date
                 m, d, y = map(int, row['Date'].split('/'))
                 row_date = datetime.date(y, m, d)
                 
-                if row.get('Done') == 'TRUE':
-                    history_rows.append(row)
-                    if row_date > last_history_date:
-                        last_history_date = row_date
-                    
+                # Check for explicit completion
+                if row.get('Done') == 'TRUE' or row.get('Day_Type') == 'Partial Day':
                     if row.get('Lectures'):
-                        for l in row['Lectures'].split(' | '): completed_items.add(l.strip())
+                        for l in row['Lectures'].split(' | '): history_items.add(l.strip())
                     if row.get('PT_Labs'):
-                        for pt in row['PT_Labs'].split(' | '): completed_items.add(pt.strip())
+                        for pt in row['PT_Labs'].split(' | '): history_items.add(pt.strip())
                     if row.get('Boson_Labs'):
-                        for b in row['Boson_Labs'].split(' | '): completed_items.add(b.strip())
-                else:
-                    if row_date < today:
-                        # Missed day tracking
-                        row['Day_Type'] = "Missed Day"
-                        row['Jeremy_Days'] = ""
-                        row['Lectures'] = ""
-                        row['PT_Labs'] = ""
-                        row['Boson_Labs'] = ""
-                        row['Lectures_Total_Hrs'] = "0.0"
-                        row['Total_Est_Hrs'] = "0.0"
-                        history_rows.append(row)
-                        
+                        for b in row['Boson_Labs'].split(' | '): history_items.add(b.strip())
+                    
+                    if row.get('Done') == 'TRUE':
                         if row_date > last_history_date:
                             last_history_date = row_date
+                
+                history_rows.append(row)
     except FileNotFoundError:
         pass
         
-    # Also load completed items from the Master Task List (if user checked them there)
+    # Add everything from history_items to completed_items
+    completed_items.update(history_items)
+
+    # 2. Load checked items from Master Task List
     try:
         with open(CURRENT_MASTER_LIST_CSV, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
@@ -355,114 +376,158 @@ def generate_schedule():
                     completed_items.add(row['Task Title'].strip())
     except FileNotFoundError:
         pass
+
+    # 3. Calculate Orphan Items (Things completed since last run)
+    orphan_items = completed_items - history_items
     
-    # Calculate start date for future scheduling
+    # Track Performance Stats for Discord
+    perf_stats = {
+        'status': 'perfect', 'sched_count': 0, 'sched_hrs': 0.0,
+        'comp_count': len(orphan_items), 'comp_hrs': round(sum(item_metadata[item]['min'] for item in orphan_items if item in item_metadata) / 60.0, 1),
+        'missed_count': 0, 'missed_hrs': 0.0, 'missed_names': [],
+        'extra_count': 0, 'extra_hrs': 0.0
+    }
+
+    # 4. Inject Orphan Items into the FIRST unchecked historical row (Yesterday)
+    injected_orphans = False
+    
+    # Calculate streak while iterating
+    streak = 0
+    # Reverse history rows to calculate streak backwards from yesterday
+    for i in range(len(history_rows) - 1, -1, -1):
+        row = history_rows[i]
+        m, d, y = map(int, row['Date'].split('/'))
+        row_date = datetime.date(y, m, d)
+        
+        if row.get('Done') != 'TRUE':
+            if row_date < today:
+                if not injected_orphans:
+                    # This is the "Yesterday" row! Let's process it.
+                    injected_orphans = True
+                    
+                    original_items = set()
+                    if row.get('Lectures'): original_items.update([x.strip() for x in row['Lectures'].split(' | ')])
+                    if row.get('PT_Labs'): original_items.update([x.strip() for x in row['PT_Labs'].split(' | ')])
+                    if row.get('Boson_Labs'): original_items.update([x.strip() for x in row['Boson_Labs'].split(' | ')])
+                    
+                    perf_stats['sched_count'] = len(original_items)
+                    perf_stats['sched_hrs'] = round(sum(item_metadata[item]['min'] for item in original_items if item in item_metadata) / 60.0, 1)
+                    
+                    missed_items = original_items - orphan_items
+                    extra_items = orphan_items - original_items
+                    
+                    perf_stats['missed_count'] = len(missed_items)
+                    perf_stats['missed_hrs'] = round(sum(item_metadata[item]['min'] for item in missed_items if item in item_metadata) / 60.0, 1)
+                    perf_stats['missed_names'] = list(missed_items)
+                    perf_stats['extra_count'] = len(extra_items)
+                    perf_stats['extra_hrs'] = round(sum(item_metadata[item]['min'] for item in extra_items if item in item_metadata) / 60.0, 1)
+                    
+                    if len(orphan_items) == 0:
+                        perf_stats['status'] = 'missed'
+                        row['Day_Type'] = "Missed Day"
+                        row['Jeremy_Days'] = ""
+                        row['Lectures'] = ""
+                        row['PT_Labs'] = ""
+                        row['Boson_Labs'] = ""
+                        row['Lectures_Total_Hrs'] = "0.0"
+                        row['Total_Est_Hrs'] = "0.0"
+                        streak = 0 # Missed day breaks streak
+                    else:
+                        if len(missed_items) > 0 or len(extra_items) > 0:
+                            perf_stats['status'] = 'partial'
+                            row['Day_Type'] = "Partial Day"
+                        else:
+                            perf_stats['status'] = 'perfect'
+                            row['Day_Type'] = row_date.strftime('%A') # Full completion!
+                        
+                        # Populate row with exactly what was done
+                        day_lecs = [item for item in orphan_items if item in item_metadata and item_metadata[item]['cat'] == 'lectures']
+                        day_pts = [item for item in orphan_items if item in item_metadata and item_metadata[item]['cat'] == 'pt_labs']
+                        day_bosons = [item for item in orphan_items if item in item_metadata and item_metadata[item]['cat'] == 'boson_labs']
+                        
+                        row['Lectures'] = ' | '.join(day_lecs)
+                        row['PT_Labs'] = ' | '.join(day_pts)
+                        row['Boson_Labs'] = ' | '.join(day_bosons)
+                        
+                        # Unique J Days
+                        j_days = set()
+                        for item in orphan_items:
+                            if item in item_metadata:
+                                j_days.add(item_metadata[item]['j_day'])
+                        row['Jeremy_Days'] = ', '.join(sorted(j_days, key=lambda x: 999 if x == 'Catch-up' else (1000 if x == 'ExSim' else int(x))))
+                        
+                        lec_min = sum(item_metadata[item]['min'] for item in day_lecs)
+                        tot_min = sum(item_metadata[item]['min'] for item in orphan_items if item in item_metadata)
+                        
+                        row['Lectures_Total_Hrs'] = str(round(lec_min / 60.0, 1))
+                        row['Total_Est_Hrs'] = str(round(tot_min / 60.0, 1))
+                        
+                        streak += 1 # Added to streak
+                        if row_date > last_history_date:
+                            last_history_date = row_date
+                else:
+                    # Any further missed days in the past get fully blanked out
+                    row['Day_Type'] = "Missed Day"
+                    row['Jeremy_Days'] = ""
+                    row['Lectures'] = ""
+                    row['PT_Labs'] = ""
+                    row['Boson_Labs'] = ""
+                    row['Lectures_Total_Hrs'] = "0.0"
+                    row['Total_Est_Hrs'] = "0.0"
+                    streak = 0 # Breaks streak
+        else:
+            # Done == TRUE
+            if not injected_orphans and row_date < today:
+                streak += 1
+
+    # 5. Calculate Future Schedule
     start_date = max(today, last_history_date + timedelta(days=1))
     current_date = start_date
-    
     schedule = []
     
-    curr_day = {
-        'date': current_date,
-        'j_days_involved': set(),
-        'lectures': [],
-        'pt_labs': [],
-        'boson_labs': [],
-        'total_min': 0
-    }
+    curr_day = {'date': current_date, 'j_days_involved': set(), 'lectures': [], 'pt_labs': [], 'boson_labs': [], 'total_min': 0}
     
     def close_day():
         nonlocal current_date, curr_day
-        if curr_day['total_min'] > 0:
-            schedule.append(curr_day)
+        if curr_day['total_min'] > 0: schedule.append(curr_day)
         current_date += timedelta(days=1)
-        curr_day = {
-            'date': current_date,
-            'j_days_involved': set(),
-            'lectures': [],
-            'pt_labs': [],
-            'boson_labs': [],
-            'total_min': 0
-        }
+        curr_day = {'date': current_date, 'j_days_involved': set(), 'lectures': [], 'pt_labs': [], 'boson_labs': [], 'total_min': 0}
 
     def add_item(item, category, j_day, duration):
         nonlocal current_date, curr_day
-        
         target_min, max_min = get_daily_limits(current_date)
-        
-        if curr_day['total_min'] + duration > max_min and curr_day['total_min'] > 0:
-            close_day()
-            
+        if curr_day['total_min'] + duration > max_min and curr_day['total_min'] > 0: close_day()
         curr_day['j_days_involved'].add(str(j_day))
         curr_day[category].append(item)
         curr_day['total_min'] += duration
-        
-        if curr_day['total_min'] >= target_min:
-            pass
 
-    # Build temp items
     temp_schedule_items = []
     catchup_queue = []
-    
     for j_day in sorted(jeremy_days.keys()):
         data = jeremy_days[j_day]
         for lec in data['lectures']: 
-            if lec['title'] not in completed_items:
-                temp_schedule_items.append({'item': lec['title'], 'cat': 'lectures', 'j_day': j_day, 'min': lec['min']})
+            if lec['title'] not in completed_items: temp_schedule_items.append({'item': lec['title'], 'cat': 'lectures', 'j_day': j_day, 'min': lec['min']})
         for pt in data['labs']: 
-            if pt['title'] not in completed_items:
-                temp_schedule_items.append({'item': pt['title'], 'cat': 'pt_labs', 'j_day': j_day, 'min': pt['min'] + pt['pt_attempt_min']})
+            if pt['title'] not in completed_items: temp_schedule_items.append({'item': pt['title'], 'cat': 'pt_labs', 'j_day': j_day, 'min': pt['min'] + pt['pt_attempt_min']})
         for boson in data['boson']: 
-            if boson['title'] in completed_items:
-                continue
-                
-            if j_day <= 25:
-                catchup_queue.append({'item': boson['title'], 'cat': 'boson_labs', 'j_day': 'Catch-up', 'min': boson['min']})
-            else:
-                temp_schedule_items.append({'item': boson['title'], 'cat': 'boson_labs', 'j_day': j_day, 'min': boson['min']})
+            if boson['title'] in completed_items: continue
+            if j_day <= 25: catchup_queue.append({'item': boson['title'], 'cat': 'boson_labs', 'j_day': 'Catch-up', 'min': boson['min']})
+            else: temp_schedule_items.append({'item': boson['title'], 'cat': 'boson_labs', 'j_day': j_day, 'min': boson['min']})
 
     first_day_64 = True
     for item in temp_schedule_items:
         if item['j_day'] == 64 and first_day_64:
             close_day()
-            
-            # Process Catch-up week queue
-            print(f"Catch-up queue has {len(catchup_queue)} items.")
-            for catchup_item in catchup_queue:
-                add_item(catchup_item['item'], catchup_item['cat'], catchup_item['j_day'], catchup_item['min'])
+            for catchup_item in catchup_queue: add_item(catchup_item['item'], catchup_item['cat'], catchup_item['j_day'], catchup_item['min'])
             close_day()
-            
             curr_day['date'] = current_date
             first_day_64 = False
         add_item(item['item'], item['cat'], item['j_day'], item['min'])
         
-    # Add Boson ExSim Prep Block
-    exsim_tasks = [
-        "Boson ExSim: Exam A (Baseline Test in Simulation Mode)",
-        "Boson ExSim: Review Exam A Explanations (Questions 1-50)",
-        "Boson ExSim: Review Exam A Explanations (Questions 51-100)",
-        "Boson ExSim: Exam B (Baseline Test in Simulation Mode)",
-        "Boson ExSim: Review Exam B Explanations (Questions 1-50)",
-        "Boson ExSim: Review Exam B Explanations (Questions 51-100)",
-        "Boson ExSim: Exam C (Baseline Test in Simulation Mode)",
-        "Boson ExSim: Review Exam C Explanations (Questions 1-50)",
-        "Boson ExSim: Review Exam C Explanations (Questions 51-100)",
-        "Targeted Review: Weak Areas (Subnetting/Routing)",
-        "Targeted Review: Weak Areas (Security/Automation)",
-        "Boson ExSim: Retake Random Exams in Simulation Mode",
-        "Final Review & Rest 1",
-        "Final Review & Rest 2"
-    ]
     for task in exsim_tasks:
-        if task not in completed_items:
-            add_item(task, 'boson_labs', 'ExSim', 120)
-            
+        if task not in completed_items: add_item(task, 'boson_labs', 'ExSim', 120)
     close_day()
 
-    # Determine tracking status
-    missed_days = (today - (last_history_date + timedelta(days=1))).days
-    is_on_track = missed_days <= 0
-    
     mega_lab_date = None
     for row in schedule:
         if '64' in row['j_days_involved']:
@@ -474,23 +539,18 @@ def generate_schedule():
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         
-        # Sort history chronologically before writing
+        # history_rows is already ordered correctly in memory, but we can safely sort just to be absolutely sure
         history_rows.sort(key=lambda r: datetime.datetime.strptime(r['Date'], '%m/%d/%Y'))
-        
-        # Write history rows first
         for h_row in history_rows:
-            # We must only write the fields that are in fieldnames
             clean_row = {k: h_row.get(k, '') for k in fieldnames}
             writer.writerow(clean_row)
         
         for row in schedule:
             actual_date = row['date']
-            
             day_name = actual_date.strftime('%A')
             day_type = f"{day_name} (Holiday)" if actual_date in HOLIDAYS_2026 else day_name
             hours_val = round(row['total_min'] / 60.0, 1)
-            
-            lec_min = sum(l['min'] for l in temp_schedule_items if l['item'] in row['lectures'])
+            lec_min = sum(item_metadata[item]['min'] for item in row['lectures'] if item in item_metadata)
             
             writer.writerow({
                 'Done': 'FALSE',
@@ -504,44 +564,19 @@ def generate_schedule():
                 'Total_Est_Hrs': hours_val
             })
             
-    print(f"Schedule generated successfully: {OUTPUT_CSV}")
-    
-    # Validation & Summary Statistics
-    last_scheduled_date = schedule[-1]['date'] if schedule else today
-    exam_date = datetime.date(2026, 10, 31)
-    overflow_days = (last_scheduled_date - exam_date).days
-    
-    print("\n--- Schedule Summary ---")
-    print(f"Remaining Study Days: {len(schedule)} (includes ExSim)")
-    print(f"Mega Lab Date: {mega_lab_date}")
-    print(f"Final ExSim Day: {last_scheduled_date.strftime('%m/%d/%Y')}")
-    if overflow_days > 0:
-        print(f"WARNING: Schedule overflows past EXAM DATE (10/31) by {overflow_days} days!")
-    else:
-        buffer_days = -overflow_days
-        print(f"On track! You have a {buffer_days}-day buffer before the Exam.")
-    print("------------------------\n")
-    
     # Generate Master Task List CSV
     with open(OUTPUT_MASTER_LIST_CSV, 'w', encoding='utf-8', newline='') as mf:
         mwriter = csv.DictWriter(mf, fieldnames=['Done', 'Day', 'Type', 'Task Title', 'Est_Time'])
         mwriter.writeheader()
-        
-        # Write all tasks chronologically
         for j_day in sorted(jeremy_days.keys()):
             data = jeremy_days[j_day]
-            for lec in data['lectures']:
-                mwriter.writerow({'Done': 'TRUE' if lec['title'] in completed_items else 'FALSE', 'Day': j_day, 'Type': 'Lecture', 'Task Title': lec['title'], 'Est_Time': round(lec['min'] / 60.0, 1)})
-            for pt in data['labs']:
-                mwriter.writerow({'Done': 'TRUE' if pt['title'] in completed_items else 'FALSE', 'Day': j_day, 'Type': 'PT Lab', 'Task Title': pt['title'], 'Est_Time': round((pt['min'] + pt['pt_attempt_min']) / 60.0, 1)})
-            for boson in data['boson']:
-                mwriter.writerow({'Done': 'TRUE' if boson['title'] in completed_items else 'FALSE', 'Day': j_day, 'Type': 'Boson Lab', 'Task Title': boson['title'], 'Est_Time': round(boson['min'] / 60.0, 1)})
-        # Write ExSim tasks
-        for task in exsim_tasks:
-            mwriter.writerow({'Done': 'TRUE' if task in completed_items else 'FALSE', 'Day': 'ExSim', 'Type': 'ExSim / Review', 'Task Title': task, 'Est_Time': 2.0})
+            for lec in data['lectures']: mwriter.writerow({'Done': 'TRUE' if lec['title'] in completed_items else 'FALSE', 'Day': j_day, 'Type': 'Lecture', 'Task Title': lec['title'], 'Est_Time': round(lec['min'] / 60.0, 1)})
+            for pt in data['labs']: mwriter.writerow({'Done': 'TRUE' if pt['title'] in completed_items else 'FALSE', 'Day': j_day, 'Type': 'PT Lab', 'Task Title': pt['title'], 'Est_Time': round((pt['min'] + pt['pt_attempt_min']) / 60.0, 1)})
+            for boson in data['boson']: mwriter.writerow({'Done': 'TRUE' if boson['title'] in completed_items else 'FALSE', 'Day': j_day, 'Type': 'Boson Lab', 'Task Title': boson['title'], 'Est_Time': round(boson['min'] / 60.0, 1)})
+        for task in exsim_tasks: mwriter.writerow({'Done': 'TRUE' if task in completed_items else 'FALSE', 'Day': 'ExSim', 'Type': 'ExSim / Review', 'Task Title': task, 'Est_Time': 2.0})
 
     # Send notification
-    send_discord_notification(schedule, is_on_track, mega_lab_date)
+    send_discord_notification(schedule, streak, perf_stats, mega_lab_date)
 
 if __name__ == '__main__':
     generate_schedule()

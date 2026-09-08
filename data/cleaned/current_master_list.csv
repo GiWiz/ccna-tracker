@@ -8,7 +8,7 @@ TRUE,3,PT Lab,OSI Model,0.4
 TRUE,4,Lecture,Intro to the CLI,0.6
 TRUE,4,PT Lab,Basic Device Security,0.4
 TRUE,4,Boson Lab,Demo Labs -> Using NetSim Online,0.4
-TRUE,4,Boson Lab,Network Fundamentals -> Explore Cisco Devices,1.0
+TRUE,4,Boson Lab,Network Fundamentals -> Explore Cisco Devices,1
 TRUE,4,Boson Lab,Network Fundamentals -> Router Basics,0.3
 TRUE,4,Boson Lab,Network Fundamentals -> Configure a Cisco Device,1.5
 FALSE,4,Boson Lab,Security Fundamentals -> Configure the Enable Password,0.5
@@ -53,7 +53,7 @@ TRUE,13,Boson Lab,Network Fundamentals -> Subnet an IPv4 Network,1.1
 TRUE,14,Lecture,Subnetting (Part 2),0.5
 TRUE,15,Lecture,Subnetting (Part 3 - VLSM),0.5
 TRUE,15,PT Lab,Subnetting (VLSM),0.7
-TRUE,15,Boson Lab,Network Fundamentals -> Configure VLSM on an IPv4 Network,1.0
+TRUE,15,Boson Lab,Network Fundamentals -> Configure VLSM on an IPv4 Network,1
 TRUE,16,Lecture,VLANs (Part 1),0.5
 TRUE,16,PT Lab,VLANs (Part 1),0.4
 FALSE,16,Boson Lab,Network Access -> Explore and Configure Switch Access Ports,1.2
@@ -92,21 +92,21 @@ TRUE,25,Lecture,RIP & EIGRP,0.9
 TRUE,25,PT Lab,Configuring EIGRP,1.1
 TRUE,25,Boson Lab,Demo Labs -> Configuration Demo 1,0.9
 TRUE,26,Lecture,OSPF Part 1,0.8
-TRUE,26,PT Lab,Configuring OSPF (1),1.0
+TRUE,26,PT Lab,Configuring OSPF (1),1
 TRUE,26,Boson Lab,IP Connectivity -> Explore and Configure OSPFv2 Router IDs,0.3
 TRUE,26,Boson Lab,IP Connectivity -> Plan and Configure Single-Area OSPF,0.5
 TRUE,27,Lecture,OSPF Part 2,0.8
-TRUE,27,PT Lab,Configuring OSPF (2),1.0
+TRUE,27,PT Lab,Configuring OSPF (2),1
 TRUE,27,Boson Lab,IP Connectivity -> Configure OSPFv2 Adjacencies,0.2
 TRUE,27,Boson Lab,IP Connectivity -> Implement Single-Area OSPFv2,0.9
-TRUE,28,Lecture,OSPF Part 3,1.0
-TRUE,28,PT Lab,Configuring OSPF (3),1.0
+TRUE,28,Lecture,OSPF Part 3,1
+TRUE,28,PT Lab,Configuring OSPF (3),1
 TRUE,28,Boson Lab,IP Connectivity -> Configure Point-to-Point OSPFv2,0.7
 TRUE,28,Boson Lab,IP Connectivity -> Explore OSPFv2 DR and BDR Router Selection,0.5
 TRUE,28,Boson Lab,IP Connectivity -> Troubleshoot an OSPFv2 Configuration,0.6
 TRUE,28,Boson Lab,IP Connectivity -> Boson CCNA Challenge Lab 3,1.4
 TRUE,29,Lecture,First Hop Redundancy Protocols,0.8
-TRUE,29,PT Lab,Configuring HSRP,1.0
+TRUE,29,PT Lab,Configuring HSRP,1
 FALSE,29,Boson Lab,IP Connectivity -> Explore HSRP,0.2
 FALSE,29,Boson Lab,IP Connectivity -> Explore VRRP,0.2
 FALSE,29,Boson Lab,IP Connectivity -> Implement HSRP,0.6
@@ -118,7 +118,7 @@ TRUE,31,PT Lab,Configuring IPv6 (Part 1),0.7
 TRUE,31,Boson Lab,Network Fundamentals -> Configure IPv6 Address Types,0.5
 FALSE,31,Boson Lab,Network Fundamentals -> Implement IPv6 Addressing,0.7
 TRUE,32,Lecture,IPv6 Part 2,0.8
-TRUE,32,PT Lab,Configuring IPv6 (Part 2),1.0
+TRUE,32,PT Lab,Configuring IPv6 (Part 2),1
 FALSE,32,Boson Lab,Network Fundamentals -> Configure IPv6 by Using Modified EUI-64,0.6
 FALSE,33,Lecture,IPv6 Part 3,0.9
 FALSE,33,PT Lab,Configuring IPv6 (Part 3),0.7
@@ -126,7 +126,7 @@ FALSE,33,Boson Lab,Network Fundamentals -> Boson CCNA Challenge Lab 1,0.8
 FALSE,33,Boson Lab,IP Connectivity -> Manually Configure Default Routes on IPv6 Networks,0.6
 FALSE,33,Boson Lab,IP Connectivity -> Manually Configure Network Routes on IPv6 Networks,0.6
 FALSE,33,Boson Lab,IP Connectivity -> Manually Configure Host Routes on IPv6 Networks,0.6
-FALSE,34,Lecture,Standard ACLs,1.0
+FALSE,34,Lecture,Standard ACLs,1
 FALSE,34,PT Lab,Standard ACLs,1.1
 FALSE,34,Boson Lab,Security Fundamentals -> Explore and Configure Standard Numbered ACLs,0.5
 FALSE,34,Boson Lab,Security Fundamentals -> Explore and Configured Numbered IP ACLs,0.2
@@ -134,7 +134,7 @@ FALSE,34,Boson Lab,Security Fundamentals -> Configure Standard Named ACLs,0.9
 FALSE,34,Boson Lab,Security Fundamentals -> Implement Standard ACLs,0.9
 FALSE,34,Boson Lab,Security Fundamentals -> Troubleshooting ACLs 2: Standard ACLs,0.7
 FALSE,35,Lecture,Extended ACLs,0.9
-FALSE,35,PT Lab,Extended ACLs,1.0
+FALSE,35,PT Lab,Extended ACLs,1
 FALSE,35,Boson Lab,Security Fundamentals -> Explore and Configure Extended Numbered ACLs,0.4
 FALSE,35,Boson Lab,Security Fundamentals -> Configure Extended Named ACLs,0.3
 FALSE,35,Boson Lab,Security Fundamentals -> Implement Extended ACLs,1.1
@@ -157,7 +157,7 @@ FALSE,38,Boson Lab,IP Services -> Configure and Test a DNS Server,0.6
 FALSE,38,Boson Lab,IP Services -> Implement DNS,1.2
 FALSE,39,Lecture,DHCP,0.8
 FALSE,39,PT Lab,DHCP,0.7
-FALSE,39,Boson Lab,IP Services -> Configure DHCP for IPv4 Networks,1.0
+FALSE,39,Boson Lab,IP Services -> Configure DHCP for IPv4 Networks,1
 FALSE,39,Boson Lab,IP Services -> Configure DHCP Relay for IPv4 Networks,0.8
 FALSE,39,Boson Lab,IP Services -> Implement DHCP,0.6
 FALSE,39,Boson Lab,IP Services -> Boson CCNA Challenge Lab 4,1.5
@@ -184,7 +184,7 @@ FALSE,45,PT Lab,Dynamic NAT,0.7
 FALSE,45,Boson Lab,IP Services -> Configure Dynamic NAT,0.7
 FALSE,45,Boson Lab,IP Services -> Configure PAT,0.6
 FALSE,46,Lecture,QoS (Part 1),0.7
-FALSE,46,PT Lab,Voice VLANs,1.0
+FALSE,46,PT Lab,Voice VLANs,1
 FALSE,47,Lecture,QoS (Part 2),0.9
 FALSE,47,PT Lab,QoS,0.7
 FALSE,48,Lecture,Security Fundamentals,0.8
@@ -199,11 +199,11 @@ FALSE,49,Boson Lab,Security Fundamentals -> Troubleshoot Port Security,0.3
 FALSE,50,Lecture,DHCP Snooping,0.6
 FALSE,50,PT Lab,DHCP Snooping,0.7
 FALSE,51,Lecture,Dynamic ARP Inspection,0.7
-FALSE,51,PT Lab,Dynamic ARP Inspection,1.0
+FALSE,51,PT Lab,Dynamic ARP Inspection,1
 FALSE,52,Lecture,LAN Architectures,0.6
 FALSE,52,PT Lab,STP & FHRP Synchronization,0.7
 FALSE,53,Lecture,WAN Architectures,0.8
-FALSE,53,PT Lab,GRE Tunnels,1.0
+FALSE,53,PT Lab,GRE Tunnels,1
 FALSE,54,Lecture,Virtualization & Cloud,0.8
 FALSE,54,Lecture,Containers,0.3
 FALSE,54,Lecture,VRF,0.4
@@ -211,7 +211,7 @@ FALSE,54,PT Lab,Oracle VirtualBox,0.4
 FALSE,55,Lecture,Wireless Fundamentals,0.7
 FALSE,56,Lecture,Wireless Architectures,0.8
 FALSE,57,Lecture,Wireless Security,0.7
-FALSE,58,Lecture,Wireless Configuration,1.0
+FALSE,58,Lecture,Wireless Configuration,1
 FALSE,58,PT Lab,Wireless LANs,0.7
 FALSE,58,Boson Lab,Network Access -> Configure a Wireless LAN by Using the WLC GUI,0.6
 FALSE,59,Lecture,Intro to Network Automation,0.7
@@ -227,17 +227,17 @@ FALSE,63,Lecture,"Ansible, Puppet, & Chef",0.4
 FALSE,63,Lecture,Terraform,0.5
 FALSE,63,Boson Lab,"Automation and Programmability -> Submit and Explore Ansible, Chef, and Puppet Queries",0.2
 FALSE,64,PT Lab,Complete Network Configuration,3.3
-FALSE,ExSim,ExSim / Review,Boson ExSim: Exam A (Baseline Test in Simulation Mode),2.0
-FALSE,ExSim,ExSim / Review,Boson ExSim: Review Exam A Explanations (Questions 1-50),2.0
-FALSE,ExSim,ExSim / Review,Boson ExSim: Review Exam A Explanations (Questions 51-100),2.0
-FALSE,ExSim,ExSim / Review,Boson ExSim: Exam B (Baseline Test in Simulation Mode),2.0
-FALSE,ExSim,ExSim / Review,Boson ExSim: Review Exam B Explanations (Questions 1-50),2.0
-FALSE,ExSim,ExSim / Review,Boson ExSim: Review Exam B Explanations (Questions 51-100),2.0
-FALSE,ExSim,ExSim / Review,Boson ExSim: Exam C (Baseline Test in Simulation Mode),2.0
-FALSE,ExSim,ExSim / Review,Boson ExSim: Review Exam C Explanations (Questions 1-50),2.0
-FALSE,ExSim,ExSim / Review,Boson ExSim: Review Exam C Explanations (Questions 51-100),2.0
-FALSE,ExSim,ExSim / Review,Targeted Review: Weak Areas (Subnetting/Routing),2.0
-FALSE,ExSim,ExSim / Review,Targeted Review: Weak Areas (Security/Automation),2.0
-FALSE,ExSim,ExSim / Review,Boson ExSim: Retake Random Exams in Simulation Mode,2.0
-FALSE,ExSim,ExSim / Review,Final Review & Rest 1,2.0
-FALSE,ExSim,ExSim / Review,Final Review & Rest 2,2.0
+FALSE,ExSim,ExSim / Review,Boson ExSim: Exam A (Baseline Test in Simulation Mode),2
+FALSE,ExSim,ExSim / Review,Boson ExSim: Review Exam A Explanations (Questions 1-50),2
+FALSE,ExSim,ExSim / Review,Boson ExSim: Review Exam A Explanations (Questions 51-100),2
+FALSE,ExSim,ExSim / Review,Boson ExSim: Exam B (Baseline Test in Simulation Mode),2
+FALSE,ExSim,ExSim / Review,Boson ExSim: Review Exam B Explanations (Questions 1-50),2
+FALSE,ExSim,ExSim / Review,Boson ExSim: Review Exam B Explanations (Questions 51-100),2
+FALSE,ExSim,ExSim / Review,Boson ExSim: Exam C (Baseline Test in Simulation Mode),2
+FALSE,ExSim,ExSim / Review,Boson ExSim: Review Exam C Explanations (Questions 1-50),2
+FALSE,ExSim,ExSim / Review,Boson ExSim: Review Exam C Explanations (Questions 51-100),2
+FALSE,ExSim,ExSim / Review,Targeted Review: Weak Areas (Subnetting/Routing),2
+FALSE,ExSim,ExSim / Review,Targeted Review: Weak Areas (Security/Automation),2
+FALSE,ExSim,ExSim / Review,Boson ExSim: Retake Random Exams in Simulation Mode,2
+FALSE,ExSim,ExSim / Review,Final Review & Rest 1,2
+FALSE,ExSim,ExSim / Review,Final Review & Rest 2,2
