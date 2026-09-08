@@ -351,6 +351,8 @@ def generate_schedule():
             for row in reader:
                 m, d, y = map(int, row['Date'].split('/'))
                 row_date = datetime.date(y, m, d)
+                if row_date >= today and row.get('Done') != 'TRUE':
+                    continue
                 
                 # Check for explicit completion
                 if row.get('Done') == 'TRUE' or row.get('Day_Type') == 'Partial Day':
