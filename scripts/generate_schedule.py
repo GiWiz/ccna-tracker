@@ -279,14 +279,19 @@ def send_discord_notification(schedule, streak, perf_stats, mega_lab_date):
         nd_hrs = round(next_day['total_min'] / 60, 1)
         limit_hrs = round(get_daily_limits(next_day['date'])[1] / 60, 1)
         
-        lec_count = len(next_day['lectures'])
-        pt_count = len(next_day['pt_labs'])
-        b_count = len(next_day['boson_labs'])
-        
         items = []
-        if lec_count: items.append(f"- {lec_count} Lecture(s)")
-        if pt_count: items.append(f"- {pt_count} PT Lab(s)")
-        if b_count: items.append(f"- {b_count} Boson/ExSim Task(s)")
+        if next_day['lectures']:
+            names = next_day['lectures'][:2]
+            rem = len(next_day['lectures']) - 2
+            items.append(f"📚 **Lectures**: {', '.join(names)}" + (f", +{rem} more" if rem > 0 else ""))
+        if next_day['pt_labs']:
+            names = next_day['pt_labs'][:2]
+            rem = len(next_day['pt_labs']) - 2
+            items.append(f"💻 **PT Labs**: {', '.join(names)}" + (f", +{rem} more" if rem > 0 else ""))
+        if next_day['boson_labs']:
+            names = [b.split(' -> ')[-1] if ' -> ' in b else b for b in next_day['boson_labs'][:2]]
+            rem = len(next_day['boson_labs']) - 2
+            items.append(f"🛠️ **Boson/ExSim**: {', '.join(names)}" + (f", +{rem} more" if rem > 0 else ""))
         items_str = "\n".join(items)
         
         next_up_txt = f"**📅 Today's Agenda ({nd_date})**:\n⏱️ **Target**: {nd_hrs} hrs (Limit: {limit_hrs} hrs)\n{items_str}"
