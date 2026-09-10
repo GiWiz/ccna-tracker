@@ -406,7 +406,7 @@ def generate_schedule():
         m, d, y = map(int, row['Date'].split('/'))
         row_date = datetime.date(y, m, d)
         
-        if row.get('Done') != 'TRUE':
+        if row.get('Done') != 'TRUE' and row.get('Day_Type') != 'Partial Day':
             if row_date < today:
                 if not injected_orphans:
                     # This is the "Yesterday" row! Let's process it.

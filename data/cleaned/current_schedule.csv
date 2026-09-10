@@ -20,46 +20,49 @@ TRUE,09/02/2026,Wednesday,27,0,,Configuring OSPF (2),IP Connectivity -> Configur
 TRUE,09/03/2026,Thursday,28,1,OSPF Part 3,,,1
 TRUE,09/04/2026,Friday,28,0,,Configuring OSPF (3),IP Connectivity -> Configure Point-to-Point OSPFv2 | IP Connectivity -> Explore OSPFv2 DR and BDR Router Selection,1.8
 TRUE,09/05/2026,Saturday,"28, 29, 30",1.5,First Hop Redundancy Protocols | TCP & UDP,Configuring HSRP | Wireshark Demo (TCP/UDP),IP Connectivity -> Troubleshoot an OSPFv2 Configuration | IP Connectivity -> Boson CCNA Challenge Lab 3,5.4
-FALSE,09/06/2026,Sunday,"29, 31, 32",1.6,IPv6 Part 1 | IPv6 Part 2,Configuring IPv6 (Part 1),IP Connectivity -> Explore HSRP | IP Connectivity -> Explore VRRP | IP Connectivity -> Implement HSRP | IP Connectivity -> Implement VRRP | Network Fundamentals -> Configure IPv6 Address Types | Network Fundamentals -> Implement IPv6 Addressing,5.1
-FALSE,09/07/2026,Monday (Holiday),"32, 33",0.9,IPv6 Part 3,Configuring IPv6 (Part 2) | Configuring IPv6 (Part 3),Network Fundamentals -> Configure IPv6 by Using Modified EUI-64 | Network Fundamentals -> Boson CCNA Challenge Lab 1 | IP Connectivity -> Manually Configure Default Routes on IPv6 Networks | IP Connectivity -> Manually Configure Network Routes on IPv6 Networks | IP Connectivity -> Manually Configure Host Routes on IPv6 Networks,5.9
-FALSE,09/08/2026,Tuesday,34,2.1,Standard ACLs,,,1
-FALSE,09/09/2026,Wednesday,34,0,,Standard ACLs,Security Fundamentals -> Explore and Configure Standard Numbered ACLs | Security Fundamentals -> Explore and Configured Numbered IP ACLs,1.8
-FALSE,09/10/2026,Thursday,34,0,,,Security Fundamentals -> Configure Standard Named ACLs | Security Fundamentals -> Implement Standard ACLs,1.7
-FALSE,09/11/2026,Friday,"34, 35",1.9,Extended ACLs,,Security Fundamentals -> Troubleshooting ACLs 2: Standard ACLs,1.6
-FALSE,09/12/2026,Saturday,"35, 36",1.9,CDP & LLDP,Extended ACLs,Security Fundamentals -> Explore and Configure Extended Numbered ACLs | Security Fundamentals -> Configure Extended Named ACLs | Security Fundamentals -> Implement Extended ACLs | Security Fundamentals -> Troubleshoot ACLs | Security Fundamentals -> Troubleshooting ACLs 1: Extended ACLs | Security Fundamentals -> Troubleshooting ACLs 3: Named ACLs,5.3
-FALSE,09/13/2026,Sunday,"36, 37",1.6,NTP,CDP & LLDP | NTP,Network Access -> Configure and Verify CDP | Network Access -> Configure and Verify LLDP | Network Access -> Implement CDP and LLDP,4.7
-FALSE,09/14/2026,Monday,37,0,,,IP Services -> Configure an NTP Server,1.5
-FALSE,09/15/2026,Tuesday,37,0,,,IP Services -> Configure an NTP Client,0.6
-FALSE,09/16/2026,Wednesday,37,0,,,IP Services -> Implement NTP,1.5
-FALSE,09/17/2026,Thursday,38,1.3,DNS,DNS,IP Services -> Configure and Test a DNS Server,1.9
-FALSE,09/18/2026,Friday,38,0,,,IP Services -> Implement DNS,1.2
-FALSE,09/19/2026,Saturday,"39, 40",2.7,DHCP | SNMP,DHCP,IP Services -> Configure DHCP for IPv4 Networks | IP Services -> Configure DHCP Relay for IPv4 Networks | IP Services -> Implement DHCP | IP Services -> Boson CCNA Challenge Lab 4,5.9
-FALSE,09/20/2026,Sunday,"40, 41, 42, 43",3.9,Syslog | SSH | FTP & TFTP,SNMP | Syslog | SSH,IP Services -> Explore Syslog Output | IP Services -> Explore and Configure Syslog Levels | IP Services -> Configure SSH | IP Services -> Implement SSH,5.3
-FALSE,09/21/2026,Monday,"43, 44",0.7,NAT (Part 1),FTP & TFTP,IP Services -> Explore and Configure TFTP | IP Services -> Explore and Configure FTP,1.7
-FALSE,09/22/2026,Tuesday,44,0,,Static NAT,IP Services -> Configure Static NAT,1.4
-FALSE,09/23/2026,Wednesday,"44, 45",0.6,NAT (part 2),,IP Services -> Implement NAT,1.5
-FALSE,09/24/2026,Thursday,45,0,,Dynamic NAT,IP Services -> Configure Dynamic NAT | IP Services -> Configure PAT,2
-FALSE,09/25/2026,Friday,46,0.7,QoS (Part 1),Voice VLANs,,1.7
-FALSE,09/26/2026,Saturday,"47, 48, 49",3.1,QoS (Part 2) | Security Fundamentals | Port Security,QoS | Kali Linux Demo | Port Security,Security Fundamentals -> Explore AAA | Security Fundamentals -> Boson CCNA Challenge Lab 5,5.9
-FALSE,09/27/2026,Sunday,"49, 50, 51, 52",3.6,DHCP Snooping | Dynamic ARP Inspection | LAN Architectures,DHCP Snooping | Dynamic ARP Inspection | STP & FHRP Synchronization,Security Fundamentals -> Explore and Configure Port Security | Security Fundamentals -> Implement Port Security | Security Fundamentals -> Troubleshoot Port Security,5.9
-FALSE,09/28/2026,Monday,53,0.8,WAN Architectures,GRE Tunnels,,1.8
-FALSE,09/29/2026,Tuesday,54,1.5,Virtualization & Cloud | Containers | VRF,Oracle VirtualBox,,1.9
-FALSE,09/30/2026,Wednesday,"55, 56",1.5,Wireless Fundamentals | Wireless Architectures,,,1.5
-FALSE,10/01/2026,Thursday,"57, 58",1.7,Wireless Security | Wireless Configuration,,,1.7
-FALSE,10/02/2026,Friday,58,0,,Wireless LANs,Network Access -> Configure a Wireless LAN by Using the WLC GUI,1.3
-FALSE,10/03/2026,Saturday,"59, 60, 61, 62, 63",4.9,"Intro to Network Automation | AI & Machine Learning | JSON, XML, & YAML | REST APIs | REST API Authentication | Software-Defined Networking | Ansible, Puppet, & Chef | Terraform",,"Automation and Programmability -> Obtain and Interpret JSON Output | Automation and Programmability -> Explore HTTP Server Verbs | Automation and Programmability -> Compare a Traditional Network to a Controller-Based Network | Automation and Programmability -> Submit and Explore Ansible, Chef, and Puppet Queries",5.9
-FALSE,10/04/2026,Sunday,Catch-up,0,,,Security Fundamentals -> Configure the Enable Password | Security Fundamentals -> Configure the Enable Secret Password | Security Fundamentals -> Configure Local User Accounts | Security Fundamentals -> Secure the Console and VTY Ports | Security Fundamentals -> Encrypt Passwords on a Cisco Device | Security Fundamentals -> Explore Password Complexity | Security Fundamentals -> Implement Passwords | Security Fundamentals -> Implement Local User Accounts | Network Fundamentals -> Implement IPv4 Addressing,5.8
-FALSE,10/05/2026,Monday,Catch-up,0,,,Network Fundamentals -> Explore the MAC Address Table | IP Connectivity -> Manually Configure Default Routes on IPv4 Networks | IP Connectivity -> Manually Configure Network Routes on IPv4 Networks,1.7
-FALSE,10/06/2026,Tuesday,Catch-up,0,,,IP Connectivity -> Manually Configure Host Routes on IPv4 Networks | IP Connectivity -> Implement Route Selection,1.3
-FALSE,10/07/2026,Wednesday,Catch-up,0,,,IP Connectivity -> Implement Static and Default Routes,1.2
-FALSE,10/08/2026,Thursday,Catch-up,0,,,Network Access -> Explore and Configure Switch Access Ports | Network Access -> Explore and Configure Switch Trunk Ports,2
-FALSE,10/09/2026,Friday,Catch-up,0,,,Network Access -> Configure InterVLAN Routing | Network Access -> Explore the Native VLAN | Network Access -> Implement InterVLAN Routing,1.6
-FALSE,10/10/2026,Saturday,Catch-up,0,,,Network Access -> Configure and Verify VTP | Network Access -> Boson CCNA Challenge Lab 2,1.8
-FALSE,10/11/2026,Sunday,"64, ExSim",0,,Complete Network Configuration,Boson ExSim: Exam A (Baseline Test in Simulation Mode),5.3
-FALSE,10/12/2026,Monday (Holiday),ExSim,0,,,Boson ExSim: Review Exam A Explanations (Questions 1-50) | Boson ExSim: Review Exam A Explanations (Questions 51-100) | Boson ExSim: Exam B (Baseline Test in Simulation Mode),6
-FALSE,10/13/2026,Tuesday,ExSim,0,,,Boson ExSim: Review Exam B Explanations (Questions 1-50),2
-FALSE,10/14/2026,Wednesday,ExSim,0,,,Boson ExSim: Review Exam B Explanations (Questions 51-100),2
-FALSE,10/15/2026,Thursday,ExSim,0,,,Boson ExSim: Exam C (Baseline Test in Simulation Mode),2
-FALSE,10/16/2026,Friday,ExSim,0,,,Boson ExSim: Review Exam C Explanations (Questions 1-50),2
-FALSE,10/17/2026,Saturday,ExSim,0,,,Boson ExSim: Review Exam C Explanations (Questions 51-100) | Targeted Review: Weak Areas (Subnetting/Routing) | Targeted Review: Weak Areas (Security/Automation),6
-FALSE,10/18/2026,Sunday,ExSim,0,,,Boson ExSim: Retake Random Exams in Simulation Mode | Final Review & Rest 1 | Final Review & Rest 2,6
+FALSE,09/06/2026,Missed Day,,0,,,,0
+FALSE,09/07/2026,Partial Day,"31, 32",1.6,IPv6 Part 1 | IPv6 Part 2,Configuring IPv6 (Part 1) | Configuring IPv6 (Part 2),Network Fundamentals -> Configure IPv6 Address Types,3.8
+TRUE,09/08/2026,Tuesday,29,0,,,IP Connectivity -> Explore HSRP | IP Connectivity -> Explore VRRP | IP Connectivity -> Implement HSRP | IP Connectivity -> Implement VRRP,1.6
+FALSE,09/09/2026,Wednesday,"31, 32",0,,,Network Fundamentals -> Implement IPv6 Addressing | Network Fundamentals -> Configure IPv6 by Using Modified EUI-64,1.2
+FALSE,09/10/2026,Thursday,33,0,,,Network Fundamentals -> Boson CCNA Challenge Lab 1 | IP Connectivity -> Manually Configure Default Routes on IPv6 Networks,1.4
+FALSE,09/11/2026,Friday,33,0,,,IP Connectivity -> Manually Configure Network Routes on IPv6 Networks | IP Connectivity -> Manually Configure Host Routes on IPv6 Networks,1.2
+FALSE,09/12/2026,Saturday,34,1.1,Standard ACLs,Standard ACLs,Security Fundamentals -> Explore and Configure Standard Numbered ACLs | Security Fundamentals -> Explore and Configured Numbered IP ACLs | Security Fundamentals -> Configure Standard Named ACLs | Security Fundamentals -> Implement Standard ACLs | Security Fundamentals -> Troubleshooting ACLs 2: Standard ACLs,5.2
+FALSE,09/13/2026,Sunday,35,1,Extended ACLs,Extended ACLs,Security Fundamentals -> Explore and Configure Extended Numbered ACLs | Security Fundamentals -> Configure Extended Named ACLs | Security Fundamentals -> Implement Extended ACLs | Security Fundamentals -> Troubleshoot ACLs | Security Fundamentals -> Troubleshooting ACLs 1: Extended ACLs | Security Fundamentals -> Troubleshooting ACLs 3: Named ACLs,5.3
+FALSE,09/14/2026,Monday,36,1.1,CDP & LLDP,CDP & LLDP,,1.9
+FALSE,09/15/2026,Tuesday,36,0,,,Network Access -> Configure and Verify CDP | Network Access -> Configure and Verify LLDP,1.6
+FALSE,09/16/2026,Wednesday,"36, 37",0.7,NTP,,Network Access -> Implement CDP and LLDP,1.4
+FALSE,09/17/2026,Thursday,37,0,,NTP,,0.7
+FALSE,09/18/2026,Friday,37,0,,,IP Services -> Configure an NTP Server,1.5
+FALSE,09/19/2026,Saturday,"37, 38",0.7,DNS,DNS,IP Services -> Configure an NTP Client | IP Services -> Implement NTP | IP Services -> Configure and Test a DNS Server | IP Services -> Implement DNS,5.3
+FALSE,09/20/2026,Sunday,"39, 40",1.4,DHCP | SNMP,DHCP,IP Services -> Configure DHCP for IPv4 Networks | IP Services -> Configure DHCP Relay for IPv4 Networks | IP Services -> Implement DHCP | IP Services -> Boson CCNA Challenge Lab 4,5.9
+FALSE,09/21/2026,Monday,"40, 41",0.7,Syslog,SNMP | Syslog,,1.9
+FALSE,09/22/2026,Tuesday,"41, 42",0.7,SSH,SSH,IP Services -> Explore Syslog Output | IP Services -> Explore and Configure Syslog Levels,1.9
+FALSE,09/23/2026,Wednesday,"42, 43",0.7,FTP & TFTP,,IP Services -> Configure SSH | IP Services -> Implement SSH,1.5
+FALSE,09/24/2026,Thursday,"43, 44",0.7,NAT (Part 1),FTP & TFTP,IP Services -> Explore and Configure TFTP | IP Services -> Explore and Configure FTP,1.7
+FALSE,09/25/2026,Friday,44,0,,Static NAT,IP Services -> Configure Static NAT,1.4
+FALSE,09/26/2026,Saturday,"44, 45, 46",1.3,NAT (part 2) | QoS (Part 1),Dynamic NAT | Voice VLANs,IP Services -> Implement NAT | IP Services -> Configure Dynamic NAT | IP Services -> Configure PAT,5.2
+FALSE,09/27/2026,Sunday,"47, 48, 49",2.4,QoS (Part 2) | Security Fundamentals | Port Security,QoS | Kali Linux Demo | Port Security,Security Fundamentals -> Explore AAA | Security Fundamentals -> Boson CCNA Challenge Lab 5,5.9
+FALSE,09/28/2026,Monday,49,0,,,Security Fundamentals -> Explore and Configure Port Security | Security Fundamentals -> Implement Port Security | Security Fundamentals -> Troubleshoot Port Security,1.6
+FALSE,09/29/2026,Tuesday,"50, 51",1.7,DHCP Snooping | Dynamic ARP Inspection,DHCP Snooping,,2
+FALSE,09/30/2026,Wednesday,"51, 52",0.6,LAN Architectures,Dynamic ARP Inspection,,1.6
+FALSE,10/01/2026,Thursday,"52, 53",0.8,WAN Architectures,STP & FHRP Synchronization,,1.5
+FALSE,10/02/2026,Friday,"53, 54",0.8,Virtualization & Cloud,GRE Tunnels,,1.8
+FALSE,10/03/2026,Saturday,"54, 55, 56, 57, 58",3.9,Containers | VRF | Wireless Fundamentals | Wireless Architectures | Wireless Security | Wireless Configuration,Oracle VirtualBox | Wireless LANs,Network Access -> Configure a Wireless LAN by Using the WLC GUI,5.6
+FALSE,10/04/2026,Sunday,"59, 60, 61, 62, 63",4.9,"Intro to Network Automation | AI & Machine Learning | JSON, XML, & YAML | REST APIs | REST API Authentication | Software-Defined Networking | Ansible, Puppet, & Chef | Terraform",,"Automation and Programmability -> Obtain and Interpret JSON Output | Automation and Programmability -> Explore HTTP Server Verbs | Automation and Programmability -> Compare a Traditional Network to a Controller-Based Network | Automation and Programmability -> Submit and Explore Ansible, Chef, and Puppet Queries",5.9
+FALSE,10/05/2026,Monday,Catch-up,0,,,Security Fundamentals -> Configure the Enable Password | Security Fundamentals -> Configure the Enable Secret Password | Security Fundamentals -> Configure Local User Accounts,1.7
+FALSE,10/06/2026,Tuesday,Catch-up,0,,,Security Fundamentals -> Secure the Console and VTY Ports | Security Fundamentals -> Encrypt Passwords on a Cisco Device | Security Fundamentals -> Explore Password Complexity,1.3
+FALSE,10/07/2026,Wednesday,Catch-up,0,,,Security Fundamentals -> Implement Passwords,0.9
+FALSE,10/08/2026,Thursday,Catch-up,0,,,Security Fundamentals -> Implement Local User Accounts | Network Fundamentals -> Implement IPv4 Addressing,1.9
+FALSE,10/09/2026,Friday,Catch-up,0,,,Network Fundamentals -> Explore the MAC Address Table | IP Connectivity -> Manually Configure Default Routes on IPv4 Networks | IP Connectivity -> Manually Configure Network Routes on IPv4 Networks,1.7
+FALSE,10/10/2026,Saturday,Catch-up,0,,,IP Connectivity -> Manually Configure Host Routes on IPv4 Networks | IP Connectivity -> Implement Route Selection | IP Connectivity -> Implement Static and Default Routes | Network Access -> Explore and Configure Switch Access Ports | Network Access -> Explore and Configure Switch Trunk Ports | Network Access -> Configure InterVLAN Routing | Network Access -> Explore the Native VLAN | Network Access -> Implement InterVLAN Routing,6
+FALSE,10/11/2026,Sunday,Catch-up,0,,,Network Access -> Configure and Verify VTP | Network Access -> Boson CCNA Challenge Lab 2,1.8
+FALSE,10/12/2026,Monday (Holiday),"64, ExSim",0,,Complete Network Configuration,Boson ExSim: Exam A (Baseline Test in Simulation Mode),5.3
+FALSE,10/13/2026,Tuesday,ExSim,0,,,Boson ExSim: Review Exam A Explanations (Questions 1-50),2
+FALSE,10/14/2026,Wednesday,ExSim,0,,,Boson ExSim: Review Exam A Explanations (Questions 51-100),2
+FALSE,10/15/2026,Thursday,ExSim,0,,,Boson ExSim: Exam B (Baseline Test in Simulation Mode),2
+FALSE,10/16/2026,Friday,ExSim,0,,,Boson ExSim: Review Exam B Explanations (Questions 1-50),2
+FALSE,10/17/2026,Saturday,ExSim,0,,,Boson ExSim: Review Exam B Explanations (Questions 51-100) | Boson ExSim: Exam C (Baseline Test in Simulation Mode) | Boson ExSim: Review Exam C Explanations (Questions 1-50),6
+FALSE,10/18/2026,Sunday,ExSim,0,,,Boson ExSim: Review Exam C Explanations (Questions 51-100) | Targeted Review: Weak Areas (Subnetting/Routing) | Targeted Review: Weak Areas (Security/Automation),6
+FALSE,10/19/2026,Monday,ExSim,0,,,Boson ExSim: Retake Random Exams in Simulation Mode,2
+FALSE,10/20/2026,Tuesday,ExSim,0,,,Final Review & Rest 1,2
+FALSE,10/21/2026,Wednesday,ExSim,0,,,Final Review & Rest 2,2

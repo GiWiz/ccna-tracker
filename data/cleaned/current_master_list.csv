@@ -107,10 +107,10 @@ TRUE,28,Boson Lab,IP Connectivity -> Troubleshoot an OSPFv2 Configuration,0.6
 TRUE,28,Boson Lab,IP Connectivity -> Boson CCNA Challenge Lab 3,1.4
 TRUE,29,Lecture,First Hop Redundancy Protocols,0.8
 TRUE,29,PT Lab,Configuring HSRP,1
-FALSE,29,Boson Lab,IP Connectivity -> Explore HSRP,0.2
-FALSE,29,Boson Lab,IP Connectivity -> Explore VRRP,0.2
-FALSE,29,Boson Lab,IP Connectivity -> Implement HSRP,0.6
-FALSE,29,Boson Lab,IP Connectivity -> Implement VRRP,0.6
+TRUE,29,Boson Lab,IP Connectivity -> Explore HSRP,0.2
+TRUE,29,Boson Lab,IP Connectivity -> Explore VRRP,0.2
+TRUE,29,Boson Lab,IP Connectivity -> Implement HSRP,0.6
+TRUE,29,Boson Lab,IP Connectivity -> Implement VRRP,0.6
 TRUE,30,Lecture,TCP & UDP,0.7
 TRUE,30,PT Lab,Wireshark Demo (TCP/UDP),0.4
 TRUE,31,Lecture,IPv6 Part 1,0.8
@@ -120,8 +120,8 @@ FALSE,31,Boson Lab,Network Fundamentals -> Implement IPv6 Addressing,0.7
 TRUE,32,Lecture,IPv6 Part 2,0.8
 TRUE,32,PT Lab,Configuring IPv6 (Part 2),1
 FALSE,32,Boson Lab,Network Fundamentals -> Configure IPv6 by Using Modified EUI-64,0.6
-FALSE,33,Lecture,IPv6 Part 3,0.9
-FALSE,33,PT Lab,Configuring IPv6 (Part 3),0.7
+TRUE,33,Lecture,IPv6 Part 3,0.9
+TRUE,33,PT Lab,Configuring IPv6 (Part 3),0.7
 FALSE,33,Boson Lab,Network Fundamentals -> Boson CCNA Challenge Lab 1,0.8
 FALSE,33,Boson Lab,IP Connectivity -> Manually Configure Default Routes on IPv6 Networks,0.6
 FALSE,33,Boson Lab,IP Connectivity -> Manually Configure Network Routes on IPv6 Networks,0.6
